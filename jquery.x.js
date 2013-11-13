@@ -1,8 +1,8 @@
 /*!
- * jQuery X Plugin v1.0
+ * jQuery X Plugin v1.0.0
  * author: xiewulong
  * create: 2013/5/16
- * update: 2013/11/5
+ * update: 2013/11/13
  */
 
 (function(window, undefined){
