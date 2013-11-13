@@ -4,7 +4,7 @@
   "description": "jQuery X Plugin",
   "main": "jquery.x.js",
   "scripts": {
-    "test": "grunt"
+    "test": "http://xiewulong.github.io/jqueryX"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,10 @@
     "xiewulong"
   ],
   "author": "xiewulong",
-  "license": "MIT",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/xiewulong/jqueryX/blob/master/MIT-License"
+  }"MIT",
   "bugs": {
     "url": "https://github.com/xiewulong/jqueryX/issues"
   },
