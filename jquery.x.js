@@ -28,7 +28,7 @@
 
 				/**
 				 * @name 模拟滚动条
-				 * @function
+				 * @function $.fn.scrolls
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
 				 */
@@ -349,7 +349,7 @@
 				/**
 				 * @name tab切换
 				 * @function
-				 * @param {string} selector- 切换页
+				 * @param {string} selector - 切换页
 				 * @param {string} [on='on'] - tab按钮效果切换class
 				 * @param {string} [type='click'] - 事件类型,支持'click/hover'
 				 * @param {number} [index=0] - 默认索引
@@ -679,9 +679,9 @@
 				
 				/**
 				 * @name 弹窗
-				 * @function
+				 * @function pop
 				 * @param {object} prop - 参数
-				 * @param {string} prop.html=null - 弹窗内容
+				 * @param {string} [prop.html=null] - 弹窗内容
 				 * @param {string} [prop.parent='body'] - dom父级
 				 * @param {string} [prop.id='jq_x_pop'] - id
 				 * @param {string} [prop.close=prop.id + '_c'] - 关闭按钮类名
