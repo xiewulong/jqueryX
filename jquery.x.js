@@ -10,14 +10,13 @@
 
 	var jQueryX = function($){
 
-			/** @global */
 			var $win	= $(window),
 				$doc	= $(document),
 				Fn		= function(){};
 
 			/**
-			 * $().fn()
-			 * @class
+			 * @name $().fn()
+			 * @class $().fn()
 			 * @classdesc $.fn.extend
 			 */
 			$.fn.extend({
@@ -26,7 +25,7 @@
 				x: '1.0.0',
 
 				/**
-				 * 模拟滚动条
+				 * @name 模拟滚动条
 				 * @function
 				 * @param {function} fn - 回调
 				 * @return {object} this
