@@ -27,9 +27,8 @@
 				x: '1.0.0',
 
 				/**
-				 * 模拟滚动条
-				 * @name $.fn.scrolls
-				 * @function $.fn.scrolls
+				 * @name 模拟滚动条$.fn.scrolls
+				 * @function
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
 				 */
@@ -124,7 +123,7 @@
 				},
 
 				/**
-				 * @name 设置模拟滚动条高度
+				 * @name 设置模拟滚动条高度$.fn.fixScrolls
 				 * @function
 				 * @return {object} this
 				 */
@@ -147,8 +146,7 @@
 				},
 
 				/**
-				 * 复选全选
-				 * @name $.fn.checkAll
+				 * @name 复选全选$.fn.checkAll
 				 * @function
 				 * @param {string} selector - 复选框
 				 * @param {function} [fn] - 全选回调
@@ -188,7 +186,7 @@
 				},
 
 				/**
-				 * @name 模拟复选
+				 * @name 模拟复选$.fn.checkboxs
 				 * @function
 				 * @param {string} [on='on'] - 选中
 				 * @param {function} [fn] - 回调
@@ -205,7 +203,7 @@
 				},
 
 				/**
-				 * @name 模拟单选
+				 * @name 模拟单选$.fn.radios
 				 * @function
 				 * @param {string} [on='on'] - 选中
 				 * @param {function} [fn] - 回调
@@ -225,7 +223,7 @@
 				},
 
 				/**
-				 * @name 模拟列表框
+				 * @name 模拟列表框$.fn.selects
 				 * @function
 				 * @param {object} [prop] - 参数
 				 * @param {string} [prop.parent=null] - 阻止冒泡的父级
@@ -349,7 +347,7 @@
 				},
 
 				/**
-				 * @name tab切换
+				 * @name tab切换$.fn.tabs
 				 * @function
 				 * @param {string} selector - 切换页
 				 * @param {string} [on='on'] - tab按钮效果切换class
@@ -389,7 +387,7 @@
 				},
 
 				/**
-				 * @name 图片预加载
+				 * @name 图片预加载$.fn.imgLoad
 				 * @function
 				 * @param {string} [attr='_src'] - 属性名
 				 * @param {function} [fn] - 回调
@@ -420,7 +418,7 @@
 				},
 
 				/**
-				 * @name 文本输入区光标处插入
+				 * @name 文本输入区光标处插入$.fn.inputIn
 				 * @function
 				 * @param {string} txt - 文本
 				 * @param {array} [wrap] - 两侧符号
@@ -464,7 +462,7 @@
 				},
 
 				/**
-				 * @name 限制字符
+				 * @name 限制字符$.fn.limit
 				 * @function
 				 * @param {number} limit - 限制数
 				 * @param {function} [fn] - 回调
@@ -483,7 +481,7 @@
 				},
 
 				/**
-				 * @name 文本输入控件
+				 * @name 文本输入控件$.fn.inputs
 				 * @function
 				 * @param {object} [prop] - 参数
 				 * @param {string} [prop.parent=null] - 事件委托对象,默认不使用
@@ -620,15 +618,10 @@
 
 			});
 
-			/**
-			 * $.fn()
-			 * @class
-			 * @classdesc $.extend
-			 */
 			$.extend({
 
 				/**
-				 * @name 粘贴板
+				 * @name 粘贴板$.clip
 				 * @function
 				 * @param {object} d - 文本输入区对象
 				 * @param {function} [fn] - 回调
@@ -659,7 +652,7 @@
 				},
 
 				/**
-				 * @name 加载程序
+				 * @name 加载程序$.loader
 				 * @function
 				 * @param {object} fns - 程序集合
 				 * @param {bool} [onload=undefined] - 默认页面onload完成后执行
@@ -680,8 +673,8 @@
 				},
 				
 				/**
-				 * @name 弹窗
-				 * @function pop
+				 * @name 弹窗$.pop
+				 * @function
 				 * @param {object} prop - 参数
 				 * @param {string} [prop.html=null] - 弹窗内容
 				 * @param {string} [prop.parent='body'] - dom父级
@@ -871,7 +864,7 @@
 				},
 				
 				/**
-				 * @name 关闭弹窗
+				 * @name 关闭弹窗$.popClose
 				 * @function
 				 * @param {string} id 弹窗id
 				 * @param {string} [animation=undefined] 动画,支持'fade'
@@ -897,7 +890,7 @@
 				},
 				
 				/**
-				 * @name 开启遮罩蒙板
+				 * @name 开启遮罩蒙板$.popBg
 				 * @function
 				 * @param {object} [prop] - 参数
 				 * @param {string} [prop.parent='body'] - dom父级
@@ -953,7 +946,7 @@
 				},
 
 				/**
-				 * @name 返回字符串长度/截取字符串
+				 * @name 返回字符串长度/截取字符串$.textSize
 				 * @function
 				 * @param {string} text - 字符串
 				 * @param {number} [cutout] - 需要截取的字符串的长度,为空则返回字符串长度
@@ -974,7 +967,7 @@
 				},
 
 				/**
-				 * @name 检测是否ie6
+				 * @name ie6检测$.ie6
 				 * @function
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
@@ -989,7 +982,7 @@
 				},
 
 				/**
-				 * @name 检测是否低于指定版本的ie
+				 * @name 低于指定版本ie检测$.ltie
 				 * @function
 				 * @param {string} [ver=9] - 版本
 				 * @param {function} [fn] - 回调
@@ -1016,7 +1009,7 @@
 				},
 
 				/**
-				 * @name 检测是否指定ie版本
+				 * @name 指定ie版本检测$.ie
 				 * @function
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
