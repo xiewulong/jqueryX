@@ -1,7 +1,8 @@
 /*!
  * @file jQuery X Plugin
  * @version 1.0.0
- * @author xiewulong<xiewulong@vip.qq.com>
+ * @author xiewulong <xiewulong@vip.qq.com> <http://xiewulong.github.io/jqueryX>
+ * @copyright 2013 by xiewulong
  * @create 2013/5/16
  * @update 2013/11/15
  */
@@ -15,8 +16,8 @@
 				Fn		= function(){};
 
 			/**
-			 * @name $().fn()
-			 * @class 111
+			 * $().fn()
+			 * @class
 			 * @classdesc $.fn.extend
 			 */
 			$.fn.extend({
@@ -27,8 +28,8 @@
 				/**
 				 * @name 模拟滚动条
 				 * @function
-				 * @param {function} fn - 回调
-				 * @return {object} this
+				 * @param {function} [fn] - 回调
+				 * @return {object} [this]
 				 */
 				scrolls: function(fn){
 					return this.each(function(){
@@ -123,7 +124,7 @@
 				/**
 				 * @name 设置模拟滚动条高度
 				 * @function
-				 * @return {object} this
+				 * @return {object} [this]
 				 */
 				fixScrolls: function(){
 					return this.each(function(){
@@ -146,10 +147,10 @@
 				/**
 				 * @name 复选全选
 				 * @function
-				 * @param {string} selector - 复选框
-				 * @param {function} [fn=] - 全选回调
-				 * @param {function} [fnC=] - 复选回调
-				 * @return {object} this
+				 * @param {string} [selector] - 复选框
+				 * @param {function} [fn] - 全选回调
+				 * @param {function} [fnC] - 复选回调
+				 * @return {object} [this]
 				 */
 				checkAll: function(selector, fn, fnC){
 					var $cbs	= $(selector),
@@ -186,9 +187,9 @@
 				/**
 				 * @name 模拟复选
 				 * @function
-				 * @param {string} [on=] - 选中
-				 * @param {function} fn - 回调
-				 * @return {object} this
+				 * @param {string} [on] - 选中
+				 * @param {function} [fn] - 回调
+				 * @return {object} [this]
 				 */
 				checkboxs: function(on, fn){
 					on === undefined && (on = 'on');
@@ -203,9 +204,9 @@
 				/**
 				 * @name 模拟单选
 				 * @function
-				 * @param {string} [on=] - 选中
-				 * @param {function} fn - 回调
-				 * @return {object} this
+				 * @param {string} [on] - 选中
+				 * @param {function} [fn] - 回调
+				 * @return {object} [this]
 				 */
 				radios: function(on, fn){
 					var $this = this;
@@ -223,22 +224,22 @@
 				/**
 				 * @name 模拟列表框
 				 * @function
-				 * @param {object} [prop=] - 参数
-				 * @param {string} [prop.parent=] - 阻止冒泡的父级
-				 * @param {string} [prop.disabled=disabled] - 禁用class
-				 * @param {string} [prop.trigger=] - 触发按钮
-				 * @param {string} [prop.span=span] - 存值器
-				 * @param {string} [prop.p=p] - 弹出列表,默认为'p'
-				 * @param {string} [prop.a=a] - 选项,默认为'a'
-				 * @param {string} [prop.onW=] - 列表展开状态class
-				 * @param {string} [prop.onS=] - 有值状态class
-				 * @param {string} [prop.onA=] - 选项选中状态class
-				 * @param {string} [prop.animation=] - 弹出动画,目前支持'silde/fade'
+				 * @param {object} [prop] - 参数
+				 * @param {string} [prop.parent=null] - 阻止冒泡的父级
+				 * @param {string} [prop.disabled='disabled'] - 禁用class
+				 * @param {string} [prop.trigger=null] - 触发按钮
+				 * @param {string} [prop.span='span'] - 存值器
+				 * @param {string} [prop.p='p'] - 弹出列表,默认为'p'
+				 * @param {string} [prop.a='a'] - 选项,默认为'a'
+				 * @param {string} [prop.onW=null] - 列表展开状态class
+				 * @param {string} [prop.onS=null] - 有值状态class
+				 * @param {string} [prop.onA=null] - 选项选中状态class
+				 * @param {string} [prop.animation=null] - 弹出动画,支持'silde/fade'
 				 * @param {number} [prop.duration=100] - 动画持续时间
 				 * @param {bool} [prop.toggle=true] - 是否点击切换显示,
 				 * @param {function} [prop.fn=false] - trigger回调
 				 * @param {function} [prop.fnA=false] - a回调
-				 * @return {object} this
+				 * @return {object} [this]
 				 */
 				selects: function(prop){
 					var p_all, hide_all,
@@ -347,12 +348,12 @@
 				/**
 				 * @name tab切换
 				 * @function
-				 * @param {string} selector - 切换页
+				 * @param {string} [selector]- 切换页
 				 * @param {string} [on='on'] - tab按钮效果切换class
-				 * @param {string} [type=] - 事件类型,支持'click'(默认),'hover'
+				 * @param {string} [type='click'] - 事件类型,支持'click/hover'
 				 * @param {number} [index=0] - 默认索引
-				 * @param {function} [fn=] - 回调
-				 * @return {object} this
+				 * @param {function} [fn] - 回调
+				 * @return {object} [this]
 				 */
 				tabs: function(selector, on, type, index, fn){
 					typeof on === 'function' && (fn = on, on = 'on');
@@ -387,9 +388,9 @@
 				/**
 				 * @name 图片预加载
 				 * @function
-				 * @param {string} attr - 属性名,可省略,默认'_src'
-				 * @param {function} fn - 回调
-				 * @return {object} this
+				 * @param {string} [attr='_src'] - 属性名
+				 * @param {function} [fn] - 回调
+				 * @return {object} [this]
 				 */
 				imgLoad: function(attr, fn){
 					attr === undefined && (attr = '_src');
@@ -418,9 +419,9 @@
 				/**
 				 * @name 文本输入区光标处插入
 				 * @function
-				 * @param {string} str - 字符数
-				 * @param {array} wrap - 两侧符号
-				 * @return {object} this
+				 * @param {string} [str] - 字符数
+				 * @param {array} [wrap] - 两侧符号
+				 * @return {object} [this]
 				 */
 				inputIn: function(str, wrap){
 
@@ -462,9 +463,9 @@
 				/**
 				 * @name 限制字符
 				 * @function
-				 * @param {number} limit - 字符数
-				 * @param {function} fn - 回调
-				 * @return {object} this
+				 * @param {number} [limit] - 字符数
+				 * @param {function} [fn] - 回调
+				 * @return {object} [this]
 				 */
 				limit: function(limit, fn){
 					return this.each(function(){
@@ -481,8 +482,16 @@
 				/**
 				 * @name 文本输入控件
 				 * @function
-				 * @param {object} prop - 参数
-				 * @return {object} this
+				 * @param {object} [prop] - 参数
+				 * @param {string} [prop.parent=null] - 事件委托对象,默认不使用
+				 * @param {array} [prop.values=null] - 默认值数组,空数据则不匹配默认值
+				 * @param {string} [prop.defV='_value'] - 取默认值属性
+				 * @param {string} [prop.onF=null] - 获取焦点时交替css效果,多个class以空格隔开
+				 * @param {string} [prop.onK=null] - 输入内容时交替css效果,多个class以空格隔开
+				 * @param {string/number} [prop.limit=false] - 是否限制字符,默认不限制,或数字/属性值为字符串的限制长度
+				 * @param {function} [prop.fn=false] - 回调,默认截取字符串,否则将字符长度差值将作为参数传回
+				 * @param {bool} [prop.range=false] - 回是否记录光标位置,默认不记录
+				 * @return {object} [this]
 				 */
 				inputs: function(prop){
 					var $parent, selector, ie,
@@ -491,14 +500,14 @@
 						 * @namespace
 						 */
 						config	= {
-							parent	: '',		//事件委托对象,默认不使用事件委托方法
-							values	: [],		//默认值数组,空数据则不匹配默认值
-							defV	: '_value',	//取默认值
-							onF		: '',		//获取焦点时交替css效果,多个class以空格隔开
-							onK		: '',		//输入内容时交替css效果,多个class以空格隔开
-							limit	: false,	//是否限制字符,字符串默认为空不限制,否则取对象属性值为字符串的限制长度
-							fn		: false,	//回调默认false为截取字符串,否则将字符长度差值将作为参数传回
-							range	: false		//是否记录光标位置,默认不记录
+							parent	: '',
+							values	: [],
+							defV	: '_value',
+							onF		: '',
+							onK		: '',
+							limit	: false,
+							fn		: false,
+							range	: false
 						},
 						ltie10	= $.ltie(10);
 
@@ -613,18 +622,17 @@
 			});
 
 			/**
-			 * @name $.fn()
-			 * @class 222
+			 * $.fn()
+			 * @class
 			 * @classdesc $.extend
-			 * @constructor
 			 */
 			$.extend({
 
 				/**
 				 * @name 粘贴板
 				 * @function
-				 * @param {object} d - 文本输入区对象
-				 * @param {function} fn - 回调
+				 * @param {object} [d] - 文本输入区对象
+				 * @param {function} [fn] - 回调
 				 * @return {none}
 				 */
 				clip: function(d, fn){
@@ -654,9 +662,9 @@
 				/**
 				 * @name 加载程序
 				 * @function
-				 * @param {object} fns - 程序集合
-				 * @param {bool} onload - 默认页面onload完成后执行
-				 * @return {object} fns
+				 * @param {object} [fns] - 程序集合
+				 * @param {bool} [onload=undefined] - 默认页面onload完成后执行
+				 * @return {object} [fns]
 				 */
 				loader: function(fns, onload){
 					onload ? _loader() : $(_loader);
@@ -675,8 +683,29 @@
 				/**
 				 * @name 弹窗
 				 * @function
-				 * @param {object} prop - 参数
-				 * @return {object} $(pop)
+				 * @param {object} [prop] - 参数
+				 * @param {string} [prop.parent='body'] - dom父级
+				 * @param {string} [prop.id='jq_x_pop'] - id
+				 * @param {string} [prop.close=null] - 关闭按钮类名,默认prop.id+'_c'
+				 * @param {string} [prop.position='fixed'] - 定位方式
+				 * @param {number} [prop.top=0] - top值,默认为垂直居中
+				 * @param {number} [prop.left=0] - left值,默认为水平居中
+				 * @param {bool} [prop.bg=true] - 遮罩蒙板,默认显示,不显示则弹窗失去焦点即关闭
+				 * @param {bool} [prop.bgclose=true] - 默认点击遮罩蒙板即关闭弹窗
+				 * @param {bool} [prop.bgcloser=true] - 默认无遮罩蒙板情况下弹窗失去焦点即关闭
+				 * @param {string} [prop.bgcolor='#000'] - 遮罩蒙板底色,默认黑色
+				 * @param {number} [prop.opacity=.5] - 遮罩蒙板透明度,默认50%
+				 * @param {number} [prop.zIndex=100] - 弹窗层级,遮罩蒙板prop.zIndex-1
+				 * @param {string} [prop.animation=null] - 动画效果,支持'fade'
+				 * @param {number} [prop.duration=400] - 动画持续时间
+				 * @param {number} [prop.width=0] - 弹窗宽度,默认auto
+				 * @param {number} [prop.height=0] - 弹窗高度,默认auto
+				 * @param {number} [prop.adjust=20] - 调整与边界的最小距离
+				 * @param {string} [prop.html=null] - 弹窗内容
+				 * @param {string} [prop.drag=null] - 触发拖曳选择器,默认不开启此功能
+				 * @param {function} [prop.fn=false] - 开启弹窗回调
+				 * @param {function} [prop.fnC=false] - 关闭弹窗回调
+				 * @return {object} [$(pop)]
 				 */
 				pop: function(prop){
 					var adjust, style, w, h, auto,
@@ -685,27 +714,27 @@
 						 * @namespace
 						 */
 						config = {
-							parent		: 'body',		//父级
-							id			: 'jq_x_pop',	//id名
-							close		: '',			//关闭按钮类名,默认为id后接'_c'
-							position	: 'fixed',		//默认为fixed定位
-							top			: 0,			//top值,默认为垂直居中
-							left		: 0,			//left值,默认为水平居中
-							bg			: true,			//蒙板,默认显示,不显示则增加document点击关闭弹窗事件
-							bgclose		: true,			//默认点击蒙板关闭弹窗
-							bgcloser	: true,			//默认无背景蒙板情况下点击document是关闭弹窗的
-							bgcolor		: '#000',		//蒙板颜色,默认黑色
-							opacity		: .5,			//蒙板透明度,默认50%
-							zIndex		: 100,			//层级,默认弹窗100,蒙板-1
-							animation	: '',			//显示效果,默认显示/隐藏,'fade'淡入/淡出
-							duration	: 400,			//动画持续时间
-							width		: 0,			//需要显示的宽度,默认auto
-							height		: 0,			//需要显示的高度,默认auto
-							adjust		: 20,			//调整与边界的最小距离,默认20
-							html		: '',			//内容
-							drag		: '',			//触发拖曳选择器,默认不开启此功能
-							fn			: false,		//回调
-							fnC			: false			//关闭回调
+							parent		: 'body',
+							id			: 'jq_x_pop',
+							close		: '',
+							position	: 'fixed',
+							top			: 0,
+							left		: 0,
+							bg			: true,
+							bgclose		: true,
+							bgcloser	: true,
+							bgcolor		: '#000',
+							opacity		: .5,
+							zIndex		: 100,
+							animation	: '',
+							duration	: 400,
+							width		: 0,
+							height		: 0,
+							adjust		: 20,
+							html		: '',
+							drag		: '',
+							fn			: false,
+							fnC			: false
 						},
 						doc_w	= $doc.width(),
 						doc_h	= $doc.height();
@@ -849,8 +878,8 @@
 				/**
 				 * @name 关闭弹窗
 				 * @function
-				 * @param {string} id 弹窗id
-				 * @param {string} animation 运行方式
+				 * @param {string} [id] 弹窗id
+				 * @param {string} [animation=undefined] 动画,支持'fade'
 				 * @return {none}
 				 */
 				popClose: function(id, animation, duration){
@@ -873,10 +902,18 @@
 				},
 				
 				/**
-				 * @name 开启背景遮罩蒙板
+				 * @name 开启遮罩蒙板
 				 * @function
-				 * @param {object} prop - 配置参数
-				 * @return {object} $(bg)
+				 * @param {object} [prop] - 参数
+				 * @param {string} [prop.parent='body'] - dom父级
+				 * @param {string} [prop.id='jq_x_pop_bg'] - id
+				 * @param {string} [prop.close='jq_x_pop_c'] - 关闭按钮选择器
+				 * @param {string} [prop.bgcolor='#000'] - 遮罩蒙板底色,默认黑色
+				 * @param {bool} [prop.fade=false] - 是否淡入淡出
+				 * @param {number} [prop.duration=400] - 动画持续时间
+				 * @param {number} [prop.opacity=.5] - 遮罩蒙板透明度,默认50%
+				 * @param {number} [prop.zIndex=99] - 遮罩蒙板层级
+				 * @return {object} [$(bg)]
 				 */
 				popBg: function(prop){
 					var opacity, $bg,
@@ -892,7 +929,7 @@
 							fade		: false,			//是否淡入
 							duration	: 400,				//动画持续时间
 							opacity		: .5,				//蒙板透明度,默认50%
-							zIndex		: '99'				//层级
+							zIndex		: 99				//层级
 						};
 
 					//重置参数
@@ -927,9 +964,9 @@
 				/**
 				 * @name 返回字符串长度/截取字符串
 				 * @function
-				 * @param {string} text - 字符串
-				 * @param {number} cutout - 需要截取的字符串的长度
-				 * @return {number/string} length/text
+				 * @param {string} [text] - 字符串
+				 * @param {number} [cutout] - 需要截取的字符串的长度
+				 * @return {number/string} [length/text]
 				 */
 				textSize: function(text, cutout){
 					var length = text.match(/[^ -~]/g) == null ? text.length : text.length + text.match(/[^ -~]/g).length;
@@ -948,7 +985,7 @@
 				/**
 				 * @name 检测是否ie6
 				 * @function
-				 * @param {function} fn - 回调
+				 * @param {function} [fn] - 回调
 				 * @return {bool}
 				 */
 				ie6: function(fn){
@@ -963,8 +1000,8 @@
 				/**
 				 * @name 检测是否低于指定版本的ie
 				 * @function
-				 * @param {string} ver - 版本,可省略,默认9
-				 * @param {function} fn - 回调
+				 * @param {string} [ver=9] - 版本
+				 * @param {function} [fn] - 回调
 				 * @return {bool}
 				 */
 				ltie: function(ver, fn){
@@ -990,7 +1027,7 @@
 				/**
 				 * @name 检测是否指定ie版本
 				 * @function
-				 * @param {function} fn - 回调
+				 * @param {function} [fn] - 回调
 				 * @return {bool}
 				 */
 				ie: function(ver, fn){
