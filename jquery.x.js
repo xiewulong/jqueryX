@@ -980,7 +980,7 @@
 				},
 
 				/**
-				 * @name 返回字符串长度(全角/半角)/截取字符串
+				 * @name 返回字符串长度/截取字符串
 				 * @param {string} text - 字符串
 				 * @param {number} cutout - 需要截取的字符串的长度
 				 * @return {number/string} length/text
