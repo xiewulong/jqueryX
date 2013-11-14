@@ -24,9 +24,9 @@
 				/**
 				 * 模拟滚动条
 				 * @function scrolls
-				 * @example $.fn.scrolls(fn);
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
+				 * @example $.fn.scrolls(fn);
 				 */
 				scrolls: function(fn){
 					return this.each(function(){
@@ -122,6 +122,7 @@
 				 * 设置模拟滚动条高度
 				 * @function fixScrolls
 				 * @return {object} this
+				 * @example $.fn.fixScrolls();
 				 */
 				fixScrolls: function(){
 					return this.each(function(){
@@ -148,6 +149,7 @@
 				 * @param {function} [fn] - 全选回调
 				 * @param {function} [fnC] - 复选回调
 				 * @return {object} this
+				 * @example $.fn.checkAll(selector, fn, fnC);
 				 */
 				checkAll: function(selector, fn, fnC){
 					var $cbs	= $(selector),
@@ -187,6 +189,7 @@
 				 * @param {string} [on='on'] - 选中
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
+				 * @example $.fn.checkboxs(on, fn);
 				 */
 				checkboxs: function(on, fn){
 					on === undefined && (on = 'on');
@@ -204,6 +207,7 @@
 				 * @param {string} [on='on'] - 选中
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
+				 * @example $.fn.radios(on, fn);
 				 */
 				radios: function(on, fn){
 					var $this = this;
@@ -237,6 +241,7 @@
 				 * @param {function} [prop.fn=false] - trigger回调
 				 * @param {function} [prop.fnA=false] - a回调
 				 * @return {object} this
+				 * @example $.fn.selects(prop);
 				 */
 				selects: function(prop){
 					var p_all, hide_all,
@@ -351,6 +356,7 @@
 				 * @param {number} [index=0] - 默认索引
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
+				 * @example $.fn.tabs(selector, on, type, index, fn);
 				 */
 				tabs: function(selector, on, type, index, fn){
 					typeof on === 'function' && (fn = on, on = 'on');
@@ -388,6 +394,7 @@
 				 * @param {string} [attr='_src'] - 属性名
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
+				 * @example $.fn.imgLoad(attr, fn);
 				 */
 				imgLoad: function(attr, fn){
 					attr === undefined && (attr = '_src');
@@ -419,6 +426,7 @@
 				 * @param {string} txt - 文本
 				 * @param {array} [wrap] - 两侧符号
 				 * @return {object} this
+				 * @example $.fn.inputIn(txt, wrap);
 				 */
 				inputIn: function(txt, wrap){
 
@@ -463,6 +471,7 @@
 				 * @param {number} limit - 限制数
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
+				 * @example $.fn.limit(limit, fn);
 				 */
 				limit: function(limit, fn){
 					return this.each(function(){
@@ -489,6 +498,7 @@
 				 * @param {function} [prop.fn=false] - 回调,默认截取字符串,否则将字符长度差值将作为参数传回
 				 * @param {bool} [prop.range=false] - 回是否记录光标位置,默认不记录
 				 * @return {object} this
+				 * @example $.fn.inputs(prop);
 				 */
 				inputs: function(prop){
 					var $parent, selector, ie,
@@ -622,6 +632,7 @@
 				 * @param {object} d - 文本输入区对象
 				 * @param {function} [fn] - 回调
 				 * @return {none}
+				 * @example $.clip(d, fn);
 				 */
 				clip: function(d, fn){
 					var clip,
@@ -653,6 +664,7 @@
 				 * @param {object} fns - 程序集合
 				 * @param {bool} [onload=undefined] - 默认页面onload完成后执行
 				 * @return {object} fns
+				 * @example $.loader(fns, onload);
 				 */
 				loader: function(fns, onload){
 					onload ? _loader() : $(_loader);
@@ -694,6 +706,7 @@
 				 * @param {function} [prop.fn=false] - 开启弹窗回调
 				 * @param {function} [prop.fnC=false] - 关闭弹窗回调
 				 * @return {object} $(pop)
+				 * @example $.pop(prop);
 				 */
 				pop: function(prop){
 					var adjust, style, w, h, auto,
@@ -862,9 +875,11 @@
 				/**
 				 * 关闭弹窗
 				 * @function popClose
-				 * @param {string} id 弹窗id
-				 * @param {string} [animation=undefined] 动画,支持'fade'
+				 * @param {string} id - 弹窗id
+				 * @param {string} [animation=undefined] - 动画,支持'fade'
+				 * @param {number} [duration=400] - 动画持续时间
 				 * @return {none}
+				 * @example $.popClose(id, animation, duration);
 				 */
 				popClose: function(id, animation, duration){
 					var id	= '.' + id,
@@ -873,7 +888,7 @@
 
 					switch(animation){
 						case 'fade':
-							$(all).stop().fadeOut(duration, _remove);
+							$(all).stop().fadeOut(duration || 400, _remove);
 							break;
 						default:
 							_remove(all);
@@ -898,6 +913,7 @@
 				 * @param {number} [prop.opacity=.5] - 遮罩蒙板透明度,默认50%
 				 * @param {number} [prop.zIndex=99] - 遮罩蒙板层级
 				 * @return {object} $(bg)
+				 * @example $.popBg(prop);
 				 */
 				popBg: function(prop){
 					var opacity, $bg,
@@ -947,6 +963,7 @@
 				 * @param {string} text - 字符串
 				 * @param {number} [cutout] - 需要截取的字符串的长度,为空则返回字符串长度
 				 * @return {number/string} length/text
+				 * @example $.textSize(text, cutout);
 				 */
 				textSize: function(text, cutout){
 					var length = text.match(/[^ -~]/g) == null ? text.length : text.length + text.match(/[^ -~]/g).length;
@@ -967,6 +984,7 @@
 				 * @function ie6
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
+				 * @example $.ie6(fn);
 				 */
 				ie6: function(fn){
 					var tag;
@@ -983,6 +1001,7 @@
 				 * @param {string} [ver=9] - 版本
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
+				 * @example $.ltie(ver, fn);
 				 */
 				ltie: function(ver, fn){
 					var index, tag, version,
@@ -1009,6 +1028,7 @@
 				 * @function ie
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
+				 * @example $.ie(ver, fn);
 				 */
 				ie: function(ver, fn){
 					var tag,
