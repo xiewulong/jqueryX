@@ -15,7 +15,7 @@ module.exports = function(grunt){
 		},
     jsdoc: {
       gerenate: {
-        src: ['jquery.xjs'],
+        src: ['jquery.x.js'],
         options: {
           destination: 'doc'
         }
@@ -24,10 +24,10 @@ module.exports = function(grunt){
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-jsdoc-plugin');
+  grunt.loadNpmTasks('grunt-jsdoc');
 
 	grunt.registerTask('default', [
     'uglify',
-    //'jsdoc' //dependent on java
+    'jsdoc' //dependent on java
   ]);
 }
