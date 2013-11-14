@@ -686,6 +686,7 @@
 			 * $.fn()
 			 * @class
 			 * @classdesc $.extend
+			 * @constructor
 			 */
 			$.extend({
 
