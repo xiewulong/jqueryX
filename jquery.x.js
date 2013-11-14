@@ -27,7 +27,8 @@
 				x: '1.0.0',
 
 				/**
-				 * @name 模拟滚动条
+				 * 模拟滚动条
+				 * @name $.fn.scrolls
 				 * @function $.fn.scrolls
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
@@ -146,7 +147,8 @@
 				},
 
 				/**
-				 * @name 复选全选
+				 * 复选全选
+				 * @name $.fn.checkAll
 				 * @function
 				 * @param {string} selector - 复选框
 				 * @param {function} [fn] - 全选回调
