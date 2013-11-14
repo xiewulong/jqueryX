@@ -56,7 +56,7 @@
 				 * @name 模拟滚动条
 				 * @function
 				 * @param {function} [fn] - 回调
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				scrolls: function(fn){
 					return this.each(function(){
@@ -151,7 +151,7 @@
 				/**
 				 * @name 设置模拟滚动条高度
 				 * @function
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				fixScrolls: function(){
 					return this.each(function(){
@@ -174,10 +174,10 @@
 				/**
 				 * @name 复选全选
 				 * @function
-				 * @param {string} [selector] - 复选框
+				 * @param {string} selector - 复选框
 				 * @param {function} [fn] - 全选回调
 				 * @param {function} [fnC] - 复选回调
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				checkAll: function(selector, fn, fnC){
 					var $cbs	= $(selector),
@@ -214,9 +214,9 @@
 				/**
 				 * @name 模拟复选
 				 * @function
-				 * @param {string} [on] - 选中
+				 * @param {string} [on='on'] - 选中
 				 * @param {function} [fn] - 回调
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				checkboxs: function(on, fn){
 					on === undefined && (on = 'on');
@@ -231,9 +231,9 @@
 				/**
 				 * @name 模拟单选
 				 * @function
-				 * @param {string} [on] - 选中
+				 * @param {string} [on='on'] - 选中
 				 * @param {function} [fn] - 回调
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				radios: function(on, fn){
 					var $this = this;
@@ -266,7 +266,7 @@
 				 * @param {bool} [prop.toggle=true] - 是否点击切换显示,
 				 * @param {function} [prop.fn=false] - trigger回调
 				 * @param {function} [prop.fnA=false] - a回调
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				selects: function(prop){
 					var p_all, hide_all,
@@ -375,12 +375,12 @@
 				/**
 				 * @name tab切换
 				 * @function
-				 * @param {string} [selector]- 切换页
+				 * @param {string} selector- 切换页
 				 * @param {string} [on='on'] - tab按钮效果切换class
 				 * @param {string} [type='click'] - 事件类型,支持'click/hover'
 				 * @param {number} [index=0] - 默认索引
 				 * @param {function} [fn] - 回调
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				tabs: function(selector, on, type, index, fn){
 					typeof on === 'function' && (fn = on, on = 'on');
@@ -417,7 +417,7 @@
 				 * @function
 				 * @param {string} [attr='_src'] - 属性名
 				 * @param {function} [fn] - 回调
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				imgLoad: function(attr, fn){
 					attr === undefined && (attr = '_src');
@@ -446,14 +446,14 @@
 				/**
 				 * @name 文本输入区光标处插入
 				 * @function
-				 * @param {string} [str] - 字符数
+				 * @param {string} txt - 文本
 				 * @param {array} [wrap] - 两侧符号
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
-				inputIn: function(str, wrap){
+				inputIn: function(txt, wrap){
 
 					//包裹字符串
-					wrap && (str = wrap[0] + str + wrap[1]);
+					wrap && (txt = wrap[0] + txt + wrap[1]);
 
 					return this.each(function(){
 						var start, end, cursor, range, _range,
@@ -469,8 +469,8 @@
 							end		= this.selectionEnd;
 						}
 
-						cursor		= start + str.length,
-						this.value	= value.slice(0, start) + str + value.slice(end);
+						cursor		= start + txt.length,
+						this.value	= value.slice(0, start) + txt + value.slice(end);
 						this.focus();
 
 						//设置光标
@@ -490,9 +490,9 @@
 				/**
 				 * @name 限制字符
 				 * @function
-				 * @param {number} [limit] - 字符数
+				 * @param {number} limit - 限制数
 				 * @param {function} [fn] - 回调
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				limit: function(limit, fn){
 					return this.each(function(){
@@ -518,7 +518,7 @@
 				 * @param {string/number} [prop.limit=false] - 是否限制字符,默认不限制,或数字/属性值为字符串的限制长度
 				 * @param {function} [prop.fn=false] - 回调,默认截取字符串,否则将字符长度差值将作为参数传回
 				 * @param {bool} [prop.range=false] - 回是否记录光标位置,默认不记录
-				 * @return {object} [this]
+				 * @return {object} this
 				 */
 				inputs: function(prop){
 					var $parent, selector, ie,
@@ -658,7 +658,7 @@
 				/**
 				 * @name 粘贴板
 				 * @function
-				 * @param {object} [d] - 文本输入区对象
+				 * @param {object} d - 文本输入区对象
 				 * @param {function} [fn] - 回调
 				 * @return {none}
 				 */
@@ -689,9 +689,9 @@
 				/**
 				 * @name 加载程序
 				 * @function
-				 * @param {object} [fns] - 程序集合
+				 * @param {object} fns - 程序集合
 				 * @param {bool} [onload=undefined] - 默认页面onload完成后执行
-				 * @return {object} [fns]
+				 * @return {object} fns
 				 */
 				loader: function(fns, onload){
 					onload ? _loader() : $(_loader);
@@ -710,10 +710,13 @@
 				/**
 				 * @name 弹窗
 				 * @function
-				 * @param {object} [prop] - 参数
+				 * @param {object} prop - 参数
+				 * @param {string} prop.html=null - 弹窗内容
 				 * @param {string} [prop.parent='body'] - dom父级
 				 * @param {string} [prop.id='jq_x_pop'] - id
-				 * @param {string} [prop.close=null] - 关闭按钮类名,默认prop.id+'_c'
+				 * @param {string} [prop.close=prop.id + '_c'] - 关闭按钮类名
+				 * @param {number} [prop.width=0] - 弹窗宽度,默认auto
+				 * @param {number} [prop.height=0] - 弹窗高度,默认auto
 				 * @param {string} [prop.position='fixed'] - 定位方式
 				 * @param {number} [prop.top=0] - top值,默认为垂直居中
 				 * @param {number} [prop.left=0] - left值,默认为水平居中
@@ -722,17 +725,14 @@
 				 * @param {bool} [prop.bgcloser=true] - 默认无遮罩蒙板情况下弹窗失去焦点即关闭
 				 * @param {string} [prop.bgcolor='#000'] - 遮罩蒙板底色,默认黑色
 				 * @param {number} [prop.opacity=.5] - 遮罩蒙板透明度,默认50%
-				 * @param {number} [prop.zIndex=100] - 弹窗层级,遮罩蒙板prop.zIndex-1
+				 * @param {number} [prop.zIndex=100] - 弹窗层级,遮罩蒙板层级prop.zIndex-1
 				 * @param {string} [prop.animation=null] - 动画效果,支持'fade'
 				 * @param {number} [prop.duration=400] - 动画持续时间
-				 * @param {number} [prop.width=0] - 弹窗宽度,默认auto
-				 * @param {number} [prop.height=0] - 弹窗高度,默认auto
 				 * @param {number} [prop.adjust=20] - 调整与边界的最小距离
-				 * @param {string} [prop.html=null] - 弹窗内容
 				 * @param {string} [prop.drag=null] - 触发拖曳选择器,默认不开启此功能
 				 * @param {function} [prop.fn=false] - 开启弹窗回调
 				 * @param {function} [prop.fnC=false] - 关闭弹窗回调
-				 * @return {object} [$(pop)]
+				 * @return {object} $(pop)
 				 */
 				pop: function(prop){
 					var adjust, style, w, h, auto,
@@ -741,9 +741,12 @@
 						 * @namespace
 						 */
 						config = {
+							html		: '',
 							parent		: 'body',
 							id			: 'jq_x_pop',
 							close		: '',
+							width		: 0,
+							height		: 0,
 							position	: 'fixed',
 							top			: 0,
 							left		: 0,
@@ -755,10 +758,7 @@
 							zIndex		: 100,
 							animation	: '',
 							duration	: 400,
-							width		: 0,
-							height		: 0,
 							adjust		: 20,
-							html		: '',
 							drag		: '',
 							fn			: false,
 							fnC			: false
@@ -905,7 +905,7 @@
 				/**
 				 * @name 关闭弹窗
 				 * @function
-				 * @param {string} [id] 弹窗id
+				 * @param {string} id 弹窗id
 				 * @param {string} [animation=undefined] 动画,支持'fade'
 				 * @return {none}
 				 */
@@ -940,7 +940,7 @@
 				 * @param {number} [prop.duration=400] - 动画持续时间
 				 * @param {number} [prop.opacity=.5] - 遮罩蒙板透明度,默认50%
 				 * @param {number} [prop.zIndex=99] - 遮罩蒙板层级
-				 * @return {object} [$(bg)]
+				 * @return {object} $(bg)
 				 */
 				popBg: function(prop){
 					var opacity, $bg,
@@ -991,9 +991,9 @@
 				/**
 				 * @name 返回字符串长度/截取字符串
 				 * @function
-				 * @param {string} [text] - 字符串
-				 * @param {number} [cutout] - 需要截取的字符串的长度
-				 * @return {number/string} [length/text]
+				 * @param {string} text - 字符串
+				 * @param {number} [cutout] - 需要截取的字符串的长度,为空则返回字符串长度
+				 * @return {number/string} length/text
 				 */
 				textSize: function(text, cutout){
 					var length = text.match(/[^ -~]/g) == null ? text.length : text.length + text.match(/[^ -~]/g).length;
@@ -1102,7 +1102,7 @@
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Thu Nov 14 2013 14:55:45 GMT-0500 (EST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Thu Nov 14 2013 15:05:19 GMT-0500 (EST)
 </footer>
 
 <script> prettyPrint(); </script>

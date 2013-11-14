@@ -91,7 +91,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="tab切换"><span class="type-signature"></span>tab切换<span class="signature">(<span class="optional">selector</span>, <span class="optional">on</span>, <span class="optional">type</span>, <span class="optional">index</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="tab切换"><span class="type-signature"></span>tab切换<span class="signature">(selector-, <span class="optional">on</span>, <span class="optional">type</span>, <span class="optional">index</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -133,7 +133,7 @@
 	
         <tr>
             
-                <td class="name"><code>selector</code></td>
+                <td class="name"><code>selector-</code></td>
             
             
             <td class="type">
@@ -147,8 +147,6 @@
             
             
                 <td class="attributes">
-                
-                    &lt;optional><br>
                 
                     
                 
@@ -373,7 +371,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -398,7 +396,7 @@
         
             
 <dt>
-    <h4 class="name" id="关闭弹窗"><span class="type-signature"></span>关闭弹窗<span class="signature">(<span class="optional">id</span>, <span class="optional">animation</span>)</span><span class="type-signature"> &rarr; {none}</span></h4>
+    <h4 class="name" id="关闭弹窗"><span class="type-signature"></span>关闭弹窗<span class="signature">(id, <span class="optional">animation</span>)</span><span class="type-signature"> &rarr; {none}</span></h4>
     
     
 </dt>
@@ -454,8 +452,6 @@
             
             
                 <td class="attributes">
-                
-                    &lt;optional><br>
                 
                     
                 
@@ -586,7 +582,7 @@
         
             
 <dt>
-    <h4 class="name" id="加载程序"><span class="type-signature"></span>加载程序<span class="signature">(<span class="optional">fns</span>, <span class="optional">onload</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="加载程序"><span class="type-signature"></span>加载程序<span class="signature">(fns, <span class="optional">onload</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -642,8 +638,6 @@
             
             
                 <td class="attributes">
-                
-                    &lt;optional><br>
                 
                     
                 
@@ -753,7 +747,7 @@
     
             
 <div class="param-desc">
-    [fns]
+    fns
 </div>
 
 
@@ -945,7 +939,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -970,7 +964,7 @@
         
             
 <dt>
-    <h4 class="name" id="复选全选"><span class="type-signature"></span>复选全选<span class="signature">(<span class="optional">selector</span>, <span class="optional">fn</span>, <span class="optional">fnC</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="复选全选"><span class="type-signature"></span>复选全选<span class="signature">(selector, <span class="optional">fn</span>, <span class="optional">fnC</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -1024,8 +1018,6 @@
             
             
                 <td class="attributes">
-                
-                    &lt;optional><br>
                 
                     
                 
@@ -1158,7 +1150,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -1646,7 +1638,7 @@
     
             
 <div class="param-desc">
-    [$(bg)]
+    $(bg)
 </div>
 
 
@@ -1671,7 +1663,7 @@
         
             
 <dt>
-    <h4 class="name" id="弹窗"><span class="type-signature"></span>弹窗<span class="signature">(<span class="optional">prop</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="弹窗"><span class="type-signature"></span>弹窗<span class="signature">(prop)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -1697,8 +1689,6 @@
 		<th>Type</th>
 		
 		
-		<th>Argument</th>
-		
 		
 		
 		
@@ -1723,16 +1713,6 @@
             
             </td>
             
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-                    
-                
-                    
-                
-                </td>
             
             
             
@@ -1763,6 +1743,41 @@
 	</thead>
 	
 	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>html=null</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">弹窗内容</td>
+        </tr>
+	
 	
 	
         <tr>
@@ -1872,12 +1887,90 @@
             
                 <td class="default">
                 
-                    null
+                    prop.id + '_c'
                 
                 </td>
             
             
-            <td class="description last">关闭按钮类名,默认prop.id+'_c'</td>
+            <td class="description last">关闭按钮类名</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+            
+            <td class="description last">弹窗宽度,默认auto</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+            
+            <td class="description last">弹窗高度,默认auto</td>
         </tr>
 	
 	
@@ -2228,7 +2321,7 @@
                 </td>
             
             
-            <td class="description last">弹窗层级,遮罩蒙板prop.zIndex-1</td>
+            <td class="description last">弹窗层级,遮罩蒙板层级prop.zIndex-1</td>
         </tr>
 	
 	
@@ -2313,84 +2406,6 @@
 	
         <tr>
             
-                <td class="name"><code>width</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-            
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-                    
-                
-                    
-                
-                </td>
-            
-            
-            
-                <td class="default">
-                
-                    0
-                
-                </td>
-            
-            
-            <td class="description last">弹窗宽度,默认auto</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>height</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-            
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-                    
-                
-                    
-                
-                </td>
-            
-            
-            
-                <td class="default">
-                
-                    0
-                
-                </td>
-            
-            
-            <td class="description last">弹窗高度,默认auto</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
                 <td class="name"><code>adjust</code></td>
             
             
@@ -2424,45 +2439,6 @@
             
             
             <td class="description last">调整与边界的最小距离</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>html</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-            
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-                    
-                
-                    
-                
-                </td>
-            
-            
-            
-                <td class="default">
-                
-                    null
-                
-                </td>
-            
-            
-            <td class="description last">弹窗内容</td>
         </tr>
 	
 	
@@ -2641,7 +2617,7 @@
     
             
 <div class="param-desc">
-    [$(pop)]
+    $(pop)
 </div>
 
 
@@ -2666,7 +2642,7 @@
         
             
 <dt>
-    <h4 class="name" id="文本输入区光标处插入"><span class="type-signature"></span>文本输入区光标处插入<span class="signature">(<span class="optional">str</span>, <span class="optional">wrap</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="文本输入区光标处插入"><span class="type-signature"></span>文本输入区光标处插入<span class="signature">(txt, <span class="optional">wrap</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -2706,7 +2682,7 @@
 	
         <tr>
             
-                <td class="name"><code>str</code></td>
+                <td class="name"><code>txt</code></td>
             
             
             <td class="type">
@@ -2721,8 +2697,6 @@
             
                 <td class="attributes">
                 
-                    &lt;optional><br>
-                
                     
                 
                     
@@ -2732,7 +2706,7 @@
             
             
             
-            <td class="description last">字符数</td>
+            <td class="description last">文本</td>
         </tr>
 	
 	
@@ -2821,7 +2795,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -3309,7 +3283,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -4505,7 +4479,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -4560,6 +4534,8 @@
 		
 		
 		
+		<th>Default</th>
+		
 		
 		<th class="last">Description</th>
 	</tr>
@@ -4595,6 +4571,12 @@
             
             
             
+                <td class="default">
+                
+                    'on'
+                
+                </td>
+            
             
             <td class="description last">选中</td>
         </tr>
@@ -4627,6 +4609,10 @@
                 </td>
             
             
+            
+                <td class="default">
+                
+                </td>
             
             
             <td class="description last">回调</td>
@@ -4685,7 +4671,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -4740,6 +4726,8 @@
 		
 		
 		
+		<th>Default</th>
+		
 		
 		<th class="last">Description</th>
 	</tr>
@@ -4775,6 +4763,12 @@
             
             
             
+                <td class="default">
+                
+                    'on'
+                
+                </td>
+            
             
             <td class="description last">选中</td>
         </tr>
@@ -4807,6 +4801,10 @@
                 </td>
             
             
+            
+                <td class="default">
+                
+                </td>
             
             
             <td class="description last">回调</td>
@@ -4865,7 +4863,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -5012,7 +5010,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -5037,7 +5035,7 @@
         
             
 <dt>
-    <h4 class="name" id="粘贴板"><span class="type-signature"></span>粘贴板<span class="signature">(<span class="optional">d</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {none}</span></h4>
+    <h4 class="name" id="粘贴板"><span class="type-signature"></span>粘贴板<span class="signature">(d, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {none}</span></h4>
     
     
 </dt>
@@ -5091,8 +5089,6 @@
             
             
                 <td class="attributes">
-                
-                    &lt;optional><br>
                 
                     
                 
@@ -5275,7 +5271,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -5300,7 +5296,7 @@
         
             
 <dt>
-    <h4 class="name" id="返回字符串长度/截取字符串"><span class="type-signature"></span>返回字符串长度/截取字符串<span class="signature">(<span class="optional">text</span>, <span class="optional">cutout</span>)</span><span class="type-signature"> &rarr; {number/string}</span></h4>
+    <h4 class="name" id="返回字符串长度/截取字符串"><span class="type-signature"></span>返回字符串长度/截取字符串<span class="signature">(text, <span class="optional">cutout</span>)</span><span class="type-signature"> &rarr; {number/string}</span></h4>
     
     
 </dt>
@@ -5355,8 +5351,6 @@
             
                 <td class="attributes">
                 
-                    &lt;optional><br>
-                
                     
                 
                     
@@ -5399,7 +5393,7 @@
             
             
             
-            <td class="description last">需要截取的字符串的长度</td>
+            <td class="description last">需要截取的字符串的长度,为空则返回字符串长度</td>
         </tr>
 	
 	
@@ -5455,7 +5449,7 @@
     
             
 <div class="param-desc">
-    [length/text]
+    length/text
 </div>
 
 
@@ -5480,7 +5474,7 @@
         
             
 <dt>
-    <h4 class="name" id="限制字符"><span class="type-signature"></span>限制字符<span class="signature">(<span class="optional">limit</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="限制字符"><span class="type-signature"></span>限制字符<span class="signature">(limit, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -5535,8 +5529,6 @@
             
                 <td class="attributes">
                 
-                    &lt;optional><br>
-                
                     
                 
                     
@@ -5546,7 +5538,7 @@
             
             
             
-            <td class="description last">字符数</td>
+            <td class="description last">限制数</td>
         </tr>
 	
 	
@@ -5635,7 +5627,7 @@
     
             
 <div class="param-desc">
-    [this]
+    this
 </div>
 
 
@@ -5679,7 +5671,7 @@
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Thu Nov 14 2013 14:55:45 GMT-0500 (EST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Thu Nov 14 2013 15:05:19 GMT-0500 (EST)
 </footer>
 
 <script> prettyPrint(); </script>
