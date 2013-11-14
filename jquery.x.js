@@ -16,7 +16,7 @@
 
 			/**
 			 * @name $().fn()
-			 * @class $().fn()
+			 * @class 111
 			 * @classdesc $.fn.extend
 			 */
 			$.fn.extend({
@@ -224,108 +224,38 @@
 				 * @name 模拟列表框
 				 * @function
 				 * @param {object} prop - 参数
+				 * @param {string} prop.parent - 阻止冒泡的父级,默认为空
+				 * @param {string} prop.disabled - 禁用class,默认为'disabled'
+				 * @param {string} prop.trigger - 触发按钮,默认为空
+				 * @param {string} prop.span - 存值器,默认为'span'
+				 * @param {string} prop.p - 弹出列表,默认为'p'
+				 * @param {string} prop.a - 选项,默认为'a'
+				 * @param {string} prop.onW - 列表展开状态class,默认为空
+				 * @param {string} prop.onS - 有值状态class,默认为空
+				 * @param {string} prop.onA - 选项选中状态class,默认为空
+				 * @param {string} prop.animation - 弹出动画,默认为空,目前支持'silde/fade'
+				 * @param {number} prop.duration - 动画持续时间,默认为100
+				 * @param {bool} prop.toggle - 是否点击切换显示,
+				 * @param {function} prop.fn - trigger回调,默认为false
+				 * @param {function} prop.fnA - a回调,默认为false
 				 * @return {object} this
 				 */
 				selects: function(prop){
 					var p_all, hide_all,
-						/**
-						 * config
-						 * @namespace
-						 */
 						config	= {
-							
-							/** 阻止冒泡的父级,默认document @type {string} @defaultvalue */
 							parent		: '',
-							
-							/**
-							 * 触发按钮
-							 * @type {string}
-							 * @defaultvalue
-							 */
-							trigger		: '',
-							
-							/**
-							 * 禁用class
-							 * @type {string}
-							 * @defaultvalue
-							 */
 							disabled	: 'disabled',
-							
-							/**
-							 * 值
-							 * @type {string}
-							 * @defaultvalue
-							 */
+							trigger		: '',
 							span		: 'span',
-							
-							/**
-							 * 列表
-							 * @type {string}
-							 * @defaultvalue
-							 */
 							p			: 'p',
-							
-							/**
-							 * 选项
-							 * @type {string}
-							 * @defaultvalue
-							 */
 							a			: 'a',
-							
-							/**
-							 * 列表展开状态class
-							 * @type {string}
-							 * @defaultvalue
-							 */
 							onW			: '',
-							
-							/**
-							 * 有值状态class
-							 * @type {string}
-							 * @defaultvalue
-							 */
 							onS			: '',
-							
-							/**
-							 * 选项选中状态class
-							 * @type {string}
-							 * @defaultvalue
-							 */
 							onA			: '',
-							
-							/**
-							 * 弹出效果,'slide','fade'
-							 * @type {string}
-							 * @defaultvalue
-							 */
 							animation	: '',
-							
-							/**
-							 * 动画持续时间
-							 * @type {number}
-							 * @defaultvalue
-							 */
 							duration	: 100,
-							
-							/**
-							 * 是否点击切换显示
-							 * @type {bool}
-							 * @defaultvalue
-							 */
 							toggle		: true,
-							
-							/**
-							 * trigger回调
-							 * @type {function}
-							 * @defaultvalue
-							 */
 							fn			: false,
-							
-							/**
-							 * trigger回调
-							 * @type {function}
-							 * @defaultvalue
-							 */
 							fnA			: false
 						},
 						$this	= this;
@@ -683,8 +613,8 @@
 			});
 
 			/**
-			 * $.fn()
-			 * @class
+			 * @name $.fn()
+			 * @class 222
 			 * @classdesc $.extend
 			 * @constructor
 			 */
