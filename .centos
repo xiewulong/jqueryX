@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#config
+node_ver='0.10.21'
+
+#check permission
+if [ $(id -u) != '0' ]; then
+	echo 'Error: You must be root to run this script'
+	exit 1
+fi
+
+echo '==================yum install tools && update && upgrade==================';
+yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel git-core
+yum update -y
+yum upgrade -y
+
+echo '==================nodejs install==================';
+node_name="node-v${node_ver}"
+node_tar="${node_name}.tar.gz"
+node_url="http://nodejs.org/dist/v${node_ver}/${node_tar}"
+cd /root
+wget -c $node_url
+tar zxvf $node_tar
+cd $node_name
+./configure
+make && make install
+cd ..
+rm -rf $node_name
+rm -f $node_tar
+
+echo '==================grunt-cli install==================';
+npm install -g grunt-cli
