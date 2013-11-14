@@ -91,7 +91,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="tab切换"><span class="type-signature"></span>tab切换<span class="signature">(selector, <span class="optional">on</span>, <span class="optional">type=</span>, <span class="optional">index</span>, <span class="optional">fn=</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="tab切换"><span class="type-signature"></span>tab切换<span class="signature">(<span class="optional">selector</span>, <span class="optional">on</span>, <span class="optional">type</span>, <span class="optional">index</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -147,6 +147,8 @@
             
             
                 <td class="attributes">
+                
+                    &lt;optional><br>
                 
                     
                 
@@ -207,7 +209,7 @@
 	
         <tr>
             
-                <td class="name"><code>type=</code></td>
+                <td class="name"><code>type</code></td>
             
             
             <td class="type">
@@ -234,10 +236,12 @@
             
                 <td class="default">
                 
+                    'click'
+                
                 </td>
             
             
-            <td class="description last">事件类型,支持'click'(默认),'hover'</td>
+            <td class="description last">事件类型,支持'click/hover'</td>
         </tr>
 	
 	
@@ -283,7 +287,7 @@
 	
         <tr>
             
-                <td class="name"><code>fn=</code></td>
+                <td class="name"><code>fn</code></td>
             
             
             <td class="type">
@@ -344,7 +348,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line347">line 347</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line348">line 348</a>
     </li></ul></dd>
     
     
@@ -369,7 +373,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -394,7 +398,7 @@
         
             
 <dt>
-    <h4 class="name" id="关闭弹窗"><span class="type-signature"></span>关闭弹窗<span class="signature">(id, animation)</span><span class="type-signature"> &rarr; {none}</span></h4>
+    <h4 class="name" id="关闭弹窗"><span class="type-signature"></span>关闭弹窗<span class="signature">(<span class="optional">id</span>, <span class="optional">animation</span>)</span><span class="type-signature"> &rarr; {none}</span></h4>
     
     
 </dt>
@@ -420,7 +424,11 @@
 		<th>Type</th>
 		
 		
+		<th>Argument</th>
 		
+		
+		
+		<th>Default</th>
 		
 		
 		<th class="last">Description</th>
@@ -445,7 +453,21 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
+            
+            
+                <td class="default">
+                
+                </td>
             
             
             <td class="description last">弹窗id</td>
@@ -468,10 +490,26 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
-            <td class="description last">运行方式</td>
+                <td class="default">
+                
+                    undefined
+                
+                </td>
+            
+            
+            <td class="description last">动画,支持'fade'</td>
         </tr>
 	
 	
@@ -502,7 +540,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line849">line 849</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line878">line 878</a>
     </li></ul></dd>
     
     
@@ -548,7 +586,7 @@
         
             
 <dt>
-    <h4 class="name" id="加载程序"><span class="type-signature"></span>加载程序<span class="signature">(fns, onload)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="加载程序"><span class="type-signature"></span>加载程序<span class="signature">(<span class="optional">fns</span>, <span class="optional">onload</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -574,7 +612,11 @@
 		<th>Type</th>
 		
 		
+		<th>Argument</th>
 		
+		
+		
+		<th>Default</th>
 		
 		
 		<th class="last">Description</th>
@@ -599,7 +641,21 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
+            
+            
+                <td class="default">
+                
+                </td>
             
             
             <td class="description last">程序集合</td>
@@ -622,7 +678,23 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
+            
+            
+                <td class="default">
+                
+                    undefined
+                
+                </td>
             
             
             <td class="description last">默认页面onload完成后执行</td>
@@ -656,7 +728,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line654">line 654</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line662">line 662</a>
     </li></ul></dd>
     
     
@@ -681,7 +753,7 @@
     
             
 <div class="param-desc">
-    fns
+    [fns]
 </div>
 
 
@@ -706,7 +778,7 @@
         
             
 <dt>
-    <h4 class="name" id="图片预加载"><span class="type-signature"></span>图片预加载<span class="signature">(attr, fn)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="图片预加载"><span class="type-signature"></span>图片预加载<span class="signature">(<span class="optional">attr</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -732,7 +804,11 @@
 		<th>Type</th>
 		
 		
+		<th>Argument</th>
 		
+		
+		
+		<th>Default</th>
 		
 		
 		<th class="last">Description</th>
@@ -757,10 +833,26 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
-            <td class="description last">属性名,可省略,默认'_src'</td>
+                <td class="default">
+                
+                    '_src'
+                
+                </td>
+            
+            
+            <td class="description last">属性名</td>
         </tr>
 	
 	
@@ -780,7 +872,21 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
+            
+            
+                <td class="default">
+                
+                </td>
             
             
             <td class="description last">回调</td>
@@ -814,7 +920,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line387">line 387</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line388">line 388</a>
     </li></ul></dd>
     
     
@@ -839,7 +945,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -864,7 +970,7 @@
         
             
 <dt>
-    <h4 class="name" id="复选全选"><span class="type-signature"></span>复选全选<span class="signature">(selector, <span class="optional">fn=</span>, <span class="optional">fnC=</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="复选全选"><span class="type-signature"></span>复选全选<span class="signature">(<span class="optional">selector</span>, <span class="optional">fn</span>, <span class="optional">fnC</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -919,6 +1025,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
                     
                 
                     
@@ -935,7 +1043,7 @@
 	
         <tr>
             
-                <td class="name"><code>fn=</code></td>
+                <td class="name"><code>fn</code></td>
             
             
             <td class="type">
@@ -968,7 +1076,7 @@
 	
         <tr>
             
-                <td class="name"><code>fnC=</code></td>
+                <td class="name"><code>fnC</code></td>
             
             
             <td class="type">
@@ -1025,7 +1133,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line146">line 146</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line147">line 147</a>
     </li></ul></dd>
     
     
@@ -1050,7 +1158,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -1075,7 +1183,7 @@
         
             
 <dt>
-    <h4 class="name" id="开启背景遮罩蒙板"><span class="type-signature"></span>开启背景遮罩蒙板<span class="signature">(prop)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="开启遮罩蒙板"><span class="type-signature"></span>开启遮罩蒙板<span class="signature">(<span class="optional">prop</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -1100,6 +1208,8 @@
 		
 		<th>Type</th>
 		
+		
+		<th>Argument</th>
 		
 		
 		
@@ -1126,10 +1236,361 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
-            <td class="description last">配置参数</td>
+            
+            <td class="description last">参数
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>parent</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    'body'
+                
+                </td>
+            
+            
+            <td class="description last">dom父级</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    'jq_x_pop_bg'
+                
+                </td>
+            
+            
+            <td class="description last">id</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>close</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    'jq_x_pop_c'
+                
+                </td>
+            
+            
+            <td class="description last">关闭按钮选择器</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>bgcolor</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    '#000'
+                
+                </td>
+            
+            
+            <td class="description last">遮罩蒙板底色,默认黑色</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>fade</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">是否淡入淡出</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    400
+                
+                </td>
+            
+            
+            <td class="description last">动画持续时间</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>opacity</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    .5
+                
+                </td>
+            
+            
+            <td class="description last">遮罩蒙板透明度,默认50%</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>zIndex</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    99
+                
+                </td>
+            
+            
+            <td class="description last">遮罩蒙板层级</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
         </tr>
 	
 	
@@ -1160,7 +1621,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line875">line 875</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line904">line 904</a>
     </li></ul></dd>
     
     
@@ -1185,7 +1646,7 @@
     
             
 <div class="param-desc">
-    $(bg)
+    [$(bg)]
 </div>
 
 
@@ -1210,7 +1671,7 @@
         
             
 <dt>
-    <h4 class="name" id="弹窗"><span class="type-signature"></span>弹窗<span class="signature">(prop)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="弹窗"><span class="type-signature"></span>弹窗<span class="signature">(<span class="optional">prop</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -1235,6 +1696,8 @@
 		
 		<th>Type</th>
 		
+		
+		<th>Argument</th>
 		
 		
 		
@@ -1261,10 +1724,868 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
-            <td class="description last">参数</td>
+            
+            <td class="description last">参数
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>parent</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    'body'
+                
+                </td>
+            
+            
+            <td class="description last">dom父级</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    'jq_x_pop'
+                
+                </td>
+            
+            
+            <td class="description last">id</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>close</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">关闭按钮类名,默认prop.id+'_c'</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    'fixed'
+                
+                </td>
+            
+            
+            <td class="description last">定位方式</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>top</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+            
+            <td class="description last">top值,默认为垂直居中</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>left</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+            
+            <td class="description last">left值,默认为水平居中</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>bg</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">遮罩蒙板,默认显示,不显示则弹窗失去焦点即关闭</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>bgclose</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">默认点击遮罩蒙板即关闭弹窗</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>bgcloser</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">默认无遮罩蒙板情况下弹窗失去焦点即关闭</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>bgcolor</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    '#000'
+                
+                </td>
+            
+            
+            <td class="description last">遮罩蒙板底色,默认黑色</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>opacity</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    .5
+                
+                </td>
+            
+            
+            <td class="description last">遮罩蒙板透明度,默认50%</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>zIndex</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    100
+                
+                </td>
+            
+            
+            <td class="description last">弹窗层级,遮罩蒙板prop.zIndex-1</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>animation</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">动画效果,支持'fade'</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    400
+                
+                </td>
+            
+            
+            <td class="description last">动画持续时间</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+            
+            <td class="description last">弹窗宽度,默认auto</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+            
+            <td class="description last">弹窗高度,默认auto</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>adjust</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    20
+                
+                </td>
+            
+            
+            <td class="description last">调整与边界的最小距离</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>html</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">弹窗内容</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>drag</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">触发拖曳选择器,默认不开启此功能</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">开启弹窗回调</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>fnC</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">关闭弹窗回调</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
         </tr>
 	
 	
@@ -1295,7 +2616,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line675">line 675</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line683">line 683</a>
     </li></ul></dd>
     
     
@@ -1320,7 +2641,7 @@
     
             
 <div class="param-desc">
-    $(pop)
+    [$(pop)]
 </div>
 
 
@@ -1345,7 +2666,7 @@
         
             
 <dt>
-    <h4 class="name" id="文本输入区光标处插入"><span class="type-signature"></span>文本输入区光标处插入<span class="signature">(str, wrap)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="文本输入区光标处插入"><span class="type-signature"></span>文本输入区光标处插入<span class="signature">(<span class="optional">str</span>, <span class="optional">wrap</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -1370,6 +2691,8 @@
 		
 		<th>Type</th>
 		
+		
+		<th>Argument</th>
 		
 		
 		
@@ -1396,6 +2719,16 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
             
             
             
@@ -1418,6 +2751,16 @@
             
             </td>
             
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
@@ -1453,7 +2796,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line418">line 418</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line419">line 419</a>
     </li></ul></dd>
     
     
@@ -1478,7 +2821,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -1503,7 +2846,7 @@
         
             
 <dt>
-    <h4 class="name" id="文本输入控件"><span class="type-signature"></span>文本输入控件<span class="signature">(prop)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="文本输入控件"><span class="type-signature"></span>文本输入控件<span class="signature">(<span class="optional">prop</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -1528,6 +2871,8 @@
 		
 		<th>Type</th>
 		
+		
+		<th>Argument</th>
 		
 		
 		
@@ -1554,10 +2899,361 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
-            <td class="description last">参数</td>
+            
+            <td class="description last">参数
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>parent</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">事件委托对象,默认不使用</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>values</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">默认值数组,空数据则不匹配默认值</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>defV</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    '_value'
+                
+                </td>
+            
+            
+            <td class="description last">取默认值属性</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>onF</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">获取焦点时交替css效果,多个class以空格隔开</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>onK</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">输入内容时交替css效果,多个class以空格隔开</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string/number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">是否限制字符,默认不限制,或数字/属性值为字符串的限制长度</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">回调,默认截取字符串,否则将字符长度差值将作为参数传回</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>range</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">bool</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">回是否记录光标位置,默认不记录</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
         </tr>
 	
 	
@@ -1588,7 +3284,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line481">line 481</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line482">line 482</a>
     </li></ul></dd>
     
     
@@ -1613,7 +3309,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -1638,7 +3334,7 @@
         
             
 <dt>
-    <h4 class="name" id="检测是否ie6"><span class="type-signature"></span>检测是否ie6<span class="signature">(fn)</span><span class="type-signature"> &rarr; {bool}</span></h4>
+    <h4 class="name" id="检测是否ie6"><span class="type-signature"></span>检测是否ie6<span class="signature">(<span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {bool}</span></h4>
     
     
 </dt>
@@ -1664,6 +3360,8 @@
 		<th>Type</th>
 		
 		
+		<th>Argument</th>
+		
 		
 		
 		
@@ -1688,6 +3386,16 @@
             
             </td>
             
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
@@ -1723,7 +3431,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line948">line 948</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line985">line 985</a>
     </li></ul></dd>
     
     
@@ -1769,292 +3477,7 @@
         
             
 <dt>
-    <h4 class="name" id="检测是否低于指定版本的ie"><span class="type-signature"></span>检测是否低于指定版本的ie<span class="signature">(ver, fn)</span><span class="type-signature"> &rarr; {bool}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>ver</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">版本,可省略,默认9</td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>fn</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">回调</td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line963">line 963</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">bool</span>
-
-
-	</dd>
-</dl>
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="检测是否指定ie版本"><span class="type-signature"></span>检测是否指定ie版本<span class="signature">(fn)</span><span class="type-signature"> &rarr; {bool}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>fn</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-            
-            <td class="description last">回调</td>
-        </tr>
-	
-	
-	</tbody>
-</table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line990">line 990</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">bool</span>
-
-
-	</dd>
-</dl>
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="模拟列表框"><span class="type-signature"></span>模拟列表框<span class="signature">(<span class="optional">prop=</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="检测是否低于指定版本的ie"><span class="type-signature"></span>检测是否低于指定版本的ie<span class="signature">(<span class="optional">ver</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {bool}</span></h4>
     
     
 </dt>
@@ -2096,7 +3519,336 @@
 	
         <tr>
             
-                <td class="name"><code>prop=</code></td>
+                <td class="name"><code>ver</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    9
+                
+                </td>
+            
+            
+            <td class="description last">版本</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">回调</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line1000">line 1000</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">bool</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="检测是否指定ie版本"><span class="type-signature"></span>检测是否指定ie版本<span class="signature">(<span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {bool}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">回调</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line1027">line 1027</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">bool</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="模拟列表框"><span class="type-signature"></span>模拟列表框<span class="signature">(<span class="optional">prop</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>prop</code></td>
             
             
             <td class="type">
@@ -2121,19 +3873,38 @@
             
             
             
-                <td class="default">
+            
+            <td class="description last">参数
+                <h6>Properties</h6>
                 
-                </td>
-            
-            
-            <td class="description last">参数</td>
-        </tr>
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
 	
+	<tbody>
 	
 	
         <tr>
             
-                <td class="name"><code>prop.parent=</code></td>
+                <td class="name"><code>parent</code></td>
             
             
             <td class="type">
@@ -2159,6 +3930,8 @@
             
             
                 <td class="default">
+                
+                    null
                 
                 </td>
             
@@ -2170,7 +3943,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.disabled</code></td>
+                <td class="name"><code>disabled</code></td>
             
             
             <td class="type">
@@ -2197,7 +3970,7 @@
             
                 <td class="default">
                 
-                    disabled
+                    'disabled'
                 
                 </td>
             
@@ -2209,7 +3982,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.trigger=</code></td>
+                <td class="name"><code>trigger</code></td>
             
             
             <td class="type">
@@ -2235,6 +4008,8 @@
             
             
                 <td class="default">
+                
+                    null
                 
                 </td>
             
@@ -2246,7 +4021,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.span</code></td>
+                <td class="name"><code>span</code></td>
             
             
             <td class="type">
@@ -2273,7 +4048,7 @@
             
                 <td class="default">
                 
-                    span
+                    'span'
                 
                 </td>
             
@@ -2285,7 +4060,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.p</code></td>
+                <td class="name"><code>p</code></td>
             
             
             <td class="type">
@@ -2312,7 +4087,7 @@
             
                 <td class="default">
                 
-                    p
+                    'p'
                 
                 </td>
             
@@ -2324,7 +4099,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.a</code></td>
+                <td class="name"><code>a</code></td>
             
             
             <td class="type">
@@ -2351,7 +4126,7 @@
             
                 <td class="default">
                 
-                    a
+                    'a'
                 
                 </td>
             
@@ -2363,7 +4138,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.onW=</code></td>
+                <td class="name"><code>onW</code></td>
             
             
             <td class="type">
@@ -2389,6 +4164,8 @@
             
             
                 <td class="default">
+                
+                    null
                 
                 </td>
             
@@ -2400,7 +4177,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.onS=</code></td>
+                <td class="name"><code>onS</code></td>
             
             
             <td class="type">
@@ -2426,6 +4203,8 @@
             
             
                 <td class="default">
+                
+                    null
                 
                 </td>
             
@@ -2437,7 +4216,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.onA=</code></td>
+                <td class="name"><code>onA</code></td>
             
             
             <td class="type">
@@ -2463,6 +4242,8 @@
             
             
                 <td class="default">
+                
+                    null
                 
                 </td>
             
@@ -2474,7 +4255,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.animation=</code></td>
+                <td class="name"><code>animation</code></td>
             
             
             <td class="type">
@@ -2501,17 +4282,19 @@
             
                 <td class="default">
                 
+                    null
+                
                 </td>
             
             
-            <td class="description last">弹出动画,目前支持'silde/fade'</td>
+            <td class="description last">弹出动画,支持'silde/fade'</td>
         </tr>
 	
 	
 	
         <tr>
             
-                <td class="name"><code>prop.duration</code></td>
+                <td class="name"><code>duration</code></td>
             
             
             <td class="type">
@@ -2550,7 +4333,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.toggle</code></td>
+                <td class="name"><code>toggle</code></td>
             
             
             <td class="type">
@@ -2589,7 +4372,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.fn</code></td>
+                <td class="name"><code>fn</code></td>
             
             
             <td class="type">
@@ -2628,7 +4411,7 @@
 	
         <tr>
             
-                <td class="name"><code>prop.fnA</code></td>
+                <td class="name"><code>fnA</code></td>
             
             
             <td class="type">
@@ -2666,6 +4449,12 @@
 	
 	</tbody>
 </table>
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
     
     
     
@@ -2691,7 +4480,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line223">line 223</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line224">line 224</a>
     </li></ul></dd>
     
     
@@ -2716,7 +4505,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -2741,7 +4530,7 @@
         
             
 <dt>
-    <h4 class="name" id="模拟单选"><span class="type-signature"></span>模拟单选<span class="signature">(<span class="optional">on=</span>, fn)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="模拟单选"><span class="type-signature"></span>模拟单选<span class="signature">(<span class="optional">on</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -2781,7 +4570,7 @@
 	
         <tr>
             
-                <td class="name"><code>on=</code></td>
+                <td class="name"><code>on</code></td>
             
             
             <td class="type">
@@ -2829,6 +4618,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
                     
                 
                     
@@ -2869,7 +4660,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line203">line 203</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line204">line 204</a>
     </li></ul></dd>
     
     
@@ -2894,7 +4685,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -2919,7 +4710,7 @@
         
             
 <dt>
-    <h4 class="name" id="模拟复选"><span class="type-signature"></span>模拟复选<span class="signature">(<span class="optional">on=</span>, fn)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="模拟复选"><span class="type-signature"></span>模拟复选<span class="signature">(<span class="optional">on</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -2959,7 +4750,7 @@
 	
         <tr>
             
-                <td class="name"><code>on=</code></td>
+                <td class="name"><code>on</code></td>
             
             
             <td class="type">
@@ -3007,6 +4798,8 @@
             
                 <td class="attributes">
                 
+                    &lt;optional><br>
+                
                     
                 
                     
@@ -3047,7 +4840,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line186">line 186</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line187">line 187</a>
     </li></ul></dd>
     
     
@@ -3072,7 +4865,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -3097,7 +4890,7 @@
         
             
 <dt>
-    <h4 class="name" id="模拟滚动条"><span class="type-signature"></span>模拟滚动条<span class="signature">(fn)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="模拟滚动条"><span class="type-signature"></span>模拟滚动条<span class="signature">(<span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -3123,6 +4916,8 @@
 		<th>Type</th>
 		
 		
+		<th>Argument</th>
+		
 		
 		
 		
@@ -3147,6 +4942,16 @@
             
             </td>
             
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
@@ -3182,7 +4987,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line27">line 27</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line28">line 28</a>
     </li></ul></dd>
     
     
@@ -3207,7 +5012,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -3232,7 +5037,7 @@
         
             
 <dt>
-    <h4 class="name" id="粘贴板"><span class="type-signature"></span>粘贴板<span class="signature">(d, fn)</span><span class="type-signature"> &rarr; {none}</span></h4>
+    <h4 class="name" id="粘贴板"><span class="type-signature"></span>粘贴板<span class="signature">(<span class="optional">d</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {none}</span></h4>
     
     
 </dt>
@@ -3257,6 +5062,8 @@
 		
 		<th>Type</th>
 		
+		
+		<th>Argument</th>
 		
 		
 		
@@ -3283,6 +5090,16 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
             
             
             
@@ -3305,6 +5122,16 @@
             
             </td>
             
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
@@ -3340,7 +5167,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line623">line 623</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line631">line 631</a>
     </li></ul></dd>
     
     
@@ -3423,7 +5250,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line123">line 123</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line124">line 124</a>
     </li></ul></dd>
     
     
@@ -3448,7 +5275,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -3473,7 +5300,7 @@
         
             
 <dt>
-    <h4 class="name" id="返回字符串长度/截取字符串"><span class="type-signature"></span>返回字符串长度/截取字符串<span class="signature">(text, cutout)</span><span class="type-signature"> &rarr; {number/string}</span></h4>
+    <h4 class="name" id="返回字符串长度/截取字符串"><span class="type-signature"></span>返回字符串长度/截取字符串<span class="signature">(<span class="optional">text</span>, <span class="optional">cutout</span>)</span><span class="type-signature"> &rarr; {number/string}</span></h4>
     
     
 </dt>
@@ -3498,6 +5325,8 @@
 		
 		<th>Type</th>
 		
+		
+		<th>Argument</th>
 		
 		
 		
@@ -3524,6 +5353,16 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
             
             
             
@@ -3546,6 +5385,16 @@
             
             </td>
             
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
@@ -3581,7 +5430,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line927">line 927</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line964">line 964</a>
     </li></ul></dd>
     
     
@@ -3606,7 +5455,7 @@
     
             
 <div class="param-desc">
-    length/text
+    [length/text]
 </div>
 
 
@@ -3631,7 +5480,7 @@
         
             
 <dt>
-    <h4 class="name" id="限制字符"><span class="type-signature"></span>限制字符<span class="signature">(limit, fn)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="限制字符"><span class="type-signature"></span>限制字符<span class="signature">(<span class="optional">limit</span>, <span class="optional">fn</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
     
 </dt>
@@ -3656,6 +5505,8 @@
 		
 		<th>Type</th>
 		
+		
+		<th>Argument</th>
 		
 		
 		
@@ -3682,6 +5533,16 @@
             </td>
             
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
+            
             
             
             
@@ -3704,6 +5565,16 @@
             
             </td>
             
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                    
+                
+                </td>
             
             
             
@@ -3739,7 +5610,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line462">line 462</a>
+        <a href="jquery.x.js.html">jquery.x.js</a>, <a href="jquery.x.js.html#line463">line 463</a>
     </li></ul></dd>
     
     
@@ -3764,7 +5635,7 @@
     
             
 <div class="param-desc">
-    this
+    [this]
 </div>
 
 
@@ -3802,13 +5673,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="111.html">111</a></li><li><a href="$.fn.html">$.fn()</a></li></ul><h3>Namespaces</h3><ul><li><a href="inputs-config.html">config</a></li><li><a href="popBg-config.html">config</a></li><li><a href="pop-config.html">config</a></li></ul><h3>Global</h3><ul><li><a href="global.html#tab切换">tab切换</a></li><li><a href="global.html#关闭弹窗">关闭弹窗</a></li><li><a href="global.html#加载程序">加载程序</a></li><li><a href="global.html#图片预加载">图片预加载</a></li><li><a href="global.html#复选全选">复选全选</a></li><li><a href="global.html#开启背景遮罩蒙板">开启背景遮罩蒙板</a></li><li><a href="global.html#弹窗">弹窗</a></li><li><a href="global.html#文本输入区光标处插入">文本输入区光标处插入</a></li><li><a href="global.html#文本输入控件">文本输入控件</a></li><li><a href="global.html#检测是否ie6">检测是否ie6</a></li><li><a href="global.html#检测是否低于指定版本的ie">检测是否低于指定版本的ie</a></li><li><a href="global.html#检测是否指定ie版本">检测是否指定ie版本</a></li><li><a href="global.html#模拟列表框">模拟列表框</a></li><li><a href="global.html#模拟单选">模拟单选</a></li><li><a href="global.html#模拟复选">模拟复选</a></li><li><a href="global.html#模拟滚动条">模拟滚动条</a></li><li><a href="global.html#粘贴板">粘贴板</a></li><li><a href="global.html#设置模拟滚动条高度">设置模拟滚动条高度</a></li><li><a href="global.html#返回字符串长度/截取字符串">返回字符串长度/截取字符串</a></li><li><a href="global.html#限制字符">限制字符</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="inputs-config.html">config</a></li><li><a href="popBg-config.html">config</a></li><li><a href="pop-config.html">config</a></li></ul><h3>Global</h3><ul><li><a href="global.html#tab切换">tab切换</a></li><li><a href="global.html#关闭弹窗">关闭弹窗</a></li><li><a href="global.html#加载程序">加载程序</a></li><li><a href="global.html#图片预加载">图片预加载</a></li><li><a href="global.html#复选全选">复选全选</a></li><li><a href="global.html#开启遮罩蒙板">开启遮罩蒙板</a></li><li><a href="global.html#弹窗">弹窗</a></li><li><a href="global.html#文本输入区光标处插入">文本输入区光标处插入</a></li><li><a href="global.html#文本输入控件">文本输入控件</a></li><li><a href="global.html#检测是否ie6">检测是否ie6</a></li><li><a href="global.html#检测是否低于指定版本的ie">检测是否低于指定版本的ie</a></li><li><a href="global.html#检测是否指定ie版本">检测是否指定ie版本</a></li><li><a href="global.html#模拟列表框">模拟列表框</a></li><li><a href="global.html#模拟单选">模拟单选</a></li><li><a href="global.html#模拟复选">模拟复选</a></li><li><a href="global.html#模拟滚动条">模拟滚动条</a></li><li><a href="global.html#粘贴板">粘贴板</a></li><li><a href="global.html#设置模拟滚动条高度">设置模拟滚动条高度</a></li><li><a href="global.html#返回字符串长度/截取字符串">返回字符串长度/截取字符串</a></li><li><a href="global.html#限制字符">限制字符</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Thu Nov 14 2013 14:22:05 GMT-0500 (EST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Thu Nov 14 2013 14:55:45 GMT-0500 (EST)
 </footer>
 
 <script> prettyPrint(); </script>
