@@ -26,7 +26,8 @@
 				x: '1.0.0',
 
 				/**
-				 * @name 模拟滚动条
+				 * 模拟滚动条
+				 * @function
 				 * @param {function} fn - 回调
 				 * @return {object} this
 				 */
@@ -122,6 +123,7 @@
 
 				/**
 				 * @name 设置模拟滚动条高度
+				 * @function
 				 * @return {object} this
 				 */
 				fixScrolls: function(){
@@ -144,6 +146,7 @@
 
 				/**
 				 * @name 复选全选
+				 * @function
 				 * @param {string} selector - 复选框
 				 * @param {function} fn - 全选回调
 				 * @param {function} fnC - 复选回调
@@ -183,6 +186,7 @@
 
 				/**
 				 * @name 模拟复选
+				 * @function
 				 * @param {string} on - 选中
 				 * @param {function} fn - 回调
 				 * @return {object} this
@@ -199,6 +203,7 @@
 
 				/**
 				 * @name 模拟单选
+				 * @function
 				 * @param {string} on - 选中
 				 * @param {function} fn - 回调
 				 * @return {object} this
@@ -218,6 +223,7 @@
 
 				/**
 				 * @name 模拟列表框
+				 * @function
 				 * @param {object} prop - 参数
 				 * @return {object} this
 				 */
@@ -451,6 +457,7 @@
 
 				/**
 				 * @name 图片预加载
+				 * @function
 				 * @param {string} attr - 属性名,可省略,默认'_src'
 				 * @param {function} fn - 回调
 				 * @return {object} this
@@ -481,6 +488,7 @@
 
 				/**
 				 * @name 文本输入区光标处插入
+				 * @function
 				 * @param {string} str - 字符数
 				 * @param {array} wrap - 两侧符号
 				 * @return {object} this
@@ -524,6 +532,7 @@
 
 				/**
 				 * @name 限制字符
+				 * @function
 				 * @param {number} limit - 字符数
 				 * @param {function} fn - 回调
 				 * @return {object} this
@@ -542,6 +551,7 @@
 
 				/**
 				 * @name 文本输入控件
+				 * @function
 				 * @param {object} prop - 参数
 				 * @return {object} this
 				 */
@@ -682,6 +692,7 @@
 
 				/**
 				 * @name 粘贴板
+				 * @function
 				 * @param {object} d - 文本输入区对象
 				 * @param {function} fn - 回调
 				 * @return {none}
@@ -712,6 +723,7 @@
 
 				/**
 				 * @name 加载程序
+				 * @function
 				 * @param {object} fns - 程序集合
 				 * @param {bool} onload - 默认页面onload完成后执行
 				 * @return {object} fns
@@ -732,6 +744,7 @@
 				
 				/**
 				 * @name 弹窗
+				 * @function
 				 * @param {object} prop - 参数
 				 * @return {object} $(pop)
 				 */
@@ -905,6 +918,7 @@
 				
 				/**
 				 * @name 关闭弹窗
+				 * @function
 				 * @param {string} id 弹窗id
 				 * @param {string} animation 运行方式
 				 * @return {none}
@@ -930,6 +944,7 @@
 				
 				/**
 				 * @name 开启背景遮罩蒙板
+				 * @function
 				 * @param {object} prop - 配置参数
 				 * @return {object} $(bg)
 				 */
@@ -981,6 +996,7 @@
 
 				/**
 				 * @name 返回字符串长度/截取字符串
+				 * @function
 				 * @param {string} text - 字符串
 				 * @param {number} cutout - 需要截取的字符串的长度
 				 * @return {number/string} length/text
@@ -1001,6 +1017,7 @@
 
 				/**
 				 * @name 检测是否ie6
+				 * @function
 				 * @param {function} fn - 回调
 				 * @return {bool}
 				 */
@@ -1015,6 +1032,7 @@
 
 				/**
 				 * @name 检测是否低于指定版本的ie
+				 * @function
 				 * @param {string} ver - 版本,可省略,默认9
 				 * @param {function} fn - 回调
 				 * @return {bool}
@@ -1041,6 +1059,7 @@
 
 				/**
 				 * @name 检测是否指定ie版本
+				 * @function
 				 * @param {function} fn - 回调
 				 * @return {bool}
 				 */
