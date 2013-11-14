@@ -3,6 +3,7 @@
  * @version 1.0.0
  * @author xiewulong <xiewulong@vip.qq.com> <http://xiewulong.github.io/jqueryX>
  * @copyright 2013 by xiewulong
+ * @license MIT
  * @create 2013/5/16
  * @update 2013/11/15
  */
@@ -495,10 +496,6 @@
 				 */
 				inputs: function(prop){
 					var $parent, selector, ie,
-						/**
-						 * config
-						 * @namespace
-						 */
 						config	= {
 							parent	: '',
 							values	: [],
@@ -709,10 +706,6 @@
 				 */
 				pop: function(prop){
 					var adjust, style, w, h, auto,
-						/**
-						 * config
-						 * @namespace
-						 */
 						config = {
 							html		: '',
 							parent		: 'body',
@@ -917,10 +910,6 @@
 				 */
 				popBg: function(prop){
 					var opacity, $bg,
-						/**
-						 * config
-						 * @namespace
-						 */
 						config = {
 							parent		: 'body',			//父级
 							id			: 'jq_x_pop_bg',	//id

@@ -5,7 +5,7 @@ module.exports = function(grunt){
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
 			options: {
-				banner: '/*!\n * @fileoverview\t<%=pkg.description%>\n * @version\t<%=pkg.version%>\n * @author\t<%=pkg.author.name%> <<%=pkg.author.email%>>\n * @url\t\t<%=pkg.author.url%>\n * @create\t2013/5/16\n * @update\t<%=grunt.template.today("yyyy/mm/dd")%>\n */\n\n '
+				banner: '/*!\n * @file <%= pkg.description %>\n * @version <%= pkg.version %>\n * @author <%= pkg.author.name %> <<%= pkg.author.email %>> <<%= pkg.author.url %>>\n * @copyright 2013 by <%= pkg.author.name %>\n * @license MIT\n * @url <%= pkg.author.url %>\n * @create 2013/5/16\n * @update <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
 			},
 			compress: {
 				files: {
