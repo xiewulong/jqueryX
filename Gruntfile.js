@@ -14,7 +14,7 @@ module.exports = function(grunt){
 			}
 		},
     jsdoc: {
-      gerenate: {
+      generate: {
         src: ['jquery.x.js'],
         options: {
           destination: 'doc'
