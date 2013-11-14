@@ -16,19 +16,15 @@
 				$doc	= $(document),
 				Fn		= function(){};
 
-			/**
-			 * $().fn()
-			 * @class
-			 * @classdesc $.fn.extend
-			 */
 			$.fn.extend({
 
 				//jQuery X Version
 				x: '1.0.0',
 
 				/**
-				 * @name 模拟滚动条$.fn.scrolls
-				 * @function
+				 * 模拟滚动条
+				 * @function scrolls
+				 * @example $.fn.scrolls(fn);
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
 				 */
@@ -123,8 +119,8 @@
 				},
 
 				/**
-				 * @name 设置模拟滚动条高度$.fn.fixScrolls
-				 * @function
+				 * 设置模拟滚动条高度
+				 * @function fixScrolls
 				 * @return {object} this
 				 */
 				fixScrolls: function(){
@@ -146,8 +142,8 @@
 				},
 
 				/**
-				 * @name 复选全选$.fn.checkAll
-				 * @function
+				 * 复选全选
+				 * @function checkAll
 				 * @param {string} selector - 复选框
 				 * @param {function} [fn] - 全选回调
 				 * @param {function} [fnC] - 复选回调
@@ -186,8 +182,8 @@
 				},
 
 				/**
-				 * @name 模拟复选$.fn.checkboxs
-				 * @function
+				 * 模拟复选
+				 * @function checkboxs
 				 * @param {string} [on='on'] - 选中
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
@@ -203,8 +199,8 @@
 				},
 
 				/**
-				 * @name 模拟单选$.fn.radios
-				 * @function
+				 * 模拟单选
+				 * @function radios
 				 * @param {string} [on='on'] - 选中
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
@@ -223,8 +219,8 @@
 				},
 
 				/**
-				 * @name 模拟列表框$.fn.selects
-				 * @function
+				 * 模拟列表框
+				 * @function selects
 				 * @param {object} [prop] - 参数
 				 * @param {string} [prop.parent=null] - 阻止冒泡的父级
 				 * @param {string} [prop.disabled='disabled'] - 禁用class
@@ -347,8 +343,8 @@
 				},
 
 				/**
-				 * @name tab切换$.fn.tabs
-				 * @function
+				 * tab切换
+				 * @function tabs
 				 * @param {string} selector - 切换页
 				 * @param {string} [on='on'] - tab按钮效果切换class
 				 * @param {string} [type='click'] - 事件类型,支持'click/hover'
@@ -387,8 +383,8 @@
 				},
 
 				/**
-				 * @name 图片预加载$.fn.imgLoad
-				 * @function
+				 * 图片预加载
+				 * @function imgLoad
 				 * @param {string} [attr='_src'] - 属性名
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
@@ -418,8 +414,8 @@
 				},
 
 				/**
-				 * @name 文本输入区光标处插入$.fn.inputIn
-				 * @function
+				 * 文本输入区光标处插入
+				 * @function inputIn
 				 * @param {string} txt - 文本
 				 * @param {array} [wrap] - 两侧符号
 				 * @return {object} this
@@ -462,8 +458,8 @@
 				},
 
 				/**
-				 * @name 限制字符$.fn.limit
-				 * @function
+				 * 限制字符
+				 * @function limit
 				 * @param {number} limit - 限制数
 				 * @param {function} [fn] - 回调
 				 * @return {object} this
@@ -481,8 +477,8 @@
 				},
 
 				/**
-				 * @name 文本输入控件$.fn.inputs
-				 * @function
+				 * 文本输入控件
+				 * @function inputs
 				 * @param {object} [prop] - 参数
 				 * @param {string} [prop.parent=null] - 事件委托对象,默认不使用
 				 * @param {array} [prop.values=null] - 默认值数组,空数据则不匹配默认值
@@ -621,8 +617,8 @@
 			$.extend({
 
 				/**
-				 * @name 粘贴板$.clip
-				 * @function
+				 * 粘贴板
+				 * @function clip
 				 * @param {object} d - 文本输入区对象
 				 * @param {function} [fn] - 回调
 				 * @return {none}
@@ -652,8 +648,8 @@
 				},
 
 				/**
-				 * @name 加载程序$.loader
-				 * @function
+				 * 加载程序
+				 * @function loader
 				 * @param {object} fns - 程序集合
 				 * @param {bool} [onload=undefined] - 默认页面onload完成后执行
 				 * @return {object} fns
@@ -673,8 +669,8 @@
 				},
 				
 				/**
-				 * @name 弹窗$.pop
-				 * @function
+				 * 弹窗
+				 * @function pop
 				 * @param {object} prop - 参数
 				 * @param {string} [prop.html=null] - 弹窗内容
 				 * @param {string} [prop.parent='body'] - dom父级
@@ -864,8 +860,8 @@
 				},
 				
 				/**
-				 * @name 关闭弹窗$.popClose
-				 * @function
+				 * 关闭弹窗
+				 * @function popClose
 				 * @param {string} id 弹窗id
 				 * @param {string} [animation=undefined] 动画,支持'fade'
 				 * @return {none}
@@ -890,8 +886,8 @@
 				},
 				
 				/**
-				 * @name 开启遮罩蒙板$.popBg
-				 * @function
+				 * 开启遮罩蒙板
+				 * @function popBg
 				 * @param {object} [prop] - 参数
 				 * @param {string} [prop.parent='body'] - dom父级
 				 * @param {string} [prop.id='jq_x_pop_bg'] - id
@@ -946,8 +942,8 @@
 				},
 
 				/**
-				 * @name 返回字符串长度/截取字符串$.textSize
-				 * @function
+				 * 返回字符串长度/截取字符串
+				 * @function textSize
 				 * @param {string} text - 字符串
 				 * @param {number} [cutout] - 需要截取的字符串的长度,为空则返回字符串长度
 				 * @return {number/string} length/text
@@ -967,8 +963,8 @@
 				},
 
 				/**
-				 * @name ie6检测$.ie6
-				 * @function
+				 * ie6检测
+				 * @function ie6
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
 				 */
@@ -982,8 +978,8 @@
 				},
 
 				/**
-				 * @name 低于指定版本ie检测$.ltie
-				 * @function
+				 * 低于指定版本ie检测
+				 * @function ltie
 				 * @param {string} [ver=9] - 版本
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
@@ -1009,8 +1005,8 @@
 				},
 
 				/**
-				 * @name 指定ie版本检测$.ie
-				 * @function
+				 * 指定ie版本检测
+				 * @function ie
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
 				 */
