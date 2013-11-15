@@ -2,6 +2,8 @@
 
 #config
 node_ver='0.10.21'
+pcre_ver='8.33'
+nginx_ver='1.4.3'
 
 #check permission
 if [ $(id -u) != '0' ]; then
@@ -9,16 +11,18 @@ if [ $(id -u) != '0' ]; then
 	exit 1
 fi
 
-echo '==================yum install tools && update && upgrade==================';
+#back to uerpath
+cd
+
+echo '================== yum tools && update && upgrade ==================';
 yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel git-core
 yum update -y
 yum upgrade -y
 
-echo '==================nodejs install==================';
+echo '================== nodejs ==================';
 node_name="node-v${node_ver}"
 node_tar="${node_name}.tar.gz"
 node_url="http://nodejs.org/dist/v${node_ver}/${node_tar}"
-cd /root
 wget -c $node_url
 tar zxvf $node_tar
 cd $node_name
@@ -28,5 +32,31 @@ cd ..
 rm -rf $node_name
 rm -f $node_tar
 
-echo '==================grunt-cli install==================';
+echo '================== grunt-cli ==================';
 npm install -g grunt-cli
+
+echo '================== pcre ==================';
+pcre_name="pcre-${pcre_ver}"
+pcre_tar="${pcre_name}.tar.gz"
+pcre_url="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/${pacre_tar}"
+wget -c $pcre_url
+tar zxvf $pcre_tar
+cd $pcre_name
+./configure
+make && make install
+cd ..
+rm -rf $pcre_name
+rm -f $pcre_tar
+
+echo '================== nginx ==================';
+nginx_name="nginx-${nginx_ver}"
+nginx_tar="${nginx_name}.tar.gz"
+nginx_url="http://nginx.org/download/${nginx_tar}"
+wget -c $nginx_url
+tar zxvf $nginx_tar
+cd $nginx_name
+./configure
+make && make install
+cd ..
+rm -rf $nginx_name
+rm -f $nginx_tar
