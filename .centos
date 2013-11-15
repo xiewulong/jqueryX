@@ -11,7 +11,7 @@ if [ $(id -u) != '0' ]; then
 	exit 1
 fi
 
-#back to uerpath
+#back to uer's directory
 cd
 
 echo '================== yum tools && update && upgrade ==================';
@@ -19,44 +19,32 @@ yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel 
 yum update -y
 yum upgrade -y
 
+#installer
+function installer(){
+  wget -c $3
+  tar zxvf $2
+  cd $1
+  ./configure
+  make && make install
+  cd ..
+  rm -rf $1
+  rm -f $2
+}
+
 echo '================== nodejs ==================';
-node_name="node-v${node_ver}"
-node_tar="${node_name}.tar.gz"
-node_url="http://nodejs.org/dist/v${node_ver}/${node_tar}"
-wget -c $node_url
-tar zxvf $node_tar
-cd $node_name
-./configure
-make && make install
-cd ..
-rm -rf $node_name
-rm -f $node_tar
+name="node-v${node_ver}"
+tar="${name}.tar.gz"
+installer ${name} ${tar} "http://nodejs.org/dist/v${node_ver}/${tar}"
 
 echo '================== grunt-cli ==================';
 npm install -g grunt-cli
 
 echo '================== pcre ==================';
-pcre_name="pcre-${pcre_ver}"
-pcre_tar="${pcre_name}.tar.gz"
-pcre_url="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/${pacre_tar}"
-wget -c $pcre_url
-tar zxvf $pcre_tar
-cd $pcre_name
-./configure
-make && make install
-cd ..
-rm -rf $pcre_name
-rm -f $pcre_tar
+name="pcre-${pcre_ver}"
+tar="${name}.tar.gz"
+installer ${name} ${tar} "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/${tar}"
 
 echo '================== nginx ==================';
-nginx_name="nginx-${nginx_ver}"
-nginx_tar="${nginx_name}.tar.gz"
-nginx_url="http://nginx.org/download/${nginx_tar}"
-wget -c $nginx_url
-tar zxvf $nginx_tar
-cd $nginx_name
-./configure
-make && make install
-cd ..
-rm -rf $nginx_name
-rm -f $nginx_tar
+name="nginx-${nginx_ver}"
+tar="${name}.tar.gz"
+installer ${name} ${tar} "http://nginx.org/download/${tar}"
