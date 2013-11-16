@@ -5,11 +5,11 @@ pid="${dir}/logs/nginx.pid"
 start="/usr/local/nginx/sbin/nginx -p ${dir}"
 
 case $1 in
-	start) ${start}
+	start) ${start} && echo 'nginx is already running.'
 	;;
-	stop) kill -QUIT `cat ${pid}`
+	stop) kill -QUIT `cat ${pid}` && echo 'nginx stops.'
 	;;
-	restart | reload) kill -HUP `cat ${pid}`
+	restart | reload) kill -HUP `cat ${pid}` && echo 'nginx reloaded.'
 	;;
 	*) echo "error: please use $0 {start|stop|restart|reload|status}"
 	;;
