@@ -1,23 +1,16 @@
 #!/bin/bash
 
-#config
-node_ver='0.10.21'
-pcre_ver='8.33'
-nginx_ver='1.4.3'
-
 #check permission
 if [ $(id -u) != '0' ]; then
 	echo 'Error: You must be root to run this script'
 	exit 1
 fi
 
-#back to uer's directory
-cd
-
-echo '================== yum tools && update && upgrade ==================';
-yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel git-core
-yum update -y
-yum upgrade -y
+#config
+cur_dir=${pwd}
+node_ver='0.10.21'
+pcre_ver='8.33'
+nginx_ver='1.4.3'
 
 #installer
 function installer(){
@@ -30,6 +23,14 @@ function installer(){
   rm -rf $1
   rm -f $2
 }
+
+#back to uer's directory
+cd
+
+echo '================== yum tools && update && upgrade ==================';
+yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel git-core
+yum update -y
+yum upgrade -y
 
 echo '================== nodejs ==================';
 name="node-v${node_ver}"

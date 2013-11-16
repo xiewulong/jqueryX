@@ -1,0 +1,16 @@
+#!/bin/bash
+
+dir=`cd $(dirname $0);pwd`
+pid="${dir}/logs/nginx.pid"
+start="/usr/local/nginx/sbin/nginx -p ${dir}"
+
+case $1 in
+	start) ${start}
+	;;
+	stop) kill -QUIT `cat ${pid}`
+	;;
+	restart | reload) kill -HUP `cat ${pid}`
+	;;
+	*) echo "error: please use $0 {start|stop|restart|reload|status}"
+	;;
+esac
