@@ -11,17 +11,17 @@ cur_dir=${pwd}
 node_ver='0.10.21'
 pcre_ver='8.33'
 nginx_ver='1.4.3'
+nginx_group='www'
 
 #installer
 function installer(){
   wget -c $3
   tar zxvf $2
   cd $1
-  ./configure
+  ./configure $4
   make && make install
   cd ..
   rm -rf $1
-  rm -f $2
 }
 
 #back to uer's directory
@@ -46,6 +46,8 @@ tar="${name}.tar.gz"
 installer ${name} ${tar} "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/${tar}"
 
 echo '================== nginx ==================';
+groupadd ${nginx_group}
+useradd -M -s /sbin/nologin -g ${nginx_group} ${nginx_group}
 name="nginx-${nginx_ver}"
 tar="${name}.tar.gz"
-installer ${name} ${tar} "http://nginx.org/download/${tar}"
+installer ${name} ${tar} "http://nginx.org/download/${tar}" " --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-ipv6"
