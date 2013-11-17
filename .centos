@@ -15,13 +15,13 @@ nginx_group='www'
 
 #installer
 function installer(){
-  wget -c $3
-  tar zxvf $2
-  cd $1
-  ./configure $4
-  make && make install
-  cd ..
-  rm -rf $1
+	wget -c $3
+	tar zxvf $2
+	cd $1
+	./configure $4
+	make && make install
+	cd ..
+	rm -rf $1
 }
 
 #back to uer's directory
