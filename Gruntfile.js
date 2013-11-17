@@ -13,21 +13,21 @@ module.exports = function(grunt){
 				}
 			}
 		},
-    jsdoc: {
-      generate: {
-        src: ['jquery.x.js'],
-        options: {
-          destination: 'doc'
-        }
-      }
-    }
+		jsdoc: {
+			generate: {
+			src: ['jquery.x.js'],
+			options: {
+				destination: 'doc'
+			}
+		  }
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-jsdoc');
+	grunt.loadNpmTasks('grunt-jsdoc');
 
 	grunt.registerTask('default', [
-    'uglify',
-    'jsdoc' //dependent on java
-  ]);
+		'uglify',
+		'jsdoc' //dependent on java
+	]);
 }
