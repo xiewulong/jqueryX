@@ -1,0 +1,53 @@
+#!/bin/bash
+
+#check permission
+if [ $(id -u) != '0' ]; then
+	echo 'Error: You must be root to run this script'
+	exit 1
+fi
+
+#config
+cur_dir=${pwd}
+node_ver='0.10.21'
+pcre_ver='8.33'
+nginx_ver='1.4.3'
+nginx_group='www'
+
+#installer
+function installer(){
+	wget -c $3
+	tar zxvf $2
+	cd $1
+	./configure $4
+	make && make install
+	cd ..
+	rm -rf $1
+}
+
+#back to uer's directory
+cd
+
+echo '================== yum tools && update && upgrade ==================';
+yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel git-core
+yum update -y
+yum upgrade -y
+
+echo '================== nodejs ==================';
+name="node-v${node_ver}"
+tar="${name}.tar.gz"
+installer ${name} ${tar} "http://nodejs.org/dist/v${node_ver}/${tar}"
+
+echo '================== grunt-cli ==================';
+npm install -g grunt-cli
+
+echo '================== pcre ==================';
+name="pcre-${pcre_ver}"
+tar="${name}.tar.gz"
+installer ${name} ${tar} "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/${tar}"
+
+echo '================== nginx ==================';
+groupadd ${nginx_group}
+useradd -M -s /sbin/nologin -g ${nginx_group} ${nginx_group}
+name="nginx-${nginx_ver}"
+tar="${name}.tar.gz"
+installer ${name} ${tar} "http://nginx.org/download/${tar}" " --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-ipv6"
