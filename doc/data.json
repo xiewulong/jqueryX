@@ -1,0 +1,1018 @@
+{
+    "project": {
+        "name": "jqueryX",
+        "description": "jQuery X Plugin",
+        "version": "1.0.0",
+        "url": "http://xiewulong.github.io/jqueryX"
+    },
+    "files": {
+        "jquery.x.js": {
+            "name": "jquery.x.js",
+            "modules": {
+                "jqueryX": 1
+            },
+            "classes": {
+                "$.extend": 1,
+                "$.fn.extend": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "jqueryX": {
+            "name": "jqueryX",
+            "submodules": {},
+            "classes": {
+                "$.extend": 1,
+                "$.fn.extend": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "jquery.x.js",
+            "line": 450,
+            "description": "jQuery X Plugin"
+        }
+    },
+    "classes": {
+        "$.extend": {
+            "name": "$.extend",
+            "shortname": "$.extend",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "jqueryX",
+            "namespace": "",
+            "file": "jquery.x.js",
+            "line": 22,
+            "description": "jquery静态方法"
+        },
+        "$.fn.extend": {
+            "name": "$.fn.extend",
+            "shortname": "$.fn.extend",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "jqueryX",
+            "namespace": "",
+            "file": "jquery.x.js",
+            "line": 450,
+            "description": "jQuery原型方法"
+        }
+    },
+    "classitems": [
+        {
+            "file": "jquery.x.js",
+            "line": 28,
+            "description": "粘贴板",
+            "itemtype": "method",
+            "name": "$.clip",
+            "params": [
+                {
+                    "name": "d",
+                    "description": "文本输入区对象",
+                    "type": "Object"
+                },
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "None"
+            },
+            "example": [
+                " $.clip(d, fn);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 60,
+            "description": "加载程序",
+            "itemtype": "method",
+            "name": "$.loader",
+            "params": [
+                {
+                    "name": "fns",
+                    "description": "程序集合",
+                    "type": "Object"
+                },
+                {
+                    "name": "onload",
+                    "description": "默认页面onload完成后执行",
+                    "type": "Bool",
+                    "optional": true,
+                    "optdefault": "undefined"
+                }
+            ],
+            "return": {
+                "description": "fns",
+                "type": "Object"
+            },
+            "example": [
+                " $.loader(fns, onload);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 82,
+            "description": "弹窗",
+            "itemtype": "method",
+            "name": "$.pop",
+            "params": [
+                {
+                    "name": "prop",
+                    "description": "参数",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "html",
+                            "description": "弹窗内容",
+                            "type": "String"
+                        },
+                        {
+                            "name": "parent",
+                            "description": "dom父级",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'body'"
+                        },
+                        {
+                            "name": "id",
+                            "description": "id",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'jq_x_pop'"
+                        },
+                        {
+                            "name": "close",
+                            "description": "关闭按钮类名",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'jq_x_pop_c'"
+                        },
+                        {
+                            "name": "width",
+                            "description": "弹窗宽度,默认auto",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "0"
+                        },
+                        {
+                            "name": "height",
+                            "description": "弹窗高度,默认auto",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "0"
+                        },
+                        {
+                            "name": "position",
+                            "description": "定位方式",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'fixed'"
+                        },
+                        {
+                            "name": "top",
+                            "description": "top值,默认为垂直居中",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "0"
+                        },
+                        {
+                            "name": "left",
+                            "description": "left值,默认为水平居中",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "0"
+                        },
+                        {
+                            "name": "bg",
+                            "description": "遮罩蒙板,默认显示,不显示则弹窗失去焦点即关闭",
+                            "type": "Bool",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "bgclose",
+                            "description": "默认点击遮罩蒙板即关闭弹窗",
+                            "type": "Bool",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "bgcloser",
+                            "description": "默认无遮罩蒙板情况下弹窗失去焦点即关闭",
+                            "type": "Bool",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "bgcolor",
+                            "description": "遮罩蒙板底色,默认黑色",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'#000'"
+                        },
+                        {
+                            "name": "opacity",
+                            "description": "遮罩蒙板透明度,默认50%",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": ".5"
+                        },
+                        {
+                            "name": "zIndex",
+                            "description": "弹窗层级,遮罩蒙板层级prop.zIndex-1",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "100"
+                        },
+                        {
+                            "name": "animation",
+                            "description": "动画效果,支持'fade'",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "duration",
+                            "description": "动画持续时间",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "400"
+                        },
+                        {
+                            "name": "adjust",
+                            "description": "调整与边界的最小距离",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "20"
+                        },
+                        {
+                            "name": "drag",
+                            "description": "触发拖曳选择器,默认不开启此功能",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "fn",
+                            "description": "开启弹窗回调",
+                            "type": "Function",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "fnC",
+                            "description": "关闭弹窗回调",
+                            "type": "Function",
+                            "optional": true,
+                            "optdefault": "false"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "$(pop)",
+                "type": "Object"
+            },
+            "example": [
+                " $.pop(prop);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 274,
+            "description": "关闭弹窗",
+            "itemtype": "method",
+            "name": "$.popClose",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "弹窗id",
+                    "type": "String"
+                },
+                {
+                    "name": "animation",
+                    "description": "动画,支持'fade'",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "undefined"
+                },
+                {
+                    "name": "duration",
+                    "description": "动画持续时间",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "400"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "None"
+            },
+            "example": [
+                " $.popClose(id, animation, duration);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 302,
+            "description": "开启遮罩蒙板",
+            "itemtype": "method",
+            "name": "$.popBg",
+            "params": [
+                {
+                    "name": "prop",
+                    "description": "参数",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "parent",
+                            "description": "dom父级",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'body'"
+                        },
+                        {
+                            "name": "id",
+                            "description": "id",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'jq_x_pop_bg'"
+                        },
+                        {
+                            "name": "close",
+                            "description": "关闭按钮选择器",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'jq_x_pop_c'"
+                        },
+                        {
+                            "name": "bgcolor",
+                            "description": "遮罩蒙板底色,默认黑色",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'#000'"
+                        },
+                        {
+                            "name": "fade",
+                            "description": "是否淡入淡出",
+                            "type": "Bool",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "duration",
+                            "description": "动画持续时间",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "400"
+                        },
+                        {
+                            "name": "opacity",
+                            "description": "遮罩蒙板透明度,默认50%",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": ".5"
+                        },
+                        {
+                            "name": "zIndex",
+                            "description": "遮罩蒙板层级",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "99"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "$(bg)",
+                "type": "Object"
+            },
+            "example": [
+                " $.popBg(prop);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 359,
+            "description": "返回字符串长度/截取字符串",
+            "itemtype": "method",
+            "name": "$.textSize",
+            "params": [
+                {
+                    "name": "text",
+                    "description": "字符串",
+                    "type": "String"
+                },
+                {
+                    "name": "cutout",
+                    "description": "需要截取的字符串的长度,为空则返回字符串长度",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "length/text",
+                "type": "Number/string"
+            },
+            "example": [
+                " $.textSize(text, cutout);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 381,
+            "description": "ie6检测",
+            "itemtype": "method",
+            "name": "$.ie6",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Bool"
+            },
+            "example": [
+                " $.ie6(fn);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 397,
+            "description": "低于指定版本ie检测",
+            "itemtype": "method",
+            "name": "$.ltie",
+            "params": [
+                {
+                    "name": "ver",
+                    "description": "版本",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "9"
+                },
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Bool"
+            },
+            "example": [
+                " $.ltie(ver, fn);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 425,
+            "description": "指定ie版本检测",
+            "itemtype": "method",
+            "name": "$.ie",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Bool"
+            },
+            "example": [
+                " $.ie(ver, fn);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 459,
+            "description": "模拟滚动条",
+            "itemtype": "method",
+            "name": "$.fn.scrolls",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.scrolls(fn);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 557,
+            "description": "设置模拟滚动条高度",
+            "itemtype": "method",
+            "name": "$.fn.fixScrolls",
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.fixScrolls();"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 582,
+            "description": "复选全选",
+            "itemtype": "method",
+            "name": "$.fn.checkAll",
+            "params": [
+                {
+                    "name": "selector",
+                    "description": "复选框",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "全选回调",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "fnC",
+                    "description": "复选回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.checkAll(selector, fn, fnC);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 624,
+            "description": "模拟复选",
+            "itemtype": "method",
+            "name": "$.fn.checkboxs",
+            "params": [
+                {
+                    "name": "on",
+                    "description": "选中",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "'on'"
+                },
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.checkboxs(on, fn);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 643,
+            "description": "模拟单选",
+            "itemtype": "method",
+            "name": "$.fn.radios",
+            "params": [
+                {
+                    "name": "on",
+                    "description": "选中",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "'on'"
+                },
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.radios(on, fn);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 665,
+            "description": "模拟列表框",
+            "itemtype": "method",
+            "name": "$.fn.selects",
+            "params": [
+                {
+                    "name": "prop",
+                    "description": "参数",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "parent",
+                            "description": "阻止冒泡的父级",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "disabled",
+                            "description": "禁用class",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'disabled'"
+                        },
+                        {
+                            "name": "trigger",
+                            "description": "触发按钮",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "span",
+                            "description": "存值器",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'span'"
+                        },
+                        {
+                            "name": "p",
+                            "description": "弹出列表,默认为'p'",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'p'"
+                        },
+                        {
+                            "name": "a",
+                            "description": "选项,默认为'a'",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'a'"
+                        },
+                        {
+                            "name": "onW",
+                            "description": "列表展开状态class",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "onS",
+                            "description": "有值状态class",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "onA",
+                            "description": "选项选中状态class",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "animation",
+                            "description": "弹出动画,支持'silde/fade'",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "duration",
+                            "description": "动画持续时间",
+                            "type": "Number",
+                            "optional": true,
+                            "optdefault": "100"
+                        },
+                        {
+                            "name": "toggle",
+                            "description": "是否点击切换显示,",
+                            "type": "Bool",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "fn",
+                            "description": "trigger回调",
+                            "type": "Function",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "fnA",
+                            "description": "a回调",
+                            "type": "Function",
+                            "optional": true,
+                            "optdefault": "false"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.selects(prop);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 791,
+            "description": "tab切换",
+            "itemtype": "method",
+            "name": "$.fn.tabs",
+            "params": [
+                {
+                    "name": "selector",
+                    "description": "切换页",
+                    "type": "String"
+                },
+                {
+                    "name": "on",
+                    "description": "tab按钮效果切换class",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "'on'"
+                },
+                {
+                    "name": "type",
+                    "description": "事件类型,支持'click/hover'",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "'click'"
+                },
+                {
+                    "name": "index",
+                    "description": "默认索引",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "0"
+                },
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.tabs(selector, on, type, index, fn);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 833,
+            "description": "图片预加载",
+            "itemtype": "method",
+            "name": "$.fn.imgLoad",
+            "params": [
+                {
+                    "name": "attr",
+                    "description": "属性名",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "'_src'"
+                },
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.imgLoad(attr, fn);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 866,
+            "description": "文本输入区光标处插入",
+            "itemtype": "method",
+            "name": "$.fn.inputIn",
+            "params": [
+                {
+                    "name": "txt",
+                    "description": "文本",
+                    "type": "String"
+                },
+                {
+                    "name": "wrap",
+                    "description": "两侧符号",
+                    "type": "Array",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.inputIn(txt, wrap);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 912,
+            "description": "限制字符",
+            "itemtype": "method",
+            "name": "$.fn.limit",
+            "params": [
+                {
+                    "name": "limit",
+                    "description": "限制数",
+                    "type": "Number"
+                },
+                {
+                    "name": "fn",
+                    "description": "回调",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.limit(limit, fn);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 933,
+            "description": "文本输入控件",
+            "itemtype": "method",
+            "name": "$.fn.inputs",
+            "params": [
+                {
+                    "name": "prop",
+                    "description": "参数",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "parent",
+                            "description": "事件委托对象,默认不使用",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "values",
+                            "description": "默认值数组,空数据则不匹配默认值",
+                            "type": "Array",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "defV",
+                            "description": "取默认值属性",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "'_value'"
+                        },
+                        {
+                            "name": "onF",
+                            "description": "获取焦点时交替css效果,多个class以空格隔开",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "onK",
+                            "description": "输入内容时交替css效果,多个class以空格隔开",
+                            "type": "String",
+                            "optional": true,
+                            "optdefault": "null"
+                        },
+                        {
+                            "name": "limit",
+                            "description": "是否限制字符,默认不限制,或数字/属性值为字符串的限制长度",
+                            "type": "String/number",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "fn",
+                            "description": "回调,默认截取字符串,否则将字符长度差值将作为参数传回",
+                            "type": "Function",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "range",
+                            "description": "回是否记录光标位置,默认不记录",
+                            "type": "Bool",
+                            "optional": true,
+                            "optdefault": "false"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "this",
+                "type": "Object"
+            },
+            "chainable": 1,
+            "example": [
+                " $.fn.inputs(prop);"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        }
+    ],
+    "warnings": []
+}

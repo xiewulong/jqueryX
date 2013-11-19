@@ -1,3 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jquery.x.js - jqueryX</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="jqueryX"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/$.extend.html">$.extend</a></li>
+            
+                <li><a href="../classes/$.fn.extend.html">$.fn.extend</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/jqueryX.html">jqueryX</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: jquery.x.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
 /*!
  * jQuery X Plugin v1.0.0
  * xiewulong@vip.qq.com
@@ -42,7 +134,7 @@
 
 						//IE,直接复制到剪贴板
 						clip.clearData();
-						clip.setData("text", text);
+						clip.setData(&quot;text&quot;, text);
 						fn.call(d, true);
 
 					}else{
@@ -74,7 +166,7 @@
 						if($.isFunction(fns)){
 							fns();
 						}else if($.isPlainObject(fns)){
-							for(var name in fns)$.isFunction(fns[name]) && fns[name]();
+							for(var name in fns)$.isFunction(fns[name]) &amp;&amp; fns[name]();
 						}
 					}
 				},
@@ -84,21 +176,21 @@
 				 * @method $.pop
 				 * @param {object} prop 参数
 				 * @param {string} prop.html 弹窗内容
-				 * @param {string} [prop.parent='body'] dom父级
-				 * @param {string} [prop.id='jq_x_pop'] id
-				 * @param {string} [prop.close='jq_x_pop_c'] 关闭按钮类名
+				 * @param {string} [prop.parent=&#x27;body&#x27;] dom父级
+				 * @param {string} [prop.id=&#x27;jq_x_pop&#x27;] id
+				 * @param {string} [prop.close=&#x27;jq_x_pop_c&#x27;] 关闭按钮类名
 				 * @param {number} [prop.width=0] 弹窗宽度,默认auto
 				 * @param {number} [prop.height=0] 弹窗高度,默认auto
-				 * @param {string} [prop.position='fixed'] 定位方式
+				 * @param {string} [prop.position=&#x27;fixed&#x27;] 定位方式
 				 * @param {number} [prop.top=0] top值,默认为垂直居中
 				 * @param {number} [prop.left=0] left值,默认为水平居中
 				 * @param {bool} [prop.bg=true] 遮罩蒙板,默认显示,不显示则弹窗失去焦点即关闭
 				 * @param {bool} [prop.bgclose=true] 默认点击遮罩蒙板即关闭弹窗
 				 * @param {bool} [prop.bgcloser=true] 默认无遮罩蒙板情况下弹窗失去焦点即关闭
-				 * @param {string} [prop.bgcolor='#000'] 遮罩蒙板底色,默认黑色
+				 * @param {string} [prop.bgcolor=&#x27;#000&#x27;] 遮罩蒙板底色,默认黑色
 				 * @param {number} [prop.opacity=.5] 遮罩蒙板透明度,默认50%
 				 * @param {number} [prop.zIndex=100] 弹窗层级,遮罩蒙板层级prop.zIndex-1
-				 * @param {string} [prop.animation] 动画效果,支持'fade'
+				 * @param {string} [prop.animation] 动画效果,支持&#x27;fade&#x27;
 				 * @param {number} [prop.duration=400] 动画持续时间
 				 * @param {number} [prop.adjust=20] 调整与边界的最小距离
 				 * @param {string} [prop.drag] 触发拖曳选择器,默认不开启此功能
@@ -110,25 +202,25 @@
 				pop: function(prop){
 					var adjust, style, w, h, auto,
 						config = {
-							html		: '',
-							parent		: 'body',
-							id			: 'jq_x_pop',
-							close		: '',
+							html		: &#x27;&#x27;,
+							parent		: &#x27;body&#x27;,
+							id			: &#x27;jq_x_pop&#x27;,
+							close		: &#x27;&#x27;,
 							width		: 0,
 							height		: 0,
-							position	: 'fixed',
+							position	: &#x27;fixed&#x27;,
 							top			: 0,
 							left		: 0,
 							bg			: true,
 							bgclose		: true,
 							bgcloser	: true,
-							bgcolor		: '#000',
+							bgcolor		: &#x27;#000&#x27;,
 							opacity		: .5,
 							zIndex		: 100,
-							animation	: '',
+							animation	: &#x27;&#x27;,
 							duration	: 400,
 							adjust		: 20,
-							drag		: '',
+							drag		: &#x27;&#x27;,
 							fn			: false,
 							fnC			: false
 						},
@@ -145,11 +237,11 @@
 					$.popClose(config.id);
 
 					//开启蒙板
-					config.bg &&
+					config.bg &amp;&amp;
 						$.popBg({
 							parent		: config.parent,
-							id			: config.id + '_bg',
-							close		: config.bgclose ? config.close || (config.id + '_c') : '',
+							id			: config.id + &#x27;_bg&#x27;,
+							close		: config.bgclose ? config.close || (config.id + &#x27;_c&#x27;) : &#x27;&#x27;,
 							bgcolor		: config.bgcolor,
 							fade		: config.animation ? true : false,
 							duration	: config.duration,
@@ -158,41 +250,41 @@
 						});
 
 					//组织样式
-					style	=	'display:inline;position:' + config.position + ';z-index:' + config.zIndex + ';' +
-								(config.animation && config.width && config.height ? 'display:none;' : '') +
-								(config.width ? 'width:' + config.width + 'px;' : '') +
-								(config.height ? 'height:' + config.height + 'px;' : '');
+					style	=	&#x27;display:inline;position:&#x27; + config.position + &#x27;;z-index:&#x27; + config.zIndex + &#x27;;&#x27; +
+								(config.animation &amp;&amp; config.width &amp;&amp; config.height ? &#x27;display:none;&#x27; : &#x27;&#x27;) +
+								(config.width ? &#x27;width:&#x27; + config.width + &#x27;px;&#x27; : &#x27;&#x27;) +
+								(config.height ? &#x27;height:&#x27; + config.height + &#x27;px;&#x27; : &#x27;&#x27;);
 
 					//创建并获取对象
-					config.$pop  = $('<div id="' + config.id + '" class="' + config.id + '" style="'+ style +'">' + config.html + '</div>').appendTo(config.parent);
+					config.$pop  = $(&#x27;&lt;div id=&quot;&#x27; + config.id + &#x27;&quot; class=&quot;&#x27; + config.id + &#x27;&quot; style=&quot;&#x27;+ style +&#x27;&quot;&gt;&#x27; + config.html + &#x27;&lt;/div&gt;&#x27;).appendTo(config.parent);
 
 					//计算值
 					w		= config.width || config.$pop.width(),
 					h		= config.height || config.$pop.height(),
-					auto	= config.position == 'fixed' ? _auto() : _auto(1);
+					auto	= config.position == &#x27;fixed&#x27; ? _auto() : _auto(1);
 
-					(config.left || config.top) && config.position == 'absolute' && (adjust = _adjust());
+					(config.left || config.top) &amp;&amp; config.position == &#x27;absolute&#x27; &amp;&amp; (adjust = _adjust());
 
 					//定位
 					config.$pop.css({
-						'left'		: config.left ? config.position == 'fixed' ? config.left : adjust.left : '50%',
-						'marginLeft': config.left ? '' : auto.marginLeft,
-						'top'		: config.top ? config.position == 'fixed' ? config.top : adjust.top : '50%',
-						'marginTop'	: config.top ? '' : auto.marginTop
+						&#x27;left&#x27;		: config.left ? config.position == &#x27;fixed&#x27; ? config.left : adjust.left : &#x27;50%&#x27;,
+						&#x27;marginLeft&#x27;: config.left ? &#x27;&#x27; : auto.marginLeft,
+						&#x27;top&#x27;		: config.top ? config.position == &#x27;fixed&#x27; ? config.top : adjust.top : &#x27;50%&#x27;,
+						&#x27;marginTop&#x27;	: config.top ? &#x27;&#x27; : auto.marginTop
 					});
 
 					//ie6兼容
-					config.position == 'fixed' &&
+					config.position == &#x27;fixed&#x27; &amp;&amp;
 						$.ie6(function(){
 							var _fixed;
-							config.$pop.css({'position' : 'absolute'});
+							config.$pop.css({&#x27;position&#x27; : &#x27;absolute&#x27;});
 							(_fixed = function(){
 								auto = _auto(1);
 								config.$pop.css({
-									'left'		: config.left ? config.left + $win.scrollLeft() : '50%',
-									'marginLeft': config.left ? '' : auto.marginLeft,
-									'top'		: config.top ? config.top + $win.scrollTop() : '50%',
-									'marginTop'	: config.top ? '' : auto.marginTop
+									&#x27;left&#x27;		: config.left ? config.left + $win.scrollLeft() : &#x27;50%&#x27;,
+									&#x27;marginLeft&#x27;: config.left ? &#x27;&#x27; : auto.marginLeft,
+									&#x27;top&#x27;		: config.top ? config.top + $win.scrollTop() : &#x27;50%&#x27;,
+									&#x27;marginTop&#x27;	: config.top ? &#x27;&#x27; : auto.marginTop
 								});
 							})();
 							$win.resize(_fixed).scroll(_fixed);
@@ -200,41 +292,41 @@
 
 					//有效果
 					if(config.animation){
-						(!config.width || !config.height) && config.$pop.hide();
+						(!config.width || !config.height) &amp;&amp; config.$pop.hide();
 						switch(config.animation){
-							case 'fade':
+							case &#x27;fade&#x27;:
 								config.$pop.stop().fadeIn(config.duration);
 								break;
 						}
 					}
 
 					//设置关闭按钮
-					config.close = '.' + (config.close || (config.id + '_c'));
-					$(config.close).on('click', function(e){
+					config.close = &#x27;.&#x27; + (config.close || (config.id + &#x27;_c&#x27;));
+					$(config.close).on(&#x27;click&#x27;, function(e){
 						(config.fnC || Fn).call(config.$pop.get(0));
 						$.popClose(config.id, config.animation);
 						e.stopPropagation();
 					});
 
 					//无背景蒙板则定义document关闭
-					if(!config.bg && config.bgcloser){
-						$doc.on('click', function(){config.$pop.remove();});
-						config.$pop.on('click', function(e){e.stopPropagation();});
+					if(!config.bg &amp;&amp; config.bgcloser){
+						$doc.on(&#x27;click&#x27;, function(){config.$pop.remove();});
+						config.$pop.on(&#x27;click&#x27;, function(e){e.stopPropagation();});
 					}
 
 					//拖曳,暂不支持ie6
-					config.drag && config.$pop.find(config.drag).mousedown(function(e){
+					config.drag &amp;&amp; config.$pop.find(config.drag).mousedown(function(e){
 						var e		= e || event,
 							x		= e.clientX,
 							y		= e.clientY,
 							$pop	= config.$pop,
-							ml		= parseInt($pop.css('marginLeft')),
-							mt		= parseInt($pop.css('marginTop'));
+							ml		= parseInt($pop.css(&#x27;marginLeft&#x27;)),
+							mt		= parseInt($pop.css(&#x27;marginTop&#x27;));
 						document.onmousemove = function(e){
 							var e		= e || event;
 							$pop.css({
-								'marginLeft'	: ml + e.clientX - x,
-								'marginTop'		: mt + e.clientY - y
+								&#x27;marginLeft&#x27;	: ml + e.clientX - x,
+								&#x27;marginTop&#x27;		: mt + e.clientY - y
 							});
 							return false;
 						}
@@ -256,8 +348,8 @@
 							t_max	= doc_h - config.adjust -h;
 
 						return {
-							left	: l_max < config.left ? l_max < config.adjust ? config.adjust : l_max : config.left < config.adjust ? config.adjust : config.left,
-							top		: t_max < config.top  ? t_max < config.adjust ? config.adjust : t_max : config.top < config.adjust ? config.adjust : config.top
+							left	: l_max &lt; config.left ? l_max &lt; config.adjust ? config.adjust : l_max : config.left &lt; config.adjust ? config.adjust : config.left,
+							top		: t_max &lt; config.top  ? t_max &lt; config.adjust ? config.adjust : t_max : config.top &lt; config.adjust ? config.adjust : config.top
 						};
 					}
 
@@ -275,18 +367,18 @@
 				 * 关闭弹窗
 				 * @method $.popClose
 				 * @param {string} id 弹窗id
-				 * @param {string} [animation=undefined] 动画,支持'fade'
+				 * @param {string} [animation=undefined] 动画,支持&#x27;fade&#x27;
 				 * @param {number} [duration=400] 动画持续时间
 				 * @return {none}
 				 * @example $.popClose(id, animation, duration);
 				 */
 				popClose: function(id, animation, duration){
-					var id	= '.' + id,
-						bg	= id + '_bg',
-						all	= id + ',' + bg;
+					var id	= &#x27;.&#x27; + id,
+						bg	= id + &#x27;_bg&#x27;,
+						all	= id + &#x27;,&#x27; + bg;
 
 					switch(animation){
-						case 'fade':
+						case &#x27;fade&#x27;:
 							$(all).stop().fadeOut(duration || 400, _remove);
 							break;
 						default:
@@ -303,10 +395,10 @@
 				 * 开启遮罩蒙板
 				 * @method $.popBg
 				 * @param {object} [prop] 参数
-				 * @param {string} [prop.parent='body'] dom父级
-				 * @param {string} [prop.id='jq_x_pop_bg'] id
-				 * @param {string} [prop.close='jq_x_pop_c'] 关闭按钮选择器
-				 * @param {string} [prop.bgcolor='#000'] 遮罩蒙板底色,默认黑色
+				 * @param {string} [prop.parent=&#x27;body&#x27;] dom父级
+				 * @param {string} [prop.id=&#x27;jq_x_pop_bg&#x27;] id
+				 * @param {string} [prop.close=&#x27;jq_x_pop_c&#x27;] 关闭按钮选择器
+				 * @param {string} [prop.bgcolor=&#x27;#000&#x27;] 遮罩蒙板底色,默认黑色
 				 * @param {bool} [prop.fade=false] 是否淡入淡出
 				 * @param {number} [prop.duration=400] 动画持续时间
 				 * @param {number} [prop.opacity=.5] 遮罩蒙板透明度,默认50%
@@ -317,10 +409,10 @@
 				popBg: function(prop){
 					var opacity, $bg,
 						config = {
-							parent		: 'body',			//父级
-							id			: 'jq_x_pop_bg',	//id
-							close		: 'jq_x_pop_c',		//关闭按钮类
-							bgcolor		: '#000',			//蒙板颜色,默认黑色
+							parent		: &#x27;body&#x27;,			//父级
+							id			: &#x27;jq_x_pop_bg&#x27;,	//id
+							close		: &#x27;jq_x_pop_c&#x27;,		//关闭按钮类
+							bgcolor		: &#x27;#000&#x27;,			//蒙板颜色,默认黑色
 							fade		: false,			//是否淡入
 							duration	: 400,				//动画持续时间
 							opacity		: .5,				//蒙板透明度,默认50%
@@ -334,19 +426,19 @@
 					opacity	= config.fade ? 0 : config.opacity;
 
 					//创建弹窗并获取对象
-					$bg = $('.' + config.id).size() == 0 ? $('<div id="' + config.id + '" class="' + config.id + ' ' + config.close + '" style="position:fixed;width:100%;height:100%;left:0;top:0;background:' + config.bgcolor + ';opacity:' + opacity + ';filter:alpha(opacity=' + opacity * 100 + ');z-index:' + config.zIndex + ';"></div>').appendTo(config.parent) : $('#' + config.id);
+					$bg = $(&#x27;.&#x27; + config.id).size() == 0 ? $(&#x27;&lt;div id=&quot;&#x27; + config.id + &#x27;&quot; class=&quot;&#x27; + config.id + &#x27; &#x27; + config.close + &#x27;&quot; style=&quot;position:fixed;width:100%;height:100%;left:0;top:0;background:&#x27; + config.bgcolor + &#x27;;opacity:&#x27; + opacity + &#x27;;filter:alpha(opacity=&#x27; + opacity * 100 + &#x27;);z-index:&#x27; + config.zIndex + &#x27;;&quot;&gt;&lt;/div&gt;&#x27;).appendTo(config.parent) : $(&#x27;#&#x27; + config.id);
 
 					//是否淡入
-					config.fade && $bg.stop().animate({opacity : config.opacity}, config.duration);
+					config.fade &amp;&amp; $bg.stop().animate({opacity : config.opacity}, config.duration);
 					
 					//ie6兼容
 					$.ie6(function(){
 						var _fixed;
 						(_fixed = function(){
 							$bg.css({
-								'position'	: 'absolute',
-								'height'	: $win.height(),
-								'marginTop'	: $win.scrollTop()
+								&#x27;position&#x27;	: &#x27;absolute&#x27;,
+								&#x27;height&#x27;	: $win.height(),
+								&#x27;marginTop&#x27;	: $win.scrollTop()
 							});
 						})();
 						$win.resize(_fixed).scroll(_fixed);
@@ -369,9 +461,9 @@
 
 					//是否截取字符串
 					if(cutout){
-						if(length > cutout){
-							for(var i=0, len = text.length; i <= len; i++){
-								if($.textSize(text.substring(0, i+1)) > cutout)return text.substring(0, i);
+						if(length &gt; cutout){
+							for(var i=0, len = text.length; i &lt;= len; i++){
+								if($.textSize(text.substring(0, i+1)) &gt; cutout)return text.substring(0, i);
 							}
 						}else return text;
 					}else return length;
@@ -389,7 +481,7 @@
 					var tag;
 
 					//判断是ie6则执行回调
-					(tag = navigator.userAgent.indexOf('MSIE 6.0') > 0) && (fn || Fn)();
+					(tag = navigator.userAgent.indexOf(&#x27;MSIE 6.0&#x27;) &gt; 0) &amp;&amp; (fn || Fn)();
 
 					return tag;
 				},
@@ -407,17 +499,17 @@
 						userAgent	= navigator.userAgent;
 
 					//判断是否ie
-					if(userAgent.indexOf('MSIE') == -1)return;
+					if(userAgent.indexOf(&#x27;MSIE&#x27;) == -1)return;
 
-					ver === undefined && (ver = 9);
-					typeof ver === 'function' && (fn = ver, ver = 9);
+					ver === undefined &amp;&amp; (ver = 9);
+					typeof ver === &#x27;function&#x27; &amp;&amp; (fn = ver, ver = 9);
 
 					//获取版本号
-					index	= userAgent.indexOf('MSIE'),
+					index	= userAgent.indexOf(&#x27;MSIE&#x27;),
 					version	= parseInt(userAgent.slice(index + 5, index + 7));
 					
 					//判断版本低于version则执行回调
-					(tag = version < ver) && (fn || Fn)();
+					(tag = version &lt; ver) &amp;&amp; (fn || Fn)();
 
 					return tag;
 				},
@@ -433,14 +525,14 @@
 					var tag,
 						userAgent = navigator.userAgent;
 
-					typeof ver === 'function' && (fn = ver, ver = undefined);
+					typeof ver === &#x27;function&#x27; &amp;&amp; (fn = ver, ver = undefined);
 
 					//获取版本号
-					index	= userAgent.indexOf('MSIE'),
+					index	= userAgent.indexOf(&#x27;MSIE&#x27;),
 					version	= parseInt(userAgent.slice(index + 5, index + 7));
 
 					//判断是ie或匹配版本号后则执行回调
-					(tag = (index > 0 && (!ver || ver == version))) && (fn || Fn)();
+					(tag = (index &gt; 0 &amp;&amp; (!ver || ver == version))) &amp;&amp; (fn || Fn)();
 
 					return tag;
 				}
@@ -454,7 +546,7 @@
 			$.fn.extend({
 
 				//jQuery X Version
-				x: '1.0.0',
+				x: &#x27;1.0.0&#x27;,
 
 				/**
 				 * 模拟滚动条
@@ -470,17 +562,17 @@
 							$this	= $(this),
 							_this	= this;
 
-						if($this.find('.scroll').size() == 0){
+						if($this.find(&#x27;.scroll&#x27;).size() == 0){
 							html = _this.innerHTML;
-							$this.html('<div class="scroll_c"></div><div class="scroll"><a href="javascript:;" class="up">▲</a><a href="javascript:;" class="scroller"></a><a href="javascript:;" class="down">▼</a></div><a href="javascript:;" class="gotop"></a>').find('.scroll_c').html(html);
+							$this.html(&#x27;&lt;div class=&quot;scroll_c&quot;&gt;&lt;/div&gt;&lt;div class=&quot;scroll&quot;&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;up&quot;&gt;▲&lt;/a&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;scroller&quot;&gt;&lt;/a&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;down&quot;&gt;▼&lt;/a&gt;&lt;/div&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;gotop&quot;&gt;&lt;/a&gt;&#x27;).find(&#x27;.scroll_c&#x27;).html(html);
 						}
 
-						scroll		= $this.find('.scroll'),
-						scroller	= scroll.find('.scroller'),
-						up			= scroll.find('.up'),
-						down		= scroll.find('.down'),
-						gotop		= $this.find('.gotop'),
-						content		= $this.find('.scroll_c');
+						scroll		= $this.find(&#x27;.scroll&#x27;),
+						scroller	= scroll.find(&#x27;.scroller&#x27;),
+						up			= scroll.find(&#x27;.up&#x27;),
+						down		= scroll.find(&#x27;.down&#x27;),
+						gotop		= $this.find(&#x27;.gotop&#x27;),
+						content		= $this.find(&#x27;.scroll_c&#x27;);
 
 						//拖曳
 						scroller.get(0).onmousedown = function(e){
@@ -495,12 +587,12 @@
 									max	= scroll.height() - (down.height() || 0) - $$this.height(),
 									min	= up.height() || 0;
 
-								t > max && (t = max);
-								t < min && (t = min);
+								t &gt; max &amp;&amp; (t = max);
+								t &lt; min &amp;&amp; (t = min);
 								$$this.css({top: t});
 								content.css({top:  - ((t - min) / (max - min)) * (_h - $this.height())});
-								gotop[t > 0 ? 'show' : 'hide']();
-								(fn || Fn).call(_this, t >= max);
+								gotop[t &gt; 0 ? &#x27;show&#x27; : &#x27;hide&#x27;]();
+								(fn || Fn).call(_this, t &gt;= max);
 
 								return false;
 							};
@@ -514,23 +606,23 @@
 						};
 
 						//返回顶部
-						gotop.on('click', function(){
+						gotop.on(&#x27;click&#x27;, function(){
 							content.css({top: 0});
 							scroller.css({top: up.height() || 0});
 							touch(this).hide();
 						});
 
 						//上下按钮
-						up.on('click', function(e){_wheel(e, 120);});
-						down.on('click', function(e){_wheel(e, -120);});
+						up.on(&#x27;click&#x27;, function(e){_wheel(e, 120);});
+						down.on(&#x27;click&#x27;, function(e){_wheel(e, -120);});
 
 						//鼠标滚动
 						_this.onmouseover = function(){
-							if('onmousewheel' in this){
+							if(&#x27;onmousewheel&#x27; in this){
 								this.onmousewheel = _wheel;
 							}else{
-								this.removeEventListener('DOMMouseScroll', _wheel, false);
-								this.addEventListener('DOMMouseScroll', _wheel, false);
+								this.removeEventListener(&#x27;DOMMouseScroll&#x27;, _wheel, false);
+								this.addEventListener(&#x27;DOMMouseScroll&#x27;, _wheel, false);
 							}
 						};
 
@@ -543,12 +635,12 @@
 								h_up	= up.height() || 0,
 								h_all	= scroll.height() - h_up - (down.height() || 0) - scroller.height();
 
-							t < max && (t = max);
-							t > 0 && (t = 0);
+							t &lt; max &amp;&amp; (t = max);
+							t &gt; 0 &amp;&amp; (t = 0);
 							content.css({top: t});
 							scroller.css({top: (t / max) * h_all + h_up});
-							gotop[t < 0 ? 'show' : 'hide']();
-							(fn || Fn).call(_this, t >= max);
+							gotop[t &lt; 0 ? &#x27;show&#x27; : &#x27;hide&#x27;]();
+							(fn || Fn).call(_this, t &gt;= max);
 							e.preventDefault ? e.preventDefault() : (event.returnValue = false);
 						}
 					}).fixScrolls();
@@ -564,17 +656,17 @@
 				fixScrolls: function(){
 					return this.each(function(){
 						var $this		= $(this),
-							scroll		= $this.find('.scroll'),
-							scroller	= scroll.find('.scroller'),
+							scroll		= $this.find(&#x27;.scroll&#x27;),
+							scroller	= scroll.find(&#x27;.scroller&#x27;),
 							h			= $this.height(),
 							_h			= this.scrollHeight;
 
-						scroller.height((scroll.height() - (scroll.find('.up').height() || 0) - (scroll.find('.down').height() || 0)) * h / _h);
-						scroll[h < _h ? 'show' : 'hide']();
+						scroller.height((scroll.height() - (scroll.find(&#x27;.up&#x27;).height() || 0) - (scroll.find(&#x27;.down&#x27;).height() || 0)) * h / _h);
+						scroll[h &lt; _h ? &#x27;show&#x27; : &#x27;hide&#x27;]();
 
-						if(h >= _h){
-							scroller.css({'top': 0});
-							$this.find('.scroll_c').css({'top': 0});
+						if(h &gt;= _h){
+							scroller.css({&#x27;top&#x27;: 0});
+							$this.find(&#x27;.scroll_c&#x27;).css({&#x27;top&#x27;: 0});
 						}
 					});
 				},
@@ -591,7 +683,7 @@
 				 */
 				checkAll: function(selector, fn, fnC){
 					var $cbs	= $(selector),
-						all		= $(this.selector + ',' + selector),
+						all		= $(this.selector + &#x27;,&#x27; + selector),
 						fn		= fn || Fn,
 						fnC		= fnC || fn,
 						$this	= this;
@@ -599,14 +691,14 @@
 					//监测复选框
 					$cbs.change(function(){
 						var _checked = _check();
-						$this.prop('checked', _checked);
+						$this.prop(&#x27;checked&#x27;, _checked);
 						fnC.call(this, _checked);
 					});
 
 					//监测全选框
 					return this.change(function(){
 						var _checked = this.checked;
-						all.prop('checked', _checked);
+						all.prop(&#x27;checked&#x27;, _checked);
 						fn.call(this, _checked);
 					});
 
@@ -614,7 +706,7 @@
 					function _check(){
 						var tag = true;
 						$cbs.each(function(){
-							!this.checked && (tag = false);
+							!this.checked &amp;&amp; (tag = false);
 						});
 						return tag;
 					}
@@ -624,17 +716,17 @@
 				/**
 				 * 模拟复选
 				 * @method $.fn.checkboxs
-				 * @param {string} [on='on'] 选中
+				 * @param {string} [on=&#x27;on&#x27;] 选中
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
 				 * @example $.fn.checkboxs(on, fn);
 				 */
 				checkboxs: function(on, fn){
-					on === undefined && (on = 'on');
-					typeof on === 'function' && (fn = on, on = 'on');
+					on === undefined &amp;&amp; (on = &#x27;on&#x27;);
+					typeof on === &#x27;function&#x27; &amp;&amp; (fn = on, on = &#x27;on&#x27;);
 
-					return this.on('click', function(){
+					return this.on(&#x27;click&#x27;, function(){
 						$(this).toggleClass(on);
 						(fn || Fn).call(this);
 					});
@@ -643,7 +735,7 @@
 				/**
 				 * 模拟单选
 				 * @method $.fn.radios
-				 * @param {string} [on='on'] 选中
+				 * @param {string} [on=&#x27;on&#x27;] 选中
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
@@ -652,10 +744,10 @@
 				radios: function(on, fn){
 					var $this = this;
 
-					on === undefined && (on = 'on');
-					typeof on === 'function' && (fn = on, on = 'on');
+					on === undefined &amp;&amp; (on = &#x27;on&#x27;);
+					typeof on === &#x27;function&#x27; &amp;&amp; (fn = on, on = &#x27;on&#x27;);
 
-					return this.on('click', function(){
+					return this.on(&#x27;click&#x27;, function(){
 						$this.removeClass(on);
 						$(this).addClass(on);
 						(fn || Fn).call(this);
@@ -667,15 +759,15 @@
 				 * @method $.fn.selects
 				 * @param {object} [prop] 参数
 				 * @param {string} [prop.parent=null] 阻止冒泡的父级
-				 * @param {string} [prop.disabled='disabled'] 禁用class
+				 * @param {string} [prop.disabled=&#x27;disabled&#x27;] 禁用class
 				 * @param {string} [prop.trigger=null] 触发按钮
-				 * @param {string} [prop.span='span'] 存值器
-				 * @param {string} [prop.p='p'] 弹出列表,默认为'p'
-				 * @param {string} [prop.a='a'] 选项,默认为'a'
+				 * @param {string} [prop.span=&#x27;span&#x27;] 存值器
+				 * @param {string} [prop.p=&#x27;p&#x27;] 弹出列表,默认为&#x27;p&#x27;
+				 * @param {string} [prop.a=&#x27;a&#x27;] 选项,默认为&#x27;a&#x27;
 				 * @param {string} [prop.onW=null] 列表展开状态class
 				 * @param {string} [prop.onS=null] 有值状态class
 				 * @param {string} [prop.onA=null] 选项选中状态class
-				 * @param {string} [prop.animation=null] 弹出动画,支持'silde/fade'
+				 * @param {string} [prop.animation=null] 弹出动画,支持&#x27;silde/fade&#x27;
 				 * @param {number} [prop.duration=100] 动画持续时间
 				 * @param {bool} [prop.toggle=true] 是否点击切换显示,
 				 * @param {function} [prop.fn=false] trigger回调
@@ -687,16 +779,16 @@
 				selects: function(prop){
 					var p_all, hide_all,
 						config	= {
-							parent		: '',
-							disabled	: 'disabled',
-							trigger		: '',
-							span		: 'span',
-							p			: 'p',
-							a			: 'a',
-							onW			: '',
-							onS			: '',
-							onA			: '',
-							animation	: '',
+							parent		: &#x27;&#x27;,
+							disabled	: &#x27;disabled&#x27;,
+							trigger		: &#x27;&#x27;,
+							span		: &#x27;span&#x27;,
+							p			: &#x27;p&#x27;,
+							a			: &#x27;a&#x27;,
+							onW			: &#x27;&#x27;,
+							onS			: &#x27;&#x27;,
+							onA			: &#x27;&#x27;,
+							animation	: &#x27;&#x27;,
 							duration	: 100,
 							toggle		: true,
 							fn			: false,
@@ -711,19 +803,19 @@
 					p_all = $this.find(config.p);
 
 					//document点击隐藏列表
-					(config.parent ? $(config.parent) : $doc).on('click', (hide_all = function(){
+					(config.parent ? $(config.parent) : $doc).on(&#x27;click&#x27;, (hide_all = function(){
 						switch(config.animation){
-							case 'slide':
+							case &#x27;slide&#x27;:
 								p_all.stop().slideUp(config.duration);
 								break;
-							case 'fade':
+							case &#x27;fade&#x27;:
 								p_all.stop().fadeOut(config.duration);
 								break;
 							default:
 								p_all.hide();
 								break;
 						}
-						config.onW && $this.removeClass(config.onW);
+						config.onW &amp;&amp; $this.removeClass(config.onW);
 					}));
 
 					return this.each(function(){
@@ -734,56 +826,56 @@
 							a		= p.find(config.a);
 
 						//展开事件
-						trigger.off().on('click', function(e){
+						trigger.off().on(&#x27;click&#x27;, function(e){
 							var _display;
 							//禁用
 							if($$this.hasClass(config.disabled))return;
 
-							if(config.toggle && p.css('display') !== 'none')return;
+							if(config.toggle &amp;&amp; p.css(&#x27;display&#x27;) !== &#x27;none&#x27;)return;
 
 							//隐藏其它列表
 							hide_all();
 
 							switch(config.animation){
-								case 'slide':
+								case &#x27;slide&#x27;:
 									p.stop().slideDown(config.duration);
 									break;
-								case 'fade':
+								case &#x27;fade&#x27;:
 									p.stop().fadeIn(config.duration);
 									break;
 								default:
 									p.show();
 									break;
 							}
-							config.onW && $$this.addClass(config.onW);
+							config.onW &amp;&amp; $$this.addClass(config.onW);
 							(config.fn || Fn).call($$this.get(0));
 
 							e.stopPropagation();
 						});
 
 						//选项事件
-						a.off().on('click', function(e){
+						a.off().on(&#x27;click&#x27;, function(e){
 							var $$this	= $(this),
 								tagname	= span.get(0).tagName.toUpperCase(),
 								text = (config.fnA || Fn).call(this);
 							if(text === false){
 								e.stopPropagation();
 							}else{
-								text === undefined && (text = $$this.text());
-								tagname == 'INPUT' || tagname == 'TEXTAREA' ? span.val(text) : span.html(text);
-								config.onS && span.addClass(config.onS);
-								config.onA	&& (a.removeClass(config.onA), $$this.addClass(config.onA));
+								text === undefined &amp;&amp; (text = $$this.text());
+								tagname == &#x27;INPUT&#x27; || tagname == &#x27;TEXTAREA&#x27; ? span.val(text) : span.html(text);
+								config.onS &amp;&amp; span.addClass(config.onS);
+								config.onA	&amp;&amp; (a.removeClass(config.onA), $$this.addClass(config.onA));
 							}
 						});
 
 						//加载检测选项值
-						config.onA &&
+						config.onA &amp;&amp;
 							a.each(function(){
 								var $$this	= $(this),
 									text	= $$this.text(),
 									tagname	= span.get(0).tagName.toUpperCase(),
-									_text	= tagname == 'INPUT' || tagname == 'TEXTAREA' ? span.val() : span.text();
-								_text == text && $$this.addClass(config.onA);
+									_text	= tagname == &#x27;INPUT&#x27; || tagname == &#x27;TEXTAREA&#x27; ? span.val() : span.text();
+								_text == text &amp;&amp; $$this.addClass(config.onA);
 							});
 					});
 				},
@@ -792,8 +884,8 @@
 				 * tab切换
 				 * @method $.fn.tabs
 				 * @param {string} selector 切换页
-				 * @param {string} [on='on'] tab按钮效果切换class
-				 * @param {string} [type='click'] 事件类型,支持'click/hover'
+				 * @param {string} [on=&#x27;on&#x27;] tab按钮效果切换class
+				 * @param {string} [type=&#x27;click&#x27;] 事件类型,支持&#x27;click/hover&#x27;
 				 * @param {number} [index=0] 默认索引
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -801,14 +893,14 @@
 				 * @example $.fn.tabs(selector, on, type, index, fn);
 				 */
 				tabs: function(selector, on, type, index, fn){
-					typeof on === 'function' && (fn = on, on = 'on');
-					typeof type === 'function' && (fn = type, type = undefined);
-					typeof index === 'function' && (fn = index, index = 0);
-					!type && (on == 'click' || on == 'hover') && (type = on);
-					index === undefined && (index = 0);
+					typeof on === &#x27;function&#x27; &amp;&amp; (fn = on, on = &#x27;on&#x27;);
+					typeof type === &#x27;function&#x27; &amp;&amp; (fn = type, type = undefined);
+					typeof index === &#x27;function&#x27; &amp;&amp; (fn = index, index = 0);
+					!type &amp;&amp; (on == &#x27;click&#x27; || on == &#x27;hover&#x27;) &amp;&amp; (type = on);
+					index === undefined &amp;&amp; (index = 0);
 
 					var cutover,
-						etype	= type == 'hover' ? 'mouseover' : 'click',
+						etype	= type == &#x27;hover&#x27; ? &#x27;mouseover&#x27; : &#x27;click&#x27;,
 						$this	= this;
 
 					(cutover = function(i){
@@ -833,24 +925,24 @@
 				/**
 				 * 图片预加载
 				 * @method $.fn.imgLoad
-				 * @param {string} [attr='_src'] 属性名
+				 * @param {string} [attr=&#x27;_src&#x27;] 属性名
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
 				 * @example $.fn.imgLoad(attr, fn);
 				 */
 				imgLoad: function(attr, fn){
-					attr === undefined && (attr = '_src');
-					typeof attr === 'function' && (fn = attr, attr = '_src');
+					attr === undefined &amp;&amp; (attr = &#x27;_src&#x27;);
+					typeof attr === &#x27;function&#x27; &amp;&amp; (fn = attr, attr = &#x27;_src&#x27;);
 
 					return this.each(function(i){
 						var img		= new Image(),
-							src		= this.src || '',
+							src		= this.src || &#x27;&#x27;,
 							url		= this.getAttribute(attr),
 							_this	= this;
 
 						//排除异常
-						if(this.tagName.toUpperCase() != 'IMG' || !url)return;
+						if(this.tagName.toUpperCase() != &#x27;IMG&#x27; || !url)return;
 
 						img.onload	= function(){
 							_this.src = this.src;
@@ -875,15 +967,15 @@
 				inputIn: function(txt, wrap){
 
 					//包裹字符串
-					wrap && (txt = wrap[0] + txt + wrap[1]);
+					wrap &amp;&amp; (txt = wrap[0] + txt + wrap[1]);
 
 					return this.each(function(){
 						var start, end, cursor, range, _range,
 							value	= this.value;
 						
 						//获取首尾值
-						if(this.getAttribute('_range')){
-							_range	= this.getAttribute('_range').split('|'),
+						if(this.getAttribute(&#x27;_range&#x27;)){
+							_range	= this.getAttribute(&#x27;_range&#x27;).split(&#x27;|&#x27;),
 							start	= parseInt(_range[0]),
 							end		= start + parseInt(_range[1]);
 						}else{
@@ -897,9 +989,9 @@
 
 						//设置光标
 						if(document.selection){
-							this.setAttribute('_range', cursor + '|0');
+							this.setAttribute(&#x27;_range&#x27;, cursor + &#x27;|0&#x27;);
 							range	= document.selection.createRange();
-							range.moveStart('character', cursor - this.value.length);
+							range.moveStart(&#x27;character&#x27;, cursor - this.value.length);
 							range.collapse(true);
 							range.select();
 						}else{
@@ -925,7 +1017,7 @@
 							size	= $.textSize(_value) / 2;
 						
 						//判断运行回调或直接截取字符串
-						typeof fn === 'function' ? fn.call(this, Math.floor(limit - size)) : size > limit && $this.val($.textSize(_value, limit * 2));
+						typeof fn === &#x27;function&#x27; ? fn.call(this, Math.floor(limit - size)) : size &gt; limit &amp;&amp; $this.val($.textSize(_value, limit * 2));
 
 					});
 				},
@@ -936,7 +1028,7 @@
 				 * @param {object} [prop] 参数
 				 * @param {string} [prop.parent=null] 事件委托对象,默认不使用
 				 * @param {array} [prop.values=null] 默认值数组,空数据则不匹配默认值
-				 * @param {string} [prop.defV='_value'] 取默认值属性
+				 * @param {string} [prop.defV=&#x27;_value&#x27;] 取默认值属性
 				 * @param {string} [prop.onF=null] 获取焦点时交替css效果,多个class以空格隔开
 				 * @param {string} [prop.onK=null] 输入内容时交替css效果,多个class以空格隔开
 				 * @param {string/number} [prop.limit=false] 是否限制字符,默认不限制,或数字/属性值为字符串的限制长度
@@ -949,11 +1041,11 @@
 				inputs: function(prop){
 					var $parent, selector, ie,
 						config	= {
-							parent	: '',
+							parent	: &#x27;&#x27;,
 							values	: [],
-							defV	: '_value',
-							onF		: '',
-							onK		: '',
+							defV	: &#x27;_value&#x27;,
+							onF		: &#x27;&#x27;,
+							onK		: &#x27;&#x27;,
 							limit	: false,
 							fn		: false,
 							range	: false
@@ -962,56 +1054,56 @@
 
 					//重置参数
 					$.extend(config, prop);
-					ie	= config.range && $.ie();
+					ie	= config.range &amp;&amp; $.ie();
 
 					//定义事件绑定对象
 					$parent		= config.parent ? $(config.parent) : this,
 					selector	= config.parent ? this.selector : undefined;
 
 					//定义事件
-					$parent.on('focus', selector, function(){
+					$parent.on(&#x27;focus&#x27;, selector, function(){
 						var $this	= $(this),
-							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
+							v_def	= config.defV &amp;&amp; $this.attr(config.defV) || this.defaultValue;
 
-						v_def && $this.val() == v_def && _check(v_def) && $this.val('');
+						v_def &amp;&amp; $this.val() == v_def &amp;&amp; _check(v_def) &amp;&amp; $this.val(&#x27;&#x27;);
 						$this.addClass(config.onF);
 						
 						//字符限制
-						config.limit && _limit.call(this);
+						config.limit &amp;&amp; _limit.call(this);
 
-					}).on('blur', selector, function(){
+					}).on(&#x27;blur&#x27;, selector, function(){
 						var $this	= $(this),
 							_value	= $this.val(),
-							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
+							v_def	= config.defV &amp;&amp; $this.attr(config.defV) || this.defaultValue;
 
-						(_value == '' || _value == v_def) && _check(v_def) && $this.val(v_def).removeClass(config.onF + ' ' + config.onK);
+						(_value == &#x27;&#x27; || _value == v_def) &amp;&amp; _check(v_def) &amp;&amp; $this.val(v_def).removeClass(config.onF + &#x27; &#x27; + config.onK);
 						
 						//字符限制
-						config.limit && _limit.call(this);
+						config.limit &amp;&amp; _limit.call(this);
 
-					}).on(ltie10 ? 'keyup' : 'input', selector, function(){
+					}).on(ltie10 ? &#x27;keyup&#x27; : &#x27;input&#x27;, selector, function(){
 						var $this	= $(this),
 							_value	= $this.val(),
-							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
+							v_def	= config.defV &amp;&amp; $this.attr(config.defV) || this.defaultValue;
 
-						_value == '' || _value == v_def ? $this.removeClass(config.onK).addClass(config.onF) : $this.addClass(config.onK);
+						_value == &#x27;&#x27; || _value == v_def ? $this.removeClass(config.onK).addClass(config.onF) : $this.addClass(config.onK);
 
 						//记录光标位置
-						ie && _range.call(this);
+						ie &amp;&amp; _range.call(this);
 						
 						//字符限制
-						config.limit && _limit.call(this);
+						config.limit &amp;&amp; _limit.call(this);
 
 					});
 
 					//字符限制
 					if(config.limit) {
 						this.each(_limit);
-						ltie10 && this.on('paste', _limit);
+						ltie10 &amp;&amp; this.on(&#x27;paste&#x27;, _limit);
 					}
 					
 					//记录光标位置
-					ie && $parent.on('mouseup', selector, _range);
+					ie &amp;&amp; $parent.on(&#x27;mouseup&#x27;, selector, _range);
 
 					return this;
 
@@ -1020,17 +1112,17 @@
 						var limit,
 							$this	= $(this),
 							_value	= $this.val(),
-							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue,
+							v_def	= config.defV &amp;&amp; $this.attr(config.defV) || this.defaultValue,
 							size	= $.textSize(_value) / 2;
 
 						//默认值则不限制
-						if(v_def && _value == v_def && _check(v_def))return;
+						if(v_def &amp;&amp; _value == v_def &amp;&amp; _check(v_def))return;
 
 						//获取限制字符长度
-						limit = typeof config.limit === 'number' ? config.limit : $this.attr(config.limit) ? parseInt($this.attr(config.limit)) : 140;
+						limit = typeof config.limit === &#x27;number&#x27; ? config.limit : $this.attr(config.limit) ? parseInt($this.attr(config.limit)) : 140;
 
 						//判断运行回调或直接截取字符串
-						typeof config.fn === 'function' ? config.fn.call(this, Math.floor(limit - size)) : size > limit && $this.val($.textSize(_value, limit * 2));
+						typeof config.fn === &#x27;function&#x27; ? config.fn.call(this, Math.floor(limit - size)) : size &gt; limit &amp;&amp; $this.val($.textSize(_value, limit * 2));
 
 					}
 
@@ -1047,23 +1139,23 @@
 							__l		= 0,
 							ie8		= $.ie(8);
 
-						range.moveStart('character', -l);
+						range.moveStart(&#x27;character&#x27;, -l);
 						_str	= range.text;
 
-						//ie8 && (_str = _str.replace(/[\r]/g, ''));
+						//ie8 &amp;&amp; (_str = _str.replace(/[\r]/g, &#x27;&#x27;));
 
-						for(var i = 0, len = _str.length; i < len; i++){
+						for(var i = 0, len = _str.length; i &lt; len; i++){
 							if(str.indexOf(_str.slice(-(i+1))) == -1)break;
 						}
 
-						//ie8 && (__l = (_str.slice(-i).match(/[\n]/g) || []).length);
+						//ie8 &amp;&amp; (__l = (_str.slice(-i).match(/[\n]/g) || []).length);
 
-						$this.attr('_range', (i - _l + __l) + '|' + _l);
+						$this.attr(&#x27;_range&#x27;, (i - _l + __l) + &#x27;|&#x27; + _l);
 					}
 
 					//匹配defaultValue
 					function _check(defaultValue){
-						return config.values.length == 0 || $.inArray(defaultValue, config.values) >= 0;
+						return config.values.length == 0 || $.inArray(defaultValue, config.values) &gt;= 0;
 					}
 
 				}
@@ -1077,7 +1169,27 @@
 		jQuery		= window.jQuery,
 		define		= window.define;
 
-		jQuery && jQuery().jquery && jQueryX(jQuery);
-		typeof define === 'function' && define.amd && define(['jquery'], jQueryX);
+		jQuery &amp;&amp; jQuery().jquery &amp;&amp; jQueryX(jQuery);
+		typeof define === &#x27;function&#x27; &amp;&amp; define.amd &amp;&amp; define([&#x27;jquery&#x27;], jQueryX);
 
 })(window);
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

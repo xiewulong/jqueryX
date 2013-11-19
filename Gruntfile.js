@@ -7,7 +7,7 @@ module.exports = function(grunt){
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
 			options: {
-				banner: '/*!\n * @file <%= pkg.description %>\n * @version <%= pkg.version %>\n * @author <%= pkg.author.name %> <<%= pkg.author.email %>>\n * @copyright {@link <%= pkg.license.url %> 2013}\n * @license {@link <%= pkg.license.url %> MIT}\n * @create 2013/5/16\n * @update <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
+				banner: '/*!\n * <%= pkg.description %> v<%= pkg.version %>\n * <%= pkg.author.email %>\n * <%= pkg.author.url %>\n * <%= pkg.license.url %>\n * create: 2013/5/16\n * update: 2013/11/19\n */\n\n'
 			},
 			compress: {
 				files: {
@@ -16,6 +16,21 @@ module.exports = function(grunt){
 			}
 		},
 		clean: ['doc'],
+		yuidoc: {
+			generate: {
+				name: '<%= pkg.name %>',
+				description: '<%= pkg.description %>',
+				version: '<%= pkg.version %>',
+				url: '<%= pkg.author.url %>',
+				options: {
+					//themedir: 'node_modules/grunt-contrib-yuidoc/node_modules/yuidocjs/themes/simple',
+					tabtospace: 2,
+					paths: ['.'],
+					outdir: 'doc'
+				}
+			}
+		}
+		/*
 		jsdoc: {
 			generate: {
 				src: ['jquery.x.js'],
@@ -26,15 +41,18 @@ module.exports = function(grunt){
 				}
 			}
 		}
+		*/
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-jsdoc');
+	grunt.loadNpmTasks('grunt-contrib-yuidoc');
+	//grunt.loadNpmTasks('grunt-jsdoc');
 
 	grunt.registerTask('default', [
-		'clean',
 		'uglify',
-		'jsdoc' //dependent on java
+		'clean',
+		'yuidoc'
+		//'jsdoc' //dependent on java
 	]);
 }
