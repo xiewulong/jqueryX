@@ -1,11 +1,11 @@
 /*!
  * @file jQuery X Plugin
  * @version 1.0.0
- * @author xiewulong <xiewulong@vip.qq.com> <http://xiewulong.github.io/jqueryX>
- * @copyright 2013 by xiewulong
+ * @author xiewulong <xiewulong@vip.qq.com>
+ * @copyright 2013
  * @license MIT
  * @create 2013/5/16
- * @update 2013/11/15
+ * @update 2013/11/19
  */
 
 (function(window, undefined){
