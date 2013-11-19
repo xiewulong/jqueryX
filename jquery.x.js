@@ -2,10 +2,12 @@
  * @file jQuery X Plugin
  * @version 1.0.0
  * @author xiewulong <xiewulong@vip.qq.com>
- * @copyright 2013
- * @license MIT
+ * @copyright {@link https://github.com/xiewulong/jqueryX/blob/master/MIT-License 2013}
+ * @license {@link https://github.com/xiewulong/jqueryX/blob/master/MIT-License MIT}
  * @create 2013/5/16
  * @update 2013/11/19
+ * @see {@link external:"jQuery" jQuery.extend}
+ * @see {@link external:"jQuery.fn" jQuery.fn.extend}
  */
 
 (function(window, undefined){
@@ -16,619 +18,15 @@
 				$doc	= $(document),
 				Fn		= function(){};
 
-			$.fn.extend({
-
-				//jQuery X Version
-				x: '1.0.0',
-
-				/**
-				 * 模拟滚动条
-				 * @function scrolls
-				 * @param {function} [fn] - 回调
-				 * @return {object} this
-				 * @example $.fn.scrolls(fn);
-				 */
-				scrolls: function(fn){
-					return this.each(function(){
-						var scroll, scroller, up, down, gotop, content, html,
-							$this	= $(this),
-							_this	= this;
-
-						if($this.find('.scroll').size() == 0){
-							html = _this.innerHTML;
-							$this.html('<div class="scroll_c"></div><div class="scroll"><a href="javascript:;" class="up">▲</a><a href="javascript:;" class="scroller"></a><a href="javascript:;" class="down">▼</a></div><a href="javascript:;" class="gotop"></a>').find('.scroll_c').html(html);
-						}
-
-						scroll		= $this.find('.scroll'),
-						scroller	= scroll.find('.scroller'),
-						up			= scroll.find('.up'),
-						down		= scroll.find('.down'),
-						gotop		= $this.find('.gotop'),
-						content		= $this.find('.scroll_c');
-
-						//拖曳
-						scroller.get(0).onmousedown = function(e){
-							var e		= e || event,
-								$$this	= $(this),
-								disY	= e.clientY - $$this.position().top;
-
-							document.onmousemove	= function(e){
-								var e	= e || event,
-									t	= e.clientY - disY,
-									_h	= content.height(),
-									max	= scroll.height() - (down.height() || 0) - $$this.height(),
-									min	= up.height() || 0;
-
-								t > max && (t = max);
-								t < min && (t = min);
-								$$this.css({top: t});
-								content.css({top:  - ((t - min) / (max - min)) * (_h - $this.height())});
-								gotop[t > 0 ? 'show' : 'hide']();
-								(fn || Fn).call(_this, t >= max);
-
-								return false;
-							};
-
-							document.onmouseup		= function(){
-								document.onmousemove = document.onmouseup = null;
-								return false;
-							};
-
-							return false;
-						};
-
-						//返回顶部
-						gotop.on('click', function(){
-							content.css({top: 0});
-							scroller.css({top: up.height() || 0});
-							touch(this).hide();
-						});
-
-						//上下按钮
-						up.on('click', function(e){_wheel(e, 120);});
-						down.on('click', function(e){_wheel(e, -120);});
-
-						//鼠标滚动
-						_this.onmouseover = function(){
-							if('onmousewheel' in this){
-								this.onmousewheel = _wheel;
-							}else{
-								this.removeEventListener('DOMMouseScroll', _wheel, false);
-								this.addEventListener('DOMMouseScroll', _wheel, false);
-							}
-						};
-
-						//鼠标滚动handler
-						function _wheel(e, d){
-							var e		= e || event,
-								delta	= (d || (e.wheelDelta ? e.wheelDelta : - e.detail * 40)) / 2,
-								t		= content.position().top + delta,
-								max		= $this.height() - content.height(),
-								h_up	= up.height() || 0,
-								h_all	= scroll.height() - h_up - (down.height() || 0) - scroller.height();
-
-							t < max && (t = max);
-							t > 0 && (t = 0);
-							content.css({top: t});
-							scroller.css({top: (t / max) * h_all + h_up});
-							gotop[t < 0 ? 'show' : 'hide']();
-							(fn || Fn).call(_this, t >= max);
-							e.preventDefault ? e.preventDefault() : (event.returnValue = false);
-						}
-					}).fixScrolls();
-				},
-
-				/**
-				 * 设置模拟滚动条高度
-				 * @function fixScrolls
-				 * @return {object} this
-				 * @example $.fn.fixScrolls();
-				 */
-				fixScrolls: function(){
-					return this.each(function(){
-						var $this		= $(this),
-							scroll		= $this.find('.scroll'),
-							scroller	= scroll.find('.scroller'),
-							h			= $this.height(),
-							_h			= this.scrollHeight;
-
-						scroller.height((scroll.height() - (scroll.find('.up').height() || 0) - (scroll.find('.down').height() || 0)) * h / _h);
-						scroll[h < _h ? 'show' : 'hide']();
-
-						if(h >= _h){
-							scroller.css({'top': 0});
-							$this.find('.scroll_c').css({'top': 0});
-						}
-					});
-				},
-
-				/**
-				 * 复选全选
-				 * @function checkAll
-				 * @param {string} selector - 复选框
-				 * @param {function} [fn] - 全选回调
-				 * @param {function} [fnC] - 复选回调
-				 * @return {object} this
-				 * @example $.fn.checkAll(selector, fn, fnC);
-				 */
-				checkAll: function(selector, fn, fnC){
-					var $cbs	= $(selector),
-						all		= $(this.selector + ',' + selector),
-						fn		= fn || Fn,
-						fnC		= fnC || fn,
-						$this	= this;
-
-					//监测复选框
-					$cbs.change(function(){
-						var _checked = _check();
-						$this.prop('checked', _checked);
-						fnC.call(this, _checked);
-					});
-
-					//监测全选框
-					return this.change(function(){
-						var _checked = this.checked;
-						all.prop('checked', _checked);
-						fn.call(this, _checked);
-					});
-
-					//检测状态
-					function _check(){
-						var tag = true;
-						$cbs.each(function(){
-							!this.checked && (tag = false);
-						});
-						return tag;
-					}
-
-				},
-
-				/**
-				 * 模拟复选
-				 * @function checkboxs
-				 * @param {string} [on='on'] - 选中
-				 * @param {function} [fn] - 回调
-				 * @return {object} this
-				 * @example $.fn.checkboxs(on, fn);
-				 */
-				checkboxs: function(on, fn){
-					on === undefined && (on = 'on');
-					typeof on === 'function' && (fn = on, on = 'on');
-
-					return this.on('click', function(){
-						$(this).toggleClass(on);
-						(fn || Fn).call(this);
-					});
-				},
-
-				/**
-				 * 模拟单选
-				 * @function radios
-				 * @param {string} [on='on'] - 选中
-				 * @param {function} [fn] - 回调
-				 * @return {object} this
-				 * @example $.fn.radios(on, fn);
-				 */
-				radios: function(on, fn){
-					var $this = this;
-
-					on === undefined && (on = 'on');
-					typeof on === 'function' && (fn = on, on = 'on');
-
-					return this.on('click', function(){
-						$this.removeClass(on);
-						$(this).addClass(on);
-						(fn || Fn).call(this);
-					});
-				},
-
-				/**
-				 * 模拟列表框
-				 * @function selects
-				 * @param {object} [prop] - 参数
-				 * @param {string} [prop.parent=null] - 阻止冒泡的父级
-				 * @param {string} [prop.disabled='disabled'] - 禁用class
-				 * @param {string} [prop.trigger=null] - 触发按钮
-				 * @param {string} [prop.span='span'] - 存值器
-				 * @param {string} [prop.p='p'] - 弹出列表,默认为'p'
-				 * @param {string} [prop.a='a'] - 选项,默认为'a'
-				 * @param {string} [prop.onW=null] - 列表展开状态class
-				 * @param {string} [prop.onS=null] - 有值状态class
-				 * @param {string} [prop.onA=null] - 选项选中状态class
-				 * @param {string} [prop.animation=null] - 弹出动画,支持'silde/fade'
-				 * @param {number} [prop.duration=100] - 动画持续时间
-				 * @param {bool} [prop.toggle=true] - 是否点击切换显示,
-				 * @param {function} [prop.fn=false] - trigger回调
-				 * @param {function} [prop.fnA=false] - a回调
-				 * @return {object} this
-				 * @example $.fn.selects(prop);
-				 */
-				selects: function(prop){
-					var p_all, hide_all,
-						config	= {
-							parent		: '',
-							disabled	: 'disabled',
-							trigger		: '',
-							span		: 'span',
-							p			: 'p',
-							a			: 'a',
-							onW			: '',
-							onS			: '',
-							onA			: '',
-							animation	: '',
-							duration	: 100,
-							toggle		: true,
-							fn			: false,
-							fnA			: false
-						},
-						$this	= this;
-
-					//重置参数
-					$.extend(config, prop);
-					
-					//获取所有下拉
-					p_all = $this.find(config.p);
-
-					//document点击隐藏列表
-					(config.parent ? $(config.parent) : $doc).on('click', (hide_all = function(){
-						switch(config.animation){
-							case 'slide':
-								p_all.stop().slideUp(config.duration);
-								break;
-							case 'fade':
-								p_all.stop().fadeOut(config.duration);
-								break;
-							default:
-								p_all.hide();
-								break;
-						}
-						config.onW && $this.removeClass(config.onW);
-					}));
-
-					return this.each(function(){
-						var $$this	= $(this),
-							trigger	= $$this.find(config.trigger || config.span),
-							span	= $$this.find(config.span),
-							p		= $$this.find(config.p),
-							a		= p.find(config.a);
-
-						//展开事件
-						trigger.off().on('click', function(e){
-							var _display;
-							//禁用
-							if($$this.hasClass(config.disabled))return;
-
-							if(config.toggle && p.css('display') !== 'none')return;
-
-							//隐藏其它列表
-							hide_all();
-
-							switch(config.animation){
-								case 'slide':
-									p.stop().slideDown(config.duration);
-									break;
-								case 'fade':
-									p.stop().fadeIn(config.duration);
-									break;
-								default:
-									p.show();
-									break;
-							}
-							config.onW && $$this.addClass(config.onW);
-							(config.fn || Fn).call($$this.get(0));
-
-							e.stopPropagation();
-						});
-
-						//选项事件
-						a.off().on('click', function(e){
-							var $$this	= $(this),
-								tagname	= span.get(0).tagName.toUpperCase(),
-								text = (config.fnA || Fn).call(this);
-							if(text === false){
-								e.stopPropagation();
-							}else{
-								text === undefined && (text = $$this.text());
-								tagname == 'INPUT' || tagname == 'TEXTAREA' ? span.val(text) : span.html(text);
-								config.onS && span.addClass(config.onS);
-								config.onA	&& (a.removeClass(config.onA), $$this.addClass(config.onA));
-							}
-						});
-
-						//加载检测选项值
-						config.onA &&
-							a.each(function(){
-								var $$this	= $(this),
-									text	= $$this.text(),
-									tagname	= span.get(0).tagName.toUpperCase(),
-									_text	= tagname == 'INPUT' || tagname == 'TEXTAREA' ? span.val() : span.text();
-								_text == text && $$this.addClass(config.onA);
-							});
-					});
-				},
-
-				/**
-				 * tab切换
-				 * @function tabs
-				 * @param {string} selector - 切换页
-				 * @param {string} [on='on'] - tab按钮效果切换class
-				 * @param {string} [type='click'] - 事件类型,支持'click/hover'
-				 * @param {number} [index=0] - 默认索引
-				 * @param {function} [fn] - 回调
-				 * @return {object} this
-				 * @example $.fn.tabs(selector, on, type, index, fn);
-				 */
-				tabs: function(selector, on, type, index, fn){
-					typeof on === 'function' && (fn = on, on = 'on');
-					typeof type === 'function' && (fn = type, type = undefined);
-					typeof index === 'function' && (fn = index, index = 0);
-					!type && (on == 'click' || on == 'hover') && (type = on);
-					index === undefined && (index = 0);
-
-					var cutover,
-						etype	= type == 'hover' ? 'mouseover' : 'click',
-						$this	= this;
-
-					(cutover = function(i){
-						var $cons = $(selector);
-
-						//添加class
-						$this.removeClass(on).eq(i).addClass(on);
-
-						//显示相应内容区域
-						$cons.hide().eq(i).show();
-
-						//执行回调
-						(fn || Fn).call($this.get(i), i, $cons.get(i));
-
-					})(index);
-					
-					return this.each(function(i){
-						$(this).on(etype, function(){cutover(i);});
-					});
-				},
-
-				/**
-				 * 图片预加载
-				 * @function imgLoad
-				 * @param {string} [attr='_src'] - 属性名
-				 * @param {function} [fn] - 回调
-				 * @return {object} this
-				 * @example $.fn.imgLoad(attr, fn);
-				 */
-				imgLoad: function(attr, fn){
-					attr === undefined && (attr = '_src');
-					typeof attr === 'function' && (fn = attr, attr = '_src');
-
-					return this.each(function(i){
-						var img		= new Image(),
-							src		= this.src || '',
-							url		= this.getAttribute(attr),
-							_this	= this;
-
-						//排除异常
-						if(this.tagName.toUpperCase() != 'IMG' || !url)return;
-
-						img.onload	= function(){
-							_this.src = this.src;
-							_this.setAttribute(attr, src);
-							(fn || Fn).call(_this, this, i);
-						}
-
-						img.src	= url;
-
-					});
-				},
-
-				/**
-				 * 文本输入区光标处插入
-				 * @function inputIn
-				 * @param {string} txt - 文本
-				 * @param {array} [wrap] - 两侧符号
-				 * @return {object} this
-				 * @example $.fn.inputIn(txt, wrap);
-				 */
-				inputIn: function(txt, wrap){
-
-					//包裹字符串
-					wrap && (txt = wrap[0] + txt + wrap[1]);
-
-					return this.each(function(){
-						var start, end, cursor, range, _range,
-							value	= this.value;
-						
-						//获取首尾值
-						if(this.getAttribute('_range')){
-							_range	= this.getAttribute('_range').split('|'),
-							start	= parseInt(_range[0]),
-							end		= start + parseInt(_range[1]);
-						}else{
-							start	= this.selectionStart,
-							end		= this.selectionEnd;
-						}
-
-						cursor		= start + txt.length,
-						this.value	= value.slice(0, start) + txt + value.slice(end);
-						this.focus();
-
-						//设置光标
-						if(document.selection){
-							this.setAttribute('_range', cursor + '|0');
-							range	= document.selection.createRange();
-							range.moveStart('character', cursor - this.value.length);
-							range.collapse(true);
-							range.select();
-						}else{
-							this.setSelectionRange(cursor, cursor);
-						}
-
-					});
-				},
-
-				/**
-				 * 限制字符
-				 * @function limit
-				 * @param {number} limit - 限制数
-				 * @param {function} [fn] - 回调
-				 * @return {object} this
-				 * @example $.fn.limit(limit, fn);
-				 */
-				limit: function(limit, fn){
-					return this.each(function(){
-						var $this	= $(this),
-							_value	= $this.val(),
-							size	= $.textSize(_value) / 2;
-						
-						//判断运行回调或直接截取字符串
-						typeof fn === 'function' ? fn.call(this, Math.floor(limit - size)) : size > limit && $this.val($.textSize(_value, limit * 2));
-
-					});
-				},
-
-				/**
-				 * 文本输入控件
-				 * @function inputs
-				 * @param {object} [prop] - 参数
-				 * @param {string} [prop.parent=null] - 事件委托对象,默认不使用
-				 * @param {array} [prop.values=null] - 默认值数组,空数据则不匹配默认值
-				 * @param {string} [prop.defV='_value'] - 取默认值属性
-				 * @param {string} [prop.onF=null] - 获取焦点时交替css效果,多个class以空格隔开
-				 * @param {string} [prop.onK=null] - 输入内容时交替css效果,多个class以空格隔开
-				 * @param {string/number} [prop.limit=false] - 是否限制字符,默认不限制,或数字/属性值为字符串的限制长度
-				 * @param {function} [prop.fn=false] - 回调,默认截取字符串,否则将字符长度差值将作为参数传回
-				 * @param {bool} [prop.range=false] - 回是否记录光标位置,默认不记录
-				 * @return {object} this
-				 * @example $.fn.inputs(prop);
-				 */
-				inputs: function(prop){
-					var $parent, selector, ie,
-						config	= {
-							parent	: '',
-							values	: [],
-							defV	: '_value',
-							onF		: '',
-							onK		: '',
-							limit	: false,
-							fn		: false,
-							range	: false
-						},
-						ltie10	= $.ltie(10);
-
-					//重置参数
-					$.extend(config, prop);
-					ie	= config.range && $.ie();
-
-					//定义事件绑定对象
-					$parent		= config.parent ? $(config.parent) : this,
-					selector	= config.parent ? this.selector : undefined;
-
-					//定义事件
-					$parent.on('focus', selector, function(){
-						var $this	= $(this),
-							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
-
-						v_def && $this.val() == v_def && _check(v_def) && $this.val('');
-						$this.addClass(config.onF);
-						
-						//字符限制
-						config.limit && _limit.call(this);
-
-					}).on('blur', selector, function(){
-						var $this	= $(this),
-							_value	= $this.val(),
-							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
-
-						(_value == '' || _value == v_def) && _check(v_def) && $this.val(v_def).removeClass(config.onF + ' ' + config.onK);
-						
-						//字符限制
-						config.limit && _limit.call(this);
-
-					}).on(ltie10 ? 'keyup' : 'input', selector, function(){
-						var $this	= $(this),
-							_value	= $this.val(),
-							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
-
-						_value == '' || _value == v_def ? $this.removeClass(config.onK).addClass(config.onF) : $this.addClass(config.onK);
-
-						//记录光标位置
-						ie && _range.call(this);
-						
-						//字符限制
-						config.limit && _limit.call(this);
-
-					});
-
-					//字符限制
-					if(config.limit) {
-						this.each(_limit);
-						ltie10 && this.on('paste', _limit);
-					}
-					
-					//记录光标位置
-					ie && $parent.on('mouseup', selector, _range);
-
-					return this;
-
-					//字符限制方法
-					function _limit(){
-						var limit,
-							$this	= $(this),
-							_value	= $this.val(),
-							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue,
-							size	= $.textSize(_value) / 2;
-
-						//默认值则不限制
-						if(v_def && _value == v_def && _check(v_def))return;
-
-						//获取限制字符长度
-						limit = typeof config.limit === 'number' ? config.limit : $this.attr(config.limit) ? parseInt($this.attr(config.limit)) : 140;
-
-						//判断运行回调或直接截取字符串
-						typeof config.fn === 'function' ? config.fn.call(this, Math.floor(limit - size)) : size > limit && $this.val($.textSize(_value, limit * 2));
-
-					}
-
-					//记录光标位置
-					function _range(){
-						if(!document.selection)return;
-
-						var _str, reg,
-							range	= document.selection.createRange(),
-							$this	= $(this),
-							str		= this.value,
-							l		= str.length,
-							_l		= range.text.length,
-							__l		= 0,
-							ie8		= $.ie(8);
-
-						range.moveStart('character', -l);
-						_str	= range.text;
-
-						//ie8 && (_str = _str.replace(/[\r]/g, ''));
-
-						for(var i = 0, len = _str.length; i < len; i++){
-							if(str.indexOf(_str.slice(-(i+1))) == -1)break;
-						}
-
-						//ie8 && (__l = (_str.slice(-i).match(/[\n]/g) || []).length);
-
-						$this.attr('_range', (i - _l + __l) + '|' + _l);
-					}
-
-					//匹配defaultValue
-					function _check(defaultValue){
-						return config.values.length == 0 || $.inArray(defaultValue, config.values) >= 0;
-					}
-
-				}
-
-			});
-
+			/**
+			 * jQuery静态方法继承
+			 * @external "jQuery"
+			 */
 			$.extend({
 
 				/**
 				 * 粘贴板
-				 * @function clip
+				 * @function external:"jQuery".clip
 				 * @param {object} d - 文本输入区对象
 				 * @param {function} [fn] - 回调
 				 * @return {none}
@@ -660,7 +58,7 @@
 
 				/**
 				 * 加载程序
-				 * @function loader
+				 * @function external:"jQuery".loader
 				 * @param {object} fns - 程序集合
 				 * @param {bool} [onload=undefined] - 默认页面onload完成后执行
 				 * @return {object} fns
@@ -682,7 +80,7 @@
 				
 				/**
 				 * 弹窗
-				 * @function pop
+				 * @function external:"jQuery".pop
 				 * @param {object} prop - 参数
 				 * @param {string} [prop.html=null] - 弹窗内容
 				 * @param {string} [prop.parent='body'] - dom父级
@@ -874,7 +272,7 @@
 				
 				/**
 				 * 关闭弹窗
-				 * @function popClose
+				 * @function external:"jQuery".popClose
 				 * @param {string} id - 弹窗id
 				 * @param {string} [animation=undefined] - 动画,支持'fade'
 				 * @param {number} [duration=400] - 动画持续时间
@@ -902,7 +300,7 @@
 				
 				/**
 				 * 开启遮罩蒙板
-				 * @function popBg
+				 * @function external:"jQuery".popBg
 				 * @param {object} [prop] - 参数
 				 * @param {string} [prop.parent='body'] - dom父级
 				 * @param {string} [prop.id='jq_x_pop_bg'] - id
@@ -959,7 +357,7 @@
 
 				/**
 				 * 返回字符串长度/截取字符串
-				 * @function textSize
+				 * @function external:"jQuery".textSize
 				 * @param {string} text - 字符串
 				 * @param {number} [cutout] - 需要截取的字符串的长度,为空则返回字符串长度
 				 * @return {number/string} length/text
@@ -981,7 +379,7 @@
 
 				/**
 				 * ie6检测
-				 * @function ie6
+				 * @function external:"jQuery".ie6
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
 				 * @example $.ie6(fn);
@@ -997,7 +395,7 @@
 
 				/**
 				 * 低于指定版本ie检测
-				 * @function ltie
+				 * @function external:"jQuery".ltie
 				 * @param {string} [ver=9] - 版本
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
@@ -1025,7 +423,7 @@
 
 				/**
 				 * 指定ie版本检测
-				 * @function ie
+				 * @function external:"jQuery".ie
 				 * @param {function} [fn] - 回调
 				 * @return {bool}
 				 * @example $.ie(ver, fn);
@@ -1044,6 +442,618 @@
 					(tag = (index > 0 && (!ver || ver == version))) && (fn || Fn)();
 
 					return tag;
+				}
+
+			});
+
+			/**
+			 * jQuery原型方法继承
+			 * @external "jQuery.fn"
+			 */
+			$.fn.extend({
+
+				//jQuery X Version
+				x: '1.0.0',
+
+				/**
+				 * 模拟滚动条
+				 * @function external:"jQuery.fn".scrolls
+				 * @param {function} [fn] - 回调
+				 * @return {object} this
+				 * @example $.fn.scrolls(fn);
+				 */
+				scrolls: function(fn){
+					return this.each(function(){
+						var scroll, scroller, up, down, gotop, content, html,
+							$this	= $(this),
+							_this	= this;
+
+						if($this.find('.scroll').size() == 0){
+							html = _this.innerHTML;
+							$this.html('<div class="scroll_c"></div><div class="scroll"><a href="javascript:;" class="up">▲</a><a href="javascript:;" class="scroller"></a><a href="javascript:;" class="down">▼</a></div><a href="javascript:;" class="gotop"></a>').find('.scroll_c').html(html);
+						}
+
+						scroll		= $this.find('.scroll'),
+						scroller	= scroll.find('.scroller'),
+						up			= scroll.find('.up'),
+						down		= scroll.find('.down'),
+						gotop		= $this.find('.gotop'),
+						content		= $this.find('.scroll_c');
+
+						//拖曳
+						scroller.get(0).onmousedown = function(e){
+							var e		= e || event,
+								$$this	= $(this),
+								disY	= e.clientY - $$this.position().top;
+
+							document.onmousemove	= function(e){
+								var e	= e || event,
+									t	= e.clientY - disY,
+									_h	= content.height(),
+									max	= scroll.height() - (down.height() || 0) - $$this.height(),
+									min	= up.height() || 0;
+
+								t > max && (t = max);
+								t < min && (t = min);
+								$$this.css({top: t});
+								content.css({top:  - ((t - min) / (max - min)) * (_h - $this.height())});
+								gotop[t > 0 ? 'show' : 'hide']();
+								(fn || Fn).call(_this, t >= max);
+
+								return false;
+							};
+
+							document.onmouseup		= function(){
+								document.onmousemove = document.onmouseup = null;
+								return false;
+							};
+
+							return false;
+						};
+
+						//返回顶部
+						gotop.on('click', function(){
+							content.css({top: 0});
+							scroller.css({top: up.height() || 0});
+							touch(this).hide();
+						});
+
+						//上下按钮
+						up.on('click', function(e){_wheel(e, 120);});
+						down.on('click', function(e){_wheel(e, -120);});
+
+						//鼠标滚动
+						_this.onmouseover = function(){
+							if('onmousewheel' in this){
+								this.onmousewheel = _wheel;
+							}else{
+								this.removeEventListener('DOMMouseScroll', _wheel, false);
+								this.addEventListener('DOMMouseScroll', _wheel, false);
+							}
+						};
+
+						//鼠标滚动handler
+						function _wheel(e, d){
+							var e		= e || event,
+								delta	= (d || (e.wheelDelta ? e.wheelDelta : - e.detail * 40)) / 2,
+								t		= content.position().top + delta,
+								max		= $this.height() - content.height(),
+								h_up	= up.height() || 0,
+								h_all	= scroll.height() - h_up - (down.height() || 0) - scroller.height();
+
+							t < max && (t = max);
+							t > 0 && (t = 0);
+							content.css({top: t});
+							scroller.css({top: (t / max) * h_all + h_up});
+							gotop[t < 0 ? 'show' : 'hide']();
+							(fn || Fn).call(_this, t >= max);
+							e.preventDefault ? e.preventDefault() : (event.returnValue = false);
+						}
+					}).fixScrolls();
+				},
+
+				/**
+				 * 设置模拟滚动条高度
+				 * @function external:"jQuery.fn".fixScrolls
+				 * @return {object} this
+				 * @example $.fn.fixScrolls();
+				 */
+				fixScrolls: function(){
+					return this.each(function(){
+						var $this		= $(this),
+							scroll		= $this.find('.scroll'),
+							scroller	= scroll.find('.scroller'),
+							h			= $this.height(),
+							_h			= this.scrollHeight;
+
+						scroller.height((scroll.height() - (scroll.find('.up').height() || 0) - (scroll.find('.down').height() || 0)) * h / _h);
+						scroll[h < _h ? 'show' : 'hide']();
+
+						if(h >= _h){
+							scroller.css({'top': 0});
+							$this.find('.scroll_c').css({'top': 0});
+						}
+					});
+				},
+
+				/**
+				 * 复选全选
+				 * @function external:"jQuery.fn".checkAll
+				 * @param {string} selector - 复选框
+				 * @param {function} [fn] - 全选回调
+				 * @param {function} [fnC] - 复选回调
+				 * @return {object} this
+				 * @example $.fn.checkAll(selector, fn, fnC);
+				 */
+				checkAll: function(selector, fn, fnC){
+					var $cbs	= $(selector),
+						all		= $(this.selector + ',' + selector),
+						fn		= fn || Fn,
+						fnC		= fnC || fn,
+						$this	= this;
+
+					//监测复选框
+					$cbs.change(function(){
+						var _checked = _check();
+						$this.prop('checked', _checked);
+						fnC.call(this, _checked);
+					});
+
+					//监测全选框
+					return this.change(function(){
+						var _checked = this.checked;
+						all.prop('checked', _checked);
+						fn.call(this, _checked);
+					});
+
+					//检测状态
+					function _check(){
+						var tag = true;
+						$cbs.each(function(){
+							!this.checked && (tag = false);
+						});
+						return tag;
+					}
+
+				},
+
+				/**
+				 * 模拟复选
+				 * @function external:"jQuery.fn".checkboxs
+				 * @param {string} [on='on'] - 选中
+				 * @param {function} [fn] - 回调
+				 * @return {object} this
+				 * @example $.fn.checkboxs(on, fn);
+				 */
+				checkboxs: function(on, fn){
+					on === undefined && (on = 'on');
+					typeof on === 'function' && (fn = on, on = 'on');
+
+					return this.on('click', function(){
+						$(this).toggleClass(on);
+						(fn || Fn).call(this);
+					});
+				},
+
+				/**
+				 * 模拟单选
+				 * @function external:"jQuery.fn".radios
+				 * @param {string} [on='on'] - 选中
+				 * @param {function} [fn] - 回调
+				 * @return {object} this
+				 * @example $.fn.radios(on, fn);
+				 */
+				radios: function(on, fn){
+					var $this = this;
+
+					on === undefined && (on = 'on');
+					typeof on === 'function' && (fn = on, on = 'on');
+
+					return this.on('click', function(){
+						$this.removeClass(on);
+						$(this).addClass(on);
+						(fn || Fn).call(this);
+					});
+				},
+
+				/**
+				 * 模拟列表框
+				 * @function external:"jQuery.fn".selects
+				 * @param {object} [prop] - 参数
+				 * @param {string} [prop.parent=null] - 阻止冒泡的父级
+				 * @param {string} [prop.disabled='disabled'] - 禁用class
+				 * @param {string} [prop.trigger=null] - 触发按钮
+				 * @param {string} [prop.span='span'] - 存值器
+				 * @param {string} [prop.p='p'] - 弹出列表,默认为'p'
+				 * @param {string} [prop.a='a'] - 选项,默认为'a'
+				 * @param {string} [prop.onW=null] - 列表展开状态class
+				 * @param {string} [prop.onS=null] - 有值状态class
+				 * @param {string} [prop.onA=null] - 选项选中状态class
+				 * @param {string} [prop.animation=null] - 弹出动画,支持'silde/fade'
+				 * @param {number} [prop.duration=100] - 动画持续时间
+				 * @param {bool} [prop.toggle=true] - 是否点击切换显示,
+				 * @param {function} [prop.fn=false] - trigger回调
+				 * @param {function} [prop.fnA=false] - a回调
+				 * @return {object} this
+				 * @example $.fn.selects(prop);
+				 */
+				selects: function(prop){
+					var p_all, hide_all,
+						config	= {
+							parent		: '',
+							disabled	: 'disabled',
+							trigger		: '',
+							span		: 'span',
+							p			: 'p',
+							a			: 'a',
+							onW			: '',
+							onS			: '',
+							onA			: '',
+							animation	: '',
+							duration	: 100,
+							toggle		: true,
+							fn			: false,
+							fnA			: false
+						},
+						$this	= this;
+
+					//重置参数
+					$.extend(config, prop);
+					
+					//获取所有下拉
+					p_all = $this.find(config.p);
+
+					//document点击隐藏列表
+					(config.parent ? $(config.parent) : $doc).on('click', (hide_all = function(){
+						switch(config.animation){
+							case 'slide':
+								p_all.stop().slideUp(config.duration);
+								break;
+							case 'fade':
+								p_all.stop().fadeOut(config.duration);
+								break;
+							default:
+								p_all.hide();
+								break;
+						}
+						config.onW && $this.removeClass(config.onW);
+					}));
+
+					return this.each(function(){
+						var $$this	= $(this),
+							trigger	= $$this.find(config.trigger || config.span),
+							span	= $$this.find(config.span),
+							p		= $$this.find(config.p),
+							a		= p.find(config.a);
+
+						//展开事件
+						trigger.off().on('click', function(e){
+							var _display;
+							//禁用
+							if($$this.hasClass(config.disabled))return;
+
+							if(config.toggle && p.css('display') !== 'none')return;
+
+							//隐藏其它列表
+							hide_all();
+
+							switch(config.animation){
+								case 'slide':
+									p.stop().slideDown(config.duration);
+									break;
+								case 'fade':
+									p.stop().fadeIn(config.duration);
+									break;
+								default:
+									p.show();
+									break;
+							}
+							config.onW && $$this.addClass(config.onW);
+							(config.fn || Fn).call($$this.get(0));
+
+							e.stopPropagation();
+						});
+
+						//选项事件
+						a.off().on('click', function(e){
+							var $$this	= $(this),
+								tagname	= span.get(0).tagName.toUpperCase(),
+								text = (config.fnA || Fn).call(this);
+							if(text === false){
+								e.stopPropagation();
+							}else{
+								text === undefined && (text = $$this.text());
+								tagname == 'INPUT' || tagname == 'TEXTAREA' ? span.val(text) : span.html(text);
+								config.onS && span.addClass(config.onS);
+								config.onA	&& (a.removeClass(config.onA), $$this.addClass(config.onA));
+							}
+						});
+
+						//加载检测选项值
+						config.onA &&
+							a.each(function(){
+								var $$this	= $(this),
+									text	= $$this.text(),
+									tagname	= span.get(0).tagName.toUpperCase(),
+									_text	= tagname == 'INPUT' || tagname == 'TEXTAREA' ? span.val() : span.text();
+								_text == text && $$this.addClass(config.onA);
+							});
+					});
+				},
+
+				/**
+				 * tab切换
+				 * @function external:"jQuery.fn".tabs
+				 * @param {string} selector - 切换页
+				 * @param {string} [on='on'] - tab按钮效果切换class
+				 * @param {string} [type='click'] - 事件类型,支持'click/hover'
+				 * @param {number} [index=0] - 默认索引
+				 * @param {function} [fn] - 回调
+				 * @return {object} this
+				 * @example $.fn.tabs(selector, on, type, index, fn);
+				 */
+				tabs: function(selector, on, type, index, fn){
+					typeof on === 'function' && (fn = on, on = 'on');
+					typeof type === 'function' && (fn = type, type = undefined);
+					typeof index === 'function' && (fn = index, index = 0);
+					!type && (on == 'click' || on == 'hover') && (type = on);
+					index === undefined && (index = 0);
+
+					var cutover,
+						etype	= type == 'hover' ? 'mouseover' : 'click',
+						$this	= this;
+
+					(cutover = function(i){
+						var $cons = $(selector);
+
+						//添加class
+						$this.removeClass(on).eq(i).addClass(on);
+
+						//显示相应内容区域
+						$cons.hide().eq(i).show();
+
+						//执行回调
+						(fn || Fn).call($this.get(i), i, $cons.get(i));
+
+					})(index);
+					
+					return this.each(function(i){
+						$(this).on(etype, function(){cutover(i);});
+					});
+				},
+
+				/**
+				 * 图片预加载
+				 * @function external:"jQuery.fn".imgLoad
+				 * @param {string} [attr='_src'] - 属性名
+				 * @param {function} [fn] - 回调
+				 * @return {object} this
+				 * @example $.fn.imgLoad(attr, fn);
+				 */
+				imgLoad: function(attr, fn){
+					attr === undefined && (attr = '_src');
+					typeof attr === 'function' && (fn = attr, attr = '_src');
+
+					return this.each(function(i){
+						var img		= new Image(),
+							src		= this.src || '',
+							url		= this.getAttribute(attr),
+							_this	= this;
+
+						//排除异常
+						if(this.tagName.toUpperCase() != 'IMG' || !url)return;
+
+						img.onload	= function(){
+							_this.src = this.src;
+							_this.setAttribute(attr, src);
+							(fn || Fn).call(_this, this, i);
+						}
+
+						img.src	= url;
+
+					});
+				},
+
+				/**
+				 * 文本输入区光标处插入
+				 * @function external:"jQuery.fn".inputIn
+				 * @param {string} txt - 文本
+				 * @param {array} [wrap] - 两侧符号
+				 * @return {object} this
+				 * @example $.fn.inputIn(txt, wrap);
+				 */
+				inputIn: function(txt, wrap){
+
+					//包裹字符串
+					wrap && (txt = wrap[0] + txt + wrap[1]);
+
+					return this.each(function(){
+						var start, end, cursor, range, _range,
+							value	= this.value;
+						
+						//获取首尾值
+						if(this.getAttribute('_range')){
+							_range	= this.getAttribute('_range').split('|'),
+							start	= parseInt(_range[0]),
+							end		= start + parseInt(_range[1]);
+						}else{
+							start	= this.selectionStart,
+							end		= this.selectionEnd;
+						}
+
+						cursor		= start + txt.length,
+						this.value	= value.slice(0, start) + txt + value.slice(end);
+						this.focus();
+
+						//设置光标
+						if(document.selection){
+							this.setAttribute('_range', cursor + '|0');
+							range	= document.selection.createRange();
+							range.moveStart('character', cursor - this.value.length);
+							range.collapse(true);
+							range.select();
+						}else{
+							this.setSelectionRange(cursor, cursor);
+						}
+
+					});
+				},
+
+				/**
+				 * 限制字符
+				 * @function external:"jQuery.fn".limit
+				 * @param {number} limit - 限制数
+				 * @param {function} [fn] - 回调
+				 * @return {object} this
+				 * @example $.fn.limit(limit, fn);
+				 */
+				limit: function(limit, fn){
+					return this.each(function(){
+						var $this	= $(this),
+							_value	= $this.val(),
+							size	= $.textSize(_value) / 2;
+						
+						//判断运行回调或直接截取字符串
+						typeof fn === 'function' ? fn.call(this, Math.floor(limit - size)) : size > limit && $this.val($.textSize(_value, limit * 2));
+
+					});
+				},
+
+				/**
+				 * 文本输入控件
+				 * @function external:"jQuery.fn".inputs
+				 * @param {object} [prop] - 参数
+				 * @param {string} [prop.parent=null] - 事件委托对象,默认不使用
+				 * @param {array} [prop.values=null] - 默认值数组,空数据则不匹配默认值
+				 * @param {string} [prop.defV='_value'] - 取默认值属性
+				 * @param {string} [prop.onF=null] - 获取焦点时交替css效果,多个class以空格隔开
+				 * @param {string} [prop.onK=null] - 输入内容时交替css效果,多个class以空格隔开
+				 * @param {string/number} [prop.limit=false] - 是否限制字符,默认不限制,或数字/属性值为字符串的限制长度
+				 * @param {function} [prop.fn=false] - 回调,默认截取字符串,否则将字符长度差值将作为参数传回
+				 * @param {bool} [prop.range=false] - 回是否记录光标位置,默认不记录
+				 * @return {object} this
+				 * @example $.fn.inputs(prop);
+				 */
+				inputs: function(prop){
+					var $parent, selector, ie,
+						config	= {
+							parent	: '',
+							values	: [],
+							defV	: '_value',
+							onF		: '',
+							onK		: '',
+							limit	: false,
+							fn		: false,
+							range	: false
+						},
+						ltie10	= $.ltie(10);
+
+					//重置参数
+					$.extend(config, prop);
+					ie	= config.range && $.ie();
+
+					//定义事件绑定对象
+					$parent		= config.parent ? $(config.parent) : this,
+					selector	= config.parent ? this.selector : undefined;
+
+					//定义事件
+					$parent.on('focus', selector, function(){
+						var $this	= $(this),
+							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
+
+						v_def && $this.val() == v_def && _check(v_def) && $this.val('');
+						$this.addClass(config.onF);
+						
+						//字符限制
+						config.limit && _limit.call(this);
+
+					}).on('blur', selector, function(){
+						var $this	= $(this),
+							_value	= $this.val(),
+							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
+
+						(_value == '' || _value == v_def) && _check(v_def) && $this.val(v_def).removeClass(config.onF + ' ' + config.onK);
+						
+						//字符限制
+						config.limit && _limit.call(this);
+
+					}).on(ltie10 ? 'keyup' : 'input', selector, function(){
+						var $this	= $(this),
+							_value	= $this.val(),
+							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
+
+						_value == '' || _value == v_def ? $this.removeClass(config.onK).addClass(config.onF) : $this.addClass(config.onK);
+
+						//记录光标位置
+						ie && _range.call(this);
+						
+						//字符限制
+						config.limit && _limit.call(this);
+
+					});
+
+					//字符限制
+					if(config.limit) {
+						this.each(_limit);
+						ltie10 && this.on('paste', _limit);
+					}
+					
+					//记录光标位置
+					ie && $parent.on('mouseup', selector, _range);
+
+					return this;
+
+					//字符限制方法
+					function _limit(){
+						var limit,
+							$this	= $(this),
+							_value	= $this.val(),
+							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue,
+							size	= $.textSize(_value) / 2;
+
+						//默认值则不限制
+						if(v_def && _value == v_def && _check(v_def))return;
+
+						//获取限制字符长度
+						limit = typeof config.limit === 'number' ? config.limit : $this.attr(config.limit) ? parseInt($this.attr(config.limit)) : 140;
+
+						//判断运行回调或直接截取字符串
+						typeof config.fn === 'function' ? config.fn.call(this, Math.floor(limit - size)) : size > limit && $this.val($.textSize(_value, limit * 2));
+
+					}
+
+					//记录光标位置
+					function _range(){
+						if(!document.selection)return;
+
+						var _str, reg,
+							range	= document.selection.createRange(),
+							$this	= $(this),
+							str		= this.value,
+							l		= str.length,
+							_l		= range.text.length,
+							__l		= 0,
+							ie8		= $.ie(8);
+
+						range.moveStart('character', -l);
+						_str	= range.text;
+
+						//ie8 && (_str = _str.replace(/[\r]/g, ''));
+
+						for(var i = 0, len = _str.length; i < len; i++){
+							if(str.indexOf(_str.slice(-(i+1))) == -1)break;
+						}
+
+						//ie8 && (__l = (_str.slice(-i).match(/[\n]/g) || []).length);
+
+						$this.attr('_range', (i - _l + __l) + '|' + _l);
+					}
+
+					//匹配defaultValue
+					function _check(defaultValue){
+						return config.values.length == 0 || $.inArray(defaultValue, config.values) >= 0;
+					}
+
 				}
 
 			});

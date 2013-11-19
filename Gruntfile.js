@@ -1,11 +1,13 @@
 module.exports = function(grunt){
 	'use strict';
 
+	var docstrap = 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template';
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
 			options: {
-				banner: '/*!\n * @file <%= pkg.description %>\n * @version <%= pkg.version %>\n * @author <%= pkg.author.name %> <<%= pkg.author.email %>>\n * @copyright 2013 by <%= pkg.author.name %>\n * @license MIT\n * @create 2013/5/16\n * @update <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
+				banner: '/*!\n * @file <%= pkg.description %>\n * @version <%= pkg.version %>\n * @author <%= pkg.author.name %> <<%= pkg.author.email %>>\n * @copyright {@link <%= pkg.license.url %> 2013}\n * @license {@link <%= pkg.license.url %> MIT}\n * @create 2013/5/16\n * @update <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
 			},
 			compress: {
 				files: {
@@ -18,8 +20,8 @@ module.exports = function(grunt){
 			generate: {
 				src: ['jquery.x.js'],
 				options: {
-					template: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template',
-					configure: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template/jsdoc.conf.json',
+					template: docstrap,
+					configure: docstrap + '/jsdoc.conf.json',
 					destination: 'doc'
 				}
 			}
