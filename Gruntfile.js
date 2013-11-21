@@ -24,7 +24,7 @@ module.exports = function(grunt){
 				url: '<%= pkg.author.url %>',
 				options: {
 					//themedir: 'node_modules/grunt-contrib-yuidoc/node_modules/yuidocjs/themes/simple',
-					tabtospace: 2,
+					tabtospace: 4,
 					paths: ['.'],
 					outdir: 'doc'
 				}
@@ -44,8 +44,8 @@ module.exports = function(grunt){
 		*/
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-yuidoc');
 	//grunt.loadNpmTasks('grunt-jsdoc');
 
