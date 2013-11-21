@@ -25,6 +25,10 @@ module.exports = function(grunt){
 				options: {
 					//themedir: 'node_modules/grunt-contrib-yuidoc/node_modules/yuidocjs/themes/simple',
 					//tabtospace: 4,
+					linkNatives: 'true',
+					attributeEmit: 'true',
+					selleck: 'true',
+					//ignorePaths: [],
 					paths: [path_yuidoc],
 					outdir: path_yuidoc + '/doc'
 				}
