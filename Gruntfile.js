@@ -5,9 +5,10 @@ module.exports = function(grunt){
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		clean: ['doc'],
 		uglify: {
 			options: {
-				banner: '/*!\n * <%= pkg.description %> v<%= pkg.version %>\n * <%= pkg.author.email %>\n * <%= pkg.author.url %>\n * <%= pkg.license.url %>\n * create: 2013/5/16\n * update: 2013/11/19\n */\n\n'
+				banner: '/*!\n * <%= pkg.description %> v<%= pkg.version %>\n * <%= pkg.author.email %>\n * <%= pkg.author.url %>\n * <%= pkg.license.url %>\n * create: 2013/5/16\n * update: <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
 			},
 			compress: {
 				files: {
@@ -15,7 +16,6 @@ module.exports = function(grunt){
 				}
 			}
 		},
-		clean: ['doc'],
 		yuidoc: {
 			generate: {
 				name: '<%= pkg.name %>',
@@ -44,14 +44,14 @@ module.exports = function(grunt){
 		*/
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-yuidoc');
 	//grunt.loadNpmTasks('grunt-jsdoc');
 
 	grunt.registerTask('default', [
-		'uglify',
 		'clean',
+		'uglify',
 		'yuidoc'
 		//'jsdoc' //dependent on java
 	]);

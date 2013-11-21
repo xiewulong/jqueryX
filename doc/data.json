@@ -31,8 +31,9 @@
             "namespaces": {},
             "tag": "module",
             "file": "jquery.x.js",
-            "line": 450,
-            "description": "jQuery X Plugin"
+            "line": 461,
+            "description": "jQuery X Plugin",
+            "since": "1.0.0"
         }
     },
     "classes": {
@@ -47,8 +48,9 @@
             "module": "jqueryX",
             "namespace": "",
             "file": "jquery.x.js",
-            "line": 22,
-            "description": "jquery静态方法"
+            "line": 23,
+            "description": "jquery静态方法",
+            "since": "1.0.0"
         },
         "$.fn.extend": {
             "name": "$.fn.extend",
@@ -61,17 +63,19 @@
             "module": "jqueryX",
             "namespace": "",
             "file": "jquery.x.js",
-            "line": 450,
-            "description": "jQuery原型方法"
+            "line": 461,
+            "description": "jQuery原型方法",
+            "since": "1.0.0"
         }
     },
     "classitems": [
         {
             "file": "jquery.x.js",
-            "line": 28,
+            "line": 30,
             "description": "粘贴板",
             "itemtype": "method",
             "name": "$.clip",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "d",
@@ -97,10 +101,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 60,
+            "line": 63,
             "description": "加载程序",
             "itemtype": "method",
             "name": "$.loader",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "fns",
@@ -127,10 +132,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 82,
+            "line": 86,
             "description": "弹窗",
             "itemtype": "method",
             "name": "$.pop",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "prop",
@@ -295,10 +301,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 274,
+            "line": 279,
             "description": "关闭弹窗",
             "itemtype": "method",
             "name": "$.popClose",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "id",
@@ -332,10 +339,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 302,
+            "line": 308,
             "description": "开启遮罩蒙板",
             "itemtype": "method",
             "name": "$.popBg",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "prop",
@@ -414,10 +422,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 359,
+            "line": 366,
             "description": "返回字符串长度/截取字符串",
             "itemtype": "method",
             "name": "$.textSize",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "text",
@@ -443,10 +452,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 381,
+            "line": 389,
             "description": "ie6检测",
             "itemtype": "method",
             "name": "$.ie6",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "fn",
@@ -467,10 +477,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 397,
+            "line": 406,
             "description": "低于指定版本ie检测",
             "itemtype": "method",
             "name": "$.ltie",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "ver",
@@ -498,10 +509,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 425,
+            "line": 435,
             "description": "指定ie版本检测",
             "itemtype": "method",
             "name": "$.ie",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "fn",
@@ -522,10 +534,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 459,
+            "line": 471,
             "description": "模拟滚动条",
             "itemtype": "method",
             "name": "$.fn.scrolls",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "fn",
@@ -547,10 +560,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 557,
+            "line": 570,
             "description": "设置模拟滚动条高度",
             "itemtype": "method",
             "name": "$.fn.fixScrolls",
+            "since": "1.0.0",
             "return": {
                 "description": "this",
                 "type": "Object"
@@ -564,10 +578,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 582,
+            "line": 596,
             "description": "复选全选",
             "itemtype": "method",
             "name": "$.fn.checkAll",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "selector",
@@ -600,10 +615,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 624,
+            "line": 639,
             "description": "模拟复选",
             "itemtype": "method",
             "name": "$.fn.checkboxs",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "on",
@@ -632,10 +648,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 643,
+            "line": 659,
             "description": "模拟单选",
             "itemtype": "method",
             "name": "$.fn.radios",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "on",
@@ -664,10 +681,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 665,
+            "line": 682,
             "description": "模拟列表框",
             "itemtype": "method",
             "name": "$.fn.selects",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "prop",
@@ -789,10 +807,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 791,
+            "line": 809,
             "description": "tab切换",
             "itemtype": "method",
             "name": "$.fn.tabs",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "selector",
@@ -840,10 +859,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 833,
+            "line": 852,
             "description": "图片预加载",
             "itemtype": "method",
             "name": "$.fn.imgLoad",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "attr",
@@ -872,10 +892,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 866,
+            "line": 886,
             "description": "文本输入区光标处插入",
             "itemtype": "method",
             "name": "$.fn.inputIn",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "txt",
@@ -902,10 +923,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 912,
+            "line": 933,
             "description": "限制字符",
             "itemtype": "method",
             "name": "$.fn.limit",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "limit",
@@ -932,10 +954,11 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 933,
+            "line": 955,
             "description": "文本输入控件",
             "itemtype": "method",
             "name": "$.fn.inputs",
+            "since": "1.0.0",
             "params": [
                 {
                     "name": "prop",

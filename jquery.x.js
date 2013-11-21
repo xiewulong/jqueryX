@@ -4,7 +4,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2013/11/19
+ * update: 2013/11/21
  */
 
 (function(window, undefined){
@@ -12,6 +12,7 @@
 	/**
 	 * jQuery X Plugin
 	 * @module jqueryX
+	 * @since 1.0.0
 	 */
 	var jQueryX = function($){
 
@@ -22,12 +23,14 @@
 			/**
 			 * jquery静态方法
 			 * @class $.extend
+			 * @since 1.0.0
 			 */
 			$.extend({
 
 				/**
 				 * 粘贴板
 				 * @method $.clip
+				 * @since 1.0.0
 				 * @param {object} d 文本输入区对象
 				 * @param {function} [fn] 回调
 				 * @return {none}
@@ -60,6 +63,7 @@
 				/**
 				 * 加载程序
 				 * @method $.loader
+				 * @since 1.0.0
 				 * @param {object} fns 程序集合
 				 * @param {bool} [onload=undefined] 默认页面onload完成后执行
 				 * @return {object} fns
@@ -82,6 +86,7 @@
 				/**
 				 * 弹窗
 				 * @method $.pop
+				 * @since 1.0.0
 				 * @param {object} prop 参数
 				 * @param {string} prop.html 弹窗内容
 				 * @param {string} [prop.parent='body'] dom父级
@@ -274,6 +279,7 @@
 				/**
 				 * 关闭弹窗
 				 * @method $.popClose
+				 * @since 1.0.0
 				 * @param {string} id 弹窗id
 				 * @param {string} [animation=undefined] 动画,支持'fade'
 				 * @param {number} [duration=400] 动画持续时间
@@ -302,6 +308,7 @@
 				/**
 				 * 开启遮罩蒙板
 				 * @method $.popBg
+				 * @since 1.0.0
 				 * @param {object} [prop] 参数
 				 * @param {string} [prop.parent='body'] dom父级
 				 * @param {string} [prop.id='jq_x_pop_bg'] id
@@ -359,6 +366,7 @@
 				/**
 				 * 返回字符串长度/截取字符串
 				 * @method $.textSize
+				 * @since 1.0.0
 				 * @param {string} text 字符串
 				 * @param {number} [cutout] 需要截取的字符串的长度,为空则返回字符串长度
 				 * @return {number/string} length/text
@@ -381,6 +389,7 @@
 				/**
 				 * ie6检测
 				 * @method $.ie6
+				 * @since 1.0.0
 				 * @param {function} [fn] 回调
 				 * @return {bool}
 				 * @example $.ie6(fn);
@@ -397,6 +406,7 @@
 				/**
 				 * 低于指定版本ie检测
 				 * @method $.ltie
+				 * @since 1.0.0
 				 * @param {string} [ver=9] 版本
 				 * @param {function} [fn] 回调
 				 * @return {bool}
@@ -425,6 +435,7 @@
 				/**
 				 * 指定ie版本检测
 				 * @method $.ie
+				 * @since 1.0.0
 				 * @param {function} [fn] 回调
 				 * @return {bool}
 				 * @example $.ie(ver, fn);
@@ -450,6 +461,7 @@
 			/**
 			 * jQuery原型方法
 			 * @class $.fn.extend
+			 * @since 1.0.0
 			 */
 			$.fn.extend({
 
@@ -459,6 +471,7 @@
 				/**
 				 * 模拟滚动条
 				 * @method $.fn.scrolls
+				 * @since 1.0.0
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
@@ -557,6 +570,7 @@
 				/**
 				 * 设置模拟滚动条高度
 				 * @method $.fn.fixScrolls
+				 * @since 1.0.0
 				 * @return {object} this
 				 * @chainable
 				 * @example $.fn.fixScrolls();
@@ -582,6 +596,7 @@
 				/**
 				 * 复选全选
 				 * @method $.fn.checkAll
+				 * @since 1.0.0
 				 * @param {string} selector 复选框
 				 * @param {function} [fn] 全选回调
 				 * @param {function} [fnC] 复选回调
@@ -624,6 +639,7 @@
 				/**
 				 * 模拟复选
 				 * @method $.fn.checkboxs
+				 * @since 1.0.0
 				 * @param {string} [on='on'] 选中
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -643,6 +659,7 @@
 				/**
 				 * 模拟单选
 				 * @method $.fn.radios
+				 * @since 1.0.0
 				 * @param {string} [on='on'] 选中
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -665,6 +682,7 @@
 				/**
 				 * 模拟列表框
 				 * @method $.fn.selects
+				 * @since 1.0.0
 				 * @param {object} [prop] 参数
 				 * @param {string} [prop.parent=null] 阻止冒泡的父级
 				 * @param {string} [prop.disabled='disabled'] 禁用class
@@ -791,6 +809,7 @@
 				/**
 				 * tab切换
 				 * @method $.fn.tabs
+				 * @since 1.0.0
 				 * @param {string} selector 切换页
 				 * @param {string} [on='on'] tab按钮效果切换class
 				 * @param {string} [type='click'] 事件类型,支持'click/hover'
@@ -833,6 +852,7 @@
 				/**
 				 * 图片预加载
 				 * @method $.fn.imgLoad
+				 * @since 1.0.0
 				 * @param {string} [attr='_src'] 属性名
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -866,6 +886,7 @@
 				/**
 				 * 文本输入区光标处插入
 				 * @method $.fn.inputIn
+				 * @since 1.0.0
 				 * @param {string} txt 文本
 				 * @param {array} [wrap] 两侧符号
 				 * @return {object} this
@@ -912,6 +933,7 @@
 				/**
 				 * 限制字符
 				 * @method $.fn.limit
+				 * @since 1.0.0
 				 * @param {number} limit 限制数
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -933,6 +955,7 @@
 				/**
 				 * 文本输入控件
 				 * @method $.fn.inputs
+				 * @since 1.0.0
 				 * @param {object} [prop] 参数
 				 * @param {string} [prop.parent=null] 事件委托对象,默认不使用
 				 * @param {array} [prop.values=null] 默认值数组,空数据则不匹配默认值
