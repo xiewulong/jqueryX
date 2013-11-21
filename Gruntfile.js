@@ -1,11 +1,11 @@
 module.exports = function(grunt){
 	'use strict';
 
-	var docstrap = 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template';
+	var path_yuidoc = '.';
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		clean: ['doc'],
+		clean: [path_yuidoc + '/doc'],
 		uglify: {
 			options: {
 				banner: '/*!\n * <%= pkg.description %> v<%= pkg.version %>\n * <%= pkg.author.email %>\n * <%= pkg.author.url %>\n * <%= pkg.license.url %>\n * create: 2013/5/16\n * update: <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
@@ -24,20 +24,20 @@ module.exports = function(grunt){
 				url: '<%= pkg.author.url %>',
 				options: {
 					//themedir: 'node_modules/grunt-contrib-yuidoc/node_modules/yuidocjs/themes/simple',
-					tabtospace: 4,
-					paths: ['.'],
-					outdir: 'doc'
+					//tabtospace: 4,
+					paths: [path_yuidoc],
+					outdir: path_yuidoc + '/doc'
 				}
 			}
 		}
 		/*
 		jsdoc: {
 			generate: {
-				src: ['jquery.x.js'],
+				src: [path_yuidoc + '/jquery.x.js'],
 				options: {
-					template: docstrap,
-					configure: docstrap + '/jsdoc.conf.json',
-					destination: 'doc'
+					template: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template',
+					configure: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template/jsdoc.conf.json',
+					destination: path_yuidoc + '/doc'
 				}
 			}
 		}
