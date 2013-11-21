@@ -8,7 +8,7 @@ module.exports = function(grunt){
 		clean: [path_yuidoc + '/doc'],
 		uglify: {
 			options: {
-				banner: '/*!\n * <%= pkg.description %> v<%= pkg.version %>\n * <%= pkg.author.email %>\n * <%= pkg.author.url %>\n * <%= pkg.license.url %>\n * create: 2013/5/16\n * update: <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
+				banner: '/*!\n * <%= pkg.description %> v<%= pkg.version %>\n * <%= pkg.author.name %> <<%= pkg.author.email %>>\n * <%= pkg.author.url %>\n * <%= pkg.license.url %>\n * create: 2013/5/16\n * update: <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
 			},
 			compress: {
 				files: {
