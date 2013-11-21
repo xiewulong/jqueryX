@@ -684,16 +684,16 @@
 				 * @method $.fn.selects
 				 * @since 1.0.0
 				 * @param {object} [prop] 参数
-				 * @param {string} [prop.parent=null] 阻止冒泡的父级
+				 * @param {string} [prop.parent] 阻止冒泡的父级
 				 * @param {string} [prop.disabled='disabled'] 禁用class
-				 * @param {string} [prop.trigger=null] 触发按钮
+				 * @param {string} [prop.trigger] 触发按钮
 				 * @param {string} [prop.span='span'] 存值器
 				 * @param {string} [prop.p='p'] 弹出列表,默认为'p'
 				 * @param {string} [prop.a='a'] 选项,默认为'a'
-				 * @param {string} [prop.onW=null] 列表展开状态class
-				 * @param {string} [prop.onS=null] 有值状态class
-				 * @param {string} [prop.onA=null] 选项选中状态class
-				 * @param {string} [prop.animation=null] 弹出动画,支持'silde/fade'
+				 * @param {string} [prop.onW] 列表展开状态class
+				 * @param {string} [prop.onS] 有值状态class
+				 * @param {string} [prop.onA] 选项选中状态class
+				 * @param {string} [prop.animation] 弹出动画,支持'silde/fade'
 				 * @param {number} [prop.duration=100] 动画持续时间
 				 * @param {bool} [prop.toggle=true] 是否点击切换显示,
 				 * @param {function} [prop.fn=false] trigger回调
@@ -957,11 +957,11 @@
 				 * @method $.fn.inputs
 				 * @since 1.0.0
 				 * @param {object} [prop] 参数
-				 * @param {string} [prop.parent=null] 事件委托对象,默认不使用
-				 * @param {array} [prop.values=null] 默认值数组,空数据则不匹配默认值
+				 * @param {string} [prop.parent] 事件委托对象,默认不使用
+				 * @param {array} [prop.values] 默认值数组,空数据则不匹配默认值
 				 * @param {string} [prop.defV='_value'] 取默认值属性
-				 * @param {string} [prop.onF=null] 获取焦点时交替css效果,多个class以空格隔开
-				 * @param {string} [prop.onK=null] 输入内容时交替css效果,多个class以空格隔开
+				 * @param {string} [prop.onF] 获取焦点时交替css效果,多个class以空格隔开
+				 * @param {string} [prop.onK] 输入内容时交替css效果,多个class以空格隔开
 				 * @param {string/number} [prop.limit=false] 是否限制字符,默认不限制,或数字/属性值为字符串的限制长度
 				 * @param {function} [prop.fn=false] 回调,默认截取字符串,否则将字符长度差值将作为参数传回
 				 * @param {bool} [prop.range=false] 回是否记录光标位置,默认不记录
