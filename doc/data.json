@@ -697,8 +697,7 @@
                             "name": "parent",
                             "description": "阻止冒泡的父级",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "disabled",
@@ -711,8 +710,7 @@
                             "name": "trigger",
                             "description": "触发按钮",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "span",
@@ -739,29 +737,25 @@
                             "name": "onW",
                             "description": "列表展开状态class",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "onS",
                             "description": "有值状态class",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "onA",
                             "description": "选项选中状态class",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "animation",
                             "description": "弹出动画,支持'silde/fade'",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "duration",
@@ -970,15 +964,13 @@
                             "name": "parent",
                             "description": "事件委托对象,默认不使用",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "values",
                             "description": "默认值数组,空数据则不匹配默认值",
                             "type": "Array",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "defV",
@@ -991,15 +983,13 @@
                             "name": "onF",
                             "description": "获取焦点时交替css效果,多个class以空格隔开",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "onK",
                             "description": "输入内容时交替css效果,多个class以空格隔开",
                             "type": "String",
-                            "optional": true,
-                            "optdefault": "null"
+                            "optional": true
                         },
                         {
                             "name": "limit",
