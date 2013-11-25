@@ -28,9 +28,15 @@ function installer(){
 cd
 
 echo '================== yum tools && update && upgrade ==================';
-yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel git-core
+yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel git-core php php-fpm mysql-server php-mysql php-mcrypt php-mbstring php-gd php-pecl-memcache
 yum update -y
 yum upgrade -y
+
+echo '================== chkconfig ==================';
+chkconfig --level 235 php-fpm on
+service php-fpm start
+chkconfig --level 235 mysqld on
+service mysqld start
 
 echo '================== nodejs ==================';
 name="node-v${node_ver}"
