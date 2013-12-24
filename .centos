@@ -28,7 +28,7 @@ function installer(){
 cd
 
 echo '================== yum tools && update && upgrade ==================';
-yum install -y vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel git-core mysql-server php php-fpm php-mysql php-mcrypt php-mbstring php-gd php-pecl-memcache
+yum install -y vim* make gcc gcc-c++ wget curl libcurl* openssl* git* mysql-server php*
 yum update -y
 yum upgrade -y
 
