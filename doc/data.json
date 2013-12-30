@@ -1011,6 +1011,13 @@
                             "type": "Bool",
                             "optional": true,
                             "optdefault": "false"
+                        },
+                        {
+                            "name": "events",
+                            "description": "默认获取焦点和失去焦点的时候运行fn",
+                            "type": "Bool",
+                            "optional": true,
+                            "optdefault": "true"
                         }
                     ]
                 }
