@@ -4,7 +4,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2013/11/21
+ * update: 2013/12/31
  */
 
 (function(window, undefined){
@@ -965,6 +965,7 @@
 				 * @param {string/number} [prop.limit=false] 是否限制字符,默认不限制,或数字/属性值为字符串的限制长度
 				 * @param {function} [prop.fn=false] 回调,默认截取字符串,否则将字符长度差值将作为参数传回
 				 * @param {bool} [prop.range=false] 回是否记录光标位置,默认不记录
+				 * @param {bool} [prop.events=true] 默认获取焦点和失去焦点的时候运行fn
 				 * @return {object} this
 				 * @chainable
 				 * @example $.fn.inputs(prop);
@@ -979,7 +980,8 @@
 							onK		: '',
 							limit	: false,
 							fn		: false,
-							range	: false
+							range	: false,
+							events	: true
 						},
 						ltie10	= $.ltie(10);
 
@@ -1000,7 +1002,7 @@
 						$this.addClass(config.onF);
 						
 						//字符限制
-						config.limit && _limit.call(this);
+						config.events && config.limit && _limit.call(this);
 
 					}).on('blur', selector, function(){
 						var $this	= $(this),
@@ -1010,7 +1012,7 @@
 						(_value == '' || _value == v_def) && _check(v_def) && $this.val(v_def).removeClass(config.onF + ' ' + config.onK);
 						
 						//字符限制
-						config.limit && _limit.call(this);
+						config.events && config.limit && _limit.call(this);
 
 					}).on(ltie10 ? 'keyup' : 'input', selector, function(){
 						var $this	= $(this),
