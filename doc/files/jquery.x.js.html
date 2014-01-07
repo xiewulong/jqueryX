@@ -96,7 +96,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2013/12/31
+ * update: 2014/1/7
  */
 
 (function(window, undefined){
@@ -1111,7 +1111,7 @@
 							_value	= $this.val(),
 							v_def	= config.defV &amp;&amp; $this.attr(config.defV) || this.defaultValue;
 
-						_value == &#x27;&#x27; || _value == v_def ? $this.removeClass(config.onK).addClass(config.onF) : $this.addClass(config.onK);
+						$this[_value == &#x27;&#x27; || _value == v_def ? &#x27;removeClass&#x27; : &#x27;addClass&#x27;](config.onK);
 
 						//记录光标位置
 						ie &amp;&amp; _range.call(this);
