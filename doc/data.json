@@ -917,7 +917,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 933,
+            "line": 939,
             "description": "限制字符",
             "itemtype": "method",
             "name": "$.fn.limit",
@@ -948,7 +948,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 955,
+            "line": 961,
             "description": "文本输入控件",
             "itemtype": "method",
             "name": "$.fn.inputs",
