@@ -4,7 +4,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2014/1/7
+ * update: 2014/1/15
  */
 
 (function(window, undefined){
@@ -899,27 +899,33 @@
 					wrap && (txt = wrap[0] + txt + wrap[1]);
 
 					return this.each(function(){
-						var start, end, cursor, range, _range,
-							value	= this.value;
+						var start, end, cursor, range, _range, value, len,
+							ds = document.selection;
+
+						//取值及长度
+						this.focus();
+						value	= this.value;
+						len		= value.length;
 						
 						//获取首尾值
-						if(this.getAttribute('_range')){
-							_range	= this.getAttribute('_range').split('|'),
-							start	= parseInt(_range[0]),
+						if(ds){
+							_range	= (_range = this.getAttribute('_range')) ? _range.split('|') : [len, len];
+							start	= parseInt(_range[0]);
 							end		= start + parseInt(_range[1]);
 						}else{
-							start	= this.selectionStart,
+							start	= this.selectionStart;
 							end		= this.selectionEnd;
 						}
 
-						cursor		= start + txt.length,
+						//设置新值
+						cursor		= start + txt.length;
 						this.value	= value.slice(0, start) + txt + value.slice(end);
 						this.focus();
 
 						//设置光标
-						if(document.selection){
+						if(ds){
 							this.setAttribute('_range', cursor + '|0');
-							range	= document.selection.createRange();
+							range = ds.createRange();
 							range.moveStart('character', cursor - this.value.length);
 							range.collapse(true);
 							range.select();
