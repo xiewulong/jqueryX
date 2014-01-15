@@ -899,17 +899,16 @@
 					wrap && (txt = wrap[0] + txt + wrap[1]);
 
 					return this.each(function(){
-						var start, end, cursor, range, _range, value, len,
+						var start, end, cursor, range, _range, value,
 							ds = document.selection;
 
 						//取值及长度
 						this.focus();
 						value	= this.value;
-						len		= value.length;
 						
 						//获取首尾值
 						if(ds){
-							_range	= (_range = this.getAttribute('_range')) ? _range.split('|') : [len, len];
+							_range	= (_range = this.getAttribute('_range')) ? _range.split('|') : [0, 0];
 							start	= parseInt(_range[0]);
 							end		= start + parseInt(_range[1]);
 						}else{
