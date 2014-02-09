@@ -1,5 +1,5 @@
 /*!
- * jQuery X Plugin v1.0.0
+ * jQuery X Plugins v1.0.0
  * xiewulong <xiewulong@vip.qq.com>
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
