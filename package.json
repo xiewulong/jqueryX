@@ -1,7 +1,7 @@
 {
 	"name": "jqueryX",
 	"version": "1.0.0",
-	"description": "jQuery X Plugin",
+	"description": "jQuery X Plugins",
 	"main": "jquery.x.js",
 	"scripts": {
 		"test": "grunt"
