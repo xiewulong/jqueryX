@@ -11,7 +11,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "jqueryX",
             "name": "jqueryX",
-            "description": "jQuery X Plugin"
+            "description": "jQuery X Plugins"
         }
     ]
 } };
