@@ -7,10 +7,11 @@ if [ $(id -u) != '0' ]; then
 fi
 
 #config
+epel_url='http://mirrors.sohu.com/fedora-epel/6Server/x86_64/epel-release-6-8.noarch.rpm'
 cur_dir=${pwd}
 node_ver='0.10.21'
 pcre_ver='8.33'
-nginx_ver='1.4.3'
+nginx_ver='1.5.10'
 nginx_group='www'
 
 #installer
@@ -27,9 +28,9 @@ function installer(){
 #back to uer's directory
 cd
 
-echo '================== yum tools && update && upgrade ==================';
-y
-m install -y ntp vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* git-core subversion mysql-server php*
+echo '================== add repo & install tools && update && upgrade ==================';
+rpm -ivh epel_url
+yum install -y ntp vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* git-core subversion mysql-server php php-mysql php-mcrypt php-gd
 yum update -y
 yum upgrade -y
 
