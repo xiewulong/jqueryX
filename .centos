@@ -29,7 +29,7 @@ function installer(){
 cd
 
 echo '================== add repo & install tools && update && upgrade ==================';
-rpm -ivh epel_url
+rpm -ivh ${epel_url}
 yum install -y ntp vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* git-core subversion mysql-server php php-mysql php-mcrypt php-gd
 yum update -y
 yum upgrade -y
