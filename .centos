@@ -31,7 +31,7 @@ cd
 echo '================== add repo & install tools && update && upgrade ==================';
 rpm -ivh ${epel_url}
 yum repolist
-yum install -y ntp vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* git-core subversion mysql-server php php-mysql php-mcrypt php-gd
+yum install -y ntp vim* make gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* git-core subversion mysql-server php php-fpm php-mysql php-mcrypt php-gd
 yum update -y
 yum upgrade -y
 
