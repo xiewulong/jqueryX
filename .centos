@@ -60,3 +60,4 @@ useradd -M -s /sbin/nologin -g ${nginx_group} ${nginx_group}
 name="nginx-${nginx_ver}"
 tar="${name}.tar.gz"
 installer ${name} ${tar} "http://nginx.org/download/${tar}" " --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-ipv6"
+#ln -s /lib64/libpcre.so.0.0.1 /lib64/libpcre.so.1
