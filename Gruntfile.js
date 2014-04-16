@@ -1,20 +1,16 @@
 module.exports = function(grunt){
 	'use strict';
 
-	var path	= '.',
-		src		= '.',
-		dest	= '.';
-
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		clean: [path + '/doc'],
+		clean: ['doc'],
 		uglify: {
 			options: {
 				banner: '/*!\n * <%= pkg.description %> v<%= pkg.version %>\n * <%= pkg.author.name %> <<%= pkg.author.email %>>\n * <%= pkg.author.url %>\n * <%= pkg.license.url %>\n * create: 2013/5/16\n * update: <%= grunt.template.today("yyyy/mm/dd") %>\n */\n\n'
 			},
 			compress: {
 				files: {
-					dest + '/jquery.x.min.js': [src + '/jquery.x.js']
+					'jquery.x.min.js': ['jquery.x.js']
 				}
 			}
 		},
@@ -31,19 +27,19 @@ module.exports = function(grunt){
 					attributeEmit: 'true',
 					selleck: 'true',
 					//ignorePaths: [],
-					paths: [path],
-					outdir: path + '/doc'
+					paths: ['jquery.x.js'],
+					outdir: 'doc'
 				}
 			}
 		},
 		/*
 		jsdoc: {
 			generate: {
-				src: [path + '/jquery.x.js'],
+				src: ['jquery.x.js'],
 				options: {
 					template: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template',
 					configure: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template/jsdoc.conf.json',
-					destination: path + '/doc'
+					destination: 'doc'
 				}
 			}
 		}
