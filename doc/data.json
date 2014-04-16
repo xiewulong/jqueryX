@@ -116,8 +116,7 @@
                     "name": "onload",
                     "description": "默认页面onload完成后执行",
                     "type": "Bool",
-                    "optional": true,
-                    "optdefault": "undefined"
+                    "optional": true
                 }
             ],
             "return": {
@@ -316,8 +315,7 @@
                     "name": "animation",
                     "description": "动画,支持'fade'",
                     "type": "String",
-                    "optional": true,
-                    "optdefault": "undefined"
+                    "optional": true
                 },
                 {
                     "name": "duration",
