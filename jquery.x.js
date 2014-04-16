@@ -4,7 +4,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2014/2/9
+ * update: 2014/4/16
  */
 
 (function(window, undefined){
@@ -65,7 +65,7 @@
 				 * @method $.loader
 				 * @since 1.0.0
 				 * @param {object} fns 程序集合
-				 * @param {bool} [onload=undefined] 默认页面onload完成后执行
+				 * @param {bool} [onload] 默认页面onload完成后执行
 				 * @return {object} fns
 				 * @example $.loader(fns, onload);
 				 */
@@ -281,7 +281,7 @@
 				 * @method $.popClose
 				 * @since 1.0.0
 				 * @param {string} id 弹窗id
-				 * @param {string} [animation=undefined] 动画,支持'fade'
+				 * @param {string} [animation] 动画,支持'fade'
 				 * @param {number} [duration=400] 动画持续时间
 				 * @return {none}
 				 * @example $.popClose(id, animation, duration);

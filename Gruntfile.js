@@ -27,7 +27,7 @@ module.exports = function(grunt){
 					attributeEmit: 'true',
 					selleck: 'true',
 					//ignorePaths: [],
-					paths: ['jquery.x.js'],
+					paths: ['./'],
 					outdir: 'doc'
 				}
 			}
