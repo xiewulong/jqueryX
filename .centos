@@ -10,7 +10,7 @@ fi
 epel_url='http://mirrors.sohu.com/fedora-epel/6Server/x86_64/epel-release-6-8.noarch.rpm'
 cur_dir=${pwd}
 node_ver='0.10.26'
-pcre_ver='8.34'
+pcre_ver='8.35'
 nginx_ver='1.4.7'
 nginx_group='www'
 
