@@ -20,6 +20,7 @@ module.exports = function(grunt){
 				src: [
 					'<%=config.baseUrl%>/*.js',
 					'!<%=config.baseUrl%>/*.min.js',
+					'!<%=config.baseUrl%>/Gruntfile.js',
 				],
 				//dest: '',
 				ext: '.min.js',
