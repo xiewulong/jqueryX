@@ -12,10 +12,10 @@ module.exports = function(grunt){
 		],
 		uglify: {
 			js: {
+				options: {
+					banner: '/*!\n * <%=pkg.description%> v<%=pkg.version%>\n * <%=pkg.author.name%> <<%=pkg.author.email%>>\n * <%=pkg.author.url%>\n * <%=pkg.license.url%>\n * create: 2013/5/16\n * update: <%=grunt.template.today("yyyy/mm/dd")%>\n */\n\n',
+				},
 				files: {
-					options: {
-						banner: '/*!\n * <%=pkg.description%> v<%=pkg.version%>\n * <%=pkg.author.name%> <<%=pkg.author.email%>>\n * <%=pkg.author.url%>\n * <%=pkg.license.url%>\n * create: 2013/5/16\n * update: <%=grunt.template.today("yyyy/mm/dd")%>\n */\n\n',
-					},
 					'<%=config.baseUrl%>/jquery.x.min.js': ['<%=config.baseUrl%>/jquery.x.js'],
 				},
 				/*
