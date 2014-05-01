@@ -646,7 +646,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 659,
+            "line": 658,
             "description": "模拟单选",
             "itemtype": "method",
             "name": "$.fn.radios",
@@ -679,7 +679,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 682,
+            "line": 681,
             "description": "模拟列表框",
             "itemtype": "method",
             "name": "$.fn.selects",
@@ -799,7 +799,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 809,
+            "line": 808,
             "description": "tab切换",
             "itemtype": "method",
             "name": "$.fn.tabs",
@@ -851,7 +851,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 852,
+            "line": 851,
             "description": "图片预加载",
             "itemtype": "method",
             "name": "$.fn.imgLoad",
@@ -884,7 +884,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 886,
+            "line": 885,
             "description": "文本输入区光标处插入",
             "itemtype": "method",
             "name": "$.fn.inputIn",
@@ -915,7 +915,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 938,
+            "line": 937,
             "description": "限制字符",
             "itemtype": "method",
             "name": "$.fn.limit",
@@ -946,7 +946,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 960,
+            "line": 959,
             "description": "文本输入控件",
             "itemtype": "method",
             "name": "$.fn.inputs",

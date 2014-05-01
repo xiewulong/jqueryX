@@ -743,8 +743,7 @@
 					typeof on === &#x27;function&#x27; &amp;&amp; (fn = on, on = &#x27;on&#x27;);
 
 					return this.on(&#x27;click&#x27;, function(){
-						$(this).toggleClass(on);
-						(fn || Fn).call(this);
+						(fn || Fn).call(this, $(this).toggleClass(on).hasClass(on));
 					});
 				},
 
