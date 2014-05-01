@@ -651,8 +651,7 @@
 					typeof on === 'function' && (fn = on, on = 'on');
 
 					return this.on('click', function(){
-						$(this).toggleClass(on);
-						(fn || Fn).call(this);
+						(fn || Fn).call(this, $(this).toggleClass(on).hasClass(on));
 					});
 				},
 

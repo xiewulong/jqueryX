@@ -22,7 +22,7 @@ function installer(){
 	./configure $4
 	make && make install
 	cd ..
-	rm -rf $1
+	rm -rf $1 $2
 }
 
 #back to root directory
