@@ -35,8 +35,8 @@ yum update -y
 yum upgrade -y
 
 echo '================== chkconfig ==================';
-sed -i "s/user = apache/user = ${nginx_user}/g"
-sed -i "s/group = apache/group = ${nginx_user}/g"
+sed -i "s/user = apache/user = ${nginx_user}/g" /etc/php-fpm.d/www.conf
+sed -i "s/group = apache/group = ${nginx_user}/g" /etc/php-fpm.d/www.conf
 chgrp ${nginx_user} /var/lib/php/session
 chkconfig --level 235 php-fpm on
 service php-fpm start
