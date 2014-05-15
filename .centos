@@ -36,12 +36,11 @@ yum update -y
 yum upgrade -y
 
 echo '================== chkconfig ==================';
-chkconfig --level 235 php-fpm on
-service php-fpm start
 sed -i "s/user = apache/user = ${nginx_user}/g" /etc/php-fpm.d/www.conf
 sed -i "s/group = apache/group = ${nginx_user}/g" /etc/php-fpm.d/www.conf
 chgrp ${nginx_user} /var/lib/php/session
-service php-fpm restart
+chkconfig --level 235 php-fpm on
+service php-fpm start
 chkconfig --level 235 mysqld on
 service mysqld start
 #grant all privileges on *.* to user@'host' identified by 'password';
