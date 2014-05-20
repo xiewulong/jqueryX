@@ -7,7 +7,6 @@ if [ $(id -u) != '0' ]; then
 fi
 
 #config
-epel_url='http://mirrors.sohu.com/fedora-epel/6Server/x86_64/epel-release-6-8.noarch.rpm'
 cur_dir=${pwd}
 node_ver='0.10.26'
 pcre_ver='8.35'
@@ -29,13 +28,24 @@ function installer(){
 cd
 
 echo '================== add repo & install tools && update && upgrade ==================';
-rpm -ivh ${epel_url}
+rpm -ivh http://mirrors.sohu.com/fedora-epel/6Server/x86_64/epel-release-6-8.noarch.rpm
 yum repolist
-yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* golang git-core subversion mysql-server php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap
+yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* golang git-core subversion mysql-server php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath java ant pcre
 yum update -y
 yum upgrade -y
 
-echo '================== chkconfig ==================';
+#echo '================== zend guard loader ==================';
+#zendguardloader='ZendGuardLoader-php-5.3-linux-glibc23-x86_64';
+#wget -c http://downloads.zend.com/guard/5.5.0/${zendguardloader}.tar.gz
+#cp ${zendguardloader}/php-5.3.x/ZendGuardLoader.so /usr/lib64/php/modules/ZendGuardLoader.so
+#echo "" >> /etc/php.ini
+#echo "; zend guard loader" >> /etc/php.ini
+#echo "zend_extension=/usr/lib64/php/modules/ZendGuardLoader.so" >> /etc/php.ini
+#echo "zend_loader.enable=1" >> /etc/php.ini
+#echo "zend_loader.disable_licensing=0" >> /etc/php.ini
+#echo "zend_loader.obfuscation_level_support=3" >> /etc/php.ini
+
+echo '================== config ==================';
 sed -i "s/user = apache/user = ${nginx_user}/g" /etc/php-fpm.d/www.conf
 sed -i "s/group = apache/group = ${nginx_user}/g" /etc/php-fpm.d/www.conf
 chkconfig --level 235 php-fpm on
@@ -46,18 +56,18 @@ service mysqld start
 #grant all privileges on *.* to user@'host' identified by 'password';
 #flush privileges;
 
-echo '================== nodejs ==================';
+echo '================== node ==================';
 name="node-v${node_ver}"
 tar="${name}.tar.gz"
 installer ${name} ${tar} "http://nodejs.org/dist/v${node_ver}/${tar}"
 
-echo '================== grunt-cli ==================';
-npm install -g grunt-cli
+echo '================== npm ==================';
+npm install -g grunt-cli phonegap cordova
 
-echo '================== pcre ==================';
-name="pcre-${pcre_ver}"
-tar="${name}.tar.gz"
-installer ${name} ${tar} "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/${tar}"
+#echo '================== pcre ==================';
+#name="pcre-${pcre_ver}"
+#tar="${name}.tar.gz"
+#installer ${name} ${tar} "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/${tar}"
 
 echo '================== nginx ==================';
 useradd -s /sbin/nologin ${nginx_user}
