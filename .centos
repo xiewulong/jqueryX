@@ -30,7 +30,7 @@ cd
 echo '================== add repo & install tools && update && upgrade ==================';
 rpm -ivh http://mirrors.sohu.com/fedora-epel/6Server/x86_64/epel-release-6-8.noarch.rpm
 yum repolist
-yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* golang git-core subversion mysql-server php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath java ant inotify-tools
+yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* inotify-tools golang git-core subversion mysql-server php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath java ant
 yum update -y
 yum upgrade -y
 
