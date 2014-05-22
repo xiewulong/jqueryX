@@ -30,20 +30,9 @@ cd
 echo '================== add repo & install tools && update && upgrade ==================';
 rpm -ivh http://mirrors.sohu.com/fedora-epel/6Server/x86_64/epel-release-6-8.noarch.rpm
 yum repolist
-yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* golang git-core subversion mysql-server php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath java ant
+yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* golang git-core subversion mysql-server php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath java ant inotify-tools
 yum update -y
 yum upgrade -y
-
-#echo '================== zend guard loader ==================';
-#zendguardloader='ZendGuardLoader-php-5.3-linux-glibc23-x86_64';
-#wget -c http://downloads.zend.com/guard/5.5.0/${zendguardloader}.tar.gz
-#cp ${zendguardloader}/php-5.3.x/ZendGuardLoader.so /usr/lib64/php/modules/ZendGuardLoader.so
-#echo "" >> /etc/php.ini
-#echo "; zend guard loader" >> /etc/php.ini
-#echo "zend_extension=/usr/lib64/php/modules/ZendGuardLoader.so" >> /etc/php.ini
-#echo "zend_loader.enable=1" >> /etc/php.ini
-#echo "zend_loader.disable_licensing=0" >> /etc/php.ini
-#echo "zend_loader.obfuscation_level_support=3" >> /etc/php.ini
 
 echo '================== node ==================';
 name="node-v${node_ver}"
@@ -65,6 +54,18 @@ name="nginx-${nginx_ver}"
 tar="${name}.tar.gz"
 installer ${name} ${tar} "http://nginx.org/download/${tar}" " --user=www --group=www --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-ipv6"
 ln -s /lib64/libpcre.so.0.0.1 /lib64/libpcre.so.1
+
+#echo '================== zend guard loader ==================';
+#zendguardloader='ZendGuardLoader-php-5.3-linux-glibc23-x86_64';
+#wget -c http://downloads.zend.com/guard/5.5.0/${zendguardloader}.tar.gz
+#tar zxvf ${zendguardloader}.tar.gz
+#cp ${zendguardloader}/php-5.3.x/ZendGuardLoader.so /usr/lib64/php/modules/ZendGuardLoader.so
+#echo '' >> /etc/php.ini
+#echo '; zend guard loader' >> /etc/php.ini
+#echo 'zend_extension=/usr/lib64/php/modules/ZendGuardLoader.so' >> /etc/php.ini
+#echo 'zend_loader.enable=1' >> /etc/php.ini
+#echo 'zend_loader.disable_licensing=0' >> /etc/php.ini
+#echo 'zend_loader.obfuscation_level_support=3' >> /etc/php.ini
 
 echo '================== config ==================';
 sed -i "s/user = apache/user = ${nginx_user}/g" /etc/php-fpm.d/www.conf
