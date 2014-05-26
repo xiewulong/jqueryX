@@ -71,11 +71,11 @@ echo '================== config ==================';
 sed -i "s/user = apache/user = ${nginx_user}/g" /etc/php-fpm.d/www.conf
 sed -i "s/group = apache/group = ${nginx_user}/g" /etc/php-fpm.d/www.conf
 chgrp ${nginx_user} /var/lib/php/session
-chkconfig --level 235 php-fpm on
+chkconfig --level 2345 php-fpm on
 service php-fpm start
-chkconfig --level 235 mysqld on
+chkconfig --level 2345 mysqld on
 service mysqld start
 #grant all privileges on *.* to user@'host' identified by 'password';
 #flush privileges;
-chkconfig --level 235 memcached on
+chkconfig --level 2345 memcached on
 service memcached start
