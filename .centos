@@ -30,7 +30,7 @@ cd
 echo '================== add repo & install tools && update && upgrade ==================';
 rpm -ivh http://mirrors.sohu.com/fedora-epel/6Server/x86_64/epel-release-6-8.noarch.rpm
 yum repolist
-yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* inotify-tools golang git-core subversion mysql-server memcached php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath php-memcache php-memcached java ant
+yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* inotify-tools golang git-core subversion mysql-server memcached php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath php-memcache php-memcached java ant ant-apache-regexp
 yum update -y
 yum upgrade -y
 
@@ -79,3 +79,14 @@ service mysqld start
 #flush privileges;
 chkconfig --level 2345 memcached on
 service memcached start
+
+#echo '================== android sdk ==================';
+#android='adt-bundle-linux-x86_64-20140321'
+#wget -c http://dl.google.com/android/adt/22.6.2/${android}.zip
+#jar xvf ${android}.zip
+#mv ${android}/sdk /usr/local/adt
+#chmod +x /usr/local/adt/tools/android
+#echo '' /etc/profile
+#echo '#android sdk' /etc/profile
+#echo 'export ANDROID_HOME=/usr/local/adt' /etc/profile
+#echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' /etc/profile
