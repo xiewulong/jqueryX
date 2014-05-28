@@ -12,6 +12,7 @@ node_ver='0.10.28'
 pcre_ver='8.35'
 nginx_ver='1.6.0'
 nginx_user='www'
+profile=/etc/profile
 
 #installer
 function installer(){
@@ -30,7 +31,7 @@ cd
 echo '================== add repo & install tools && update && upgrade ==================';
 rpm -ivh http://mirrors.sohu.com/fedora-epel/6Server/x86_64/epel-release-6-8.noarch.rpm
 yum repolist
-yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* inotify-tools golang git-core subversion mysql-server memcached php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath php-memcache php-memcached java ant ant-apache-regexp
+yum install -y ntp vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* inotify-tools golang git-core subversion mysql-server memcached php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath php-memcache php-memcached java-1.7.0-openjdk java-1.7.0-openjdk-devel glibc.i686 zlib.i686 libstdc++.i686
 yum update -y
 yum upgrade -y
 
@@ -40,7 +41,7 @@ tar="${name}.tar.gz"
 installer ${name} ${tar} "http://nodejs.org/dist/v${node_ver}/${tar}"
 
 echo '================== npm ==================';
-npm install -g grunt-cli phonegap cordova
+npm install -g grunt-cli cordova
 
 echo '================== pcre ==================';
 name="pcre-${pcre_ver}"
@@ -80,13 +81,25 @@ service mysqld start
 chkconfig --level 2345 memcached on
 service memcached start
 
+#echo '================== ant ==================';
+#ant='apache-ant-1.9.4-bin';
+#wget -c http://mirrors.hust.edu.cn/apache/ant/binaries/${ant}.tar.gz
+#tar zxvf ${ant}.tar.gz
+#mv ${ant} /usr/local/ant
+#echo '' >> ${profile}
+#echo '#apache ant' >> ${profile}
+#echo 'export ANT_HOME=/usr/local/ant' >> ${profile}
+#echo 'export PATH=$PATH:$ANT_HOME/bin' >> ${profile}
+#source ${profile}
+
 #echo '================== android sdk ==================';
 #android='adt-bundle-linux-x86_64-20140321'
 #wget -c http://dl.google.com/android/adt/22.6.2/${android}.zip
 #jar xvf ${android}.zip
 #mv ${android}/sdk /usr/local/adt
-#chmod +x /usr/local/adt/tools/android
-#echo '' /etc/profile
-#echo '#android sdk' /etc/profile
-#echo 'export ANDROID_HOME=/usr/local/adt' /etc/profile
-#echo 'export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' /etc/profile
+#chmod +x /usr/local/adt/tools/android /usr/local/adt/build-tools/android-4.4.2/aapt /usr/local/adt/build-tools/android-4.4.2/dx /usr/local/adt/platform-tools/adb /usr/local/adt/platform-tools/fastboot
+#echo '' >> ${profile}
+#echo '#android sdk' >> ${profile}
+#echo 'export ANDROID_HOME=/usr/local/adt' >> ${profile}
+#echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools' >> ${profile}
+#source ${profile}
