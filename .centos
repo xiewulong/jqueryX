@@ -97,7 +97,7 @@ service memcached start
 #wget -c http://dl.google.com/android/adt/22.6.2/${android}.zip
 #jar xvf ${android}.zip
 #mv ${android}/sdk /usr/local/adt
-#chmod +x /usr/local/adt/tools/android /usr/local/adt/build-tools/android-4.4.2/aapt /usr/local/adt/build-tools/android-4.4.2/dx /usr/local/adt/platform-tools/adb /usr/local/adt/platform-tools/fastboot
+#chmod +x /usr/local/adt/platform-tools/* /usr/local/adt/tools/* /usr/local/adt/build-tools/android-4.4.2/*
 #echo '' >> ${profile}
 #echo '#android sdk' >> ${profile}
 #echo 'export ANDROID_HOME=/usr/local/adt' >> ${profile}
