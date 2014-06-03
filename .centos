@@ -81,7 +81,7 @@ service mysqld start
 chkconfig --level 2345 memcached on
 service memcached start
 
-#echo '================== ant ==================';
+#echo '================== apache ant ==================';
 #ant='apache-ant-1.9.4-bin';
 #wget -c http://mirrors.hust.edu.cn/apache/ant/binaries/${ant}.tar.gz
 #tar zxvf ${ant}.tar.gz
