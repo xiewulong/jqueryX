@@ -83,7 +83,7 @@ service memcached start
 
 #echo '================== apache ant ==================';
 #ant='apache-ant-1.9.4';
-#wget -c http://apache.fayea.com/apache-mirror/ant/binaries/${ant}.tar.gz
+#wget -c http://apache.fayea.com/apache-mirror/ant/binaries/${ant}-bin.tar.gz
 #tar zxvf ${ant}-bin.tar.gz
 #mv ${ant} /usr/local/ant
 #echo '' >> ${profile}
