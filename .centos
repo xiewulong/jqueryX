@@ -82,9 +82,9 @@ chkconfig --level 2345 memcached on
 service memcached start
 
 #echo '================== apache ant ==================';
-#ant='apache-ant-1.9.4-bin';
-#wget -c http://mirrors.hust.edu.cn/apache/ant/binaries/${ant}.tar.gz
-#tar zxvf ${ant}.tar.gz
+#ant='apache-ant-1.9.4';
+#wget -c http://mirrors.hust.edu.cn/apache/ant/binaries/${ant}-bin.tar.gz
+#tar zxvf ${ant}-bin.tar.gz
 #mv ${ant} /usr/local/ant
 #echo '' >> ${profile}
 #echo '#apache ant' >> ${profile}
