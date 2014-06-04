@@ -87,7 +87,7 @@ service memcached start
 #tar zxvf ${ant}-bin.tar.gz
 #mv ${ant} /usr/local/ant
 #echo '' >> ${profile}
-#echo '#apache ant' >> ${profile}
+#echo '# apache ant' >> ${profile}
 #echo 'export ANT_HOME=/usr/local/ant' >> ${profile}
 #echo 'export PATH=$PATH:$ANT_HOME/bin' >> ${profile}
 #source ${profile}
@@ -99,7 +99,7 @@ service memcached start
 #mv ${android}/sdk /usr/local/adt
 #chmod +x /usr/local/adt/platform-tools/* /usr/local/adt/tools/* /usr/local/adt/build-tools/android-4.4.2/*
 #echo '' >> ${profile}
-#echo '#android sdk' >> ${profile}
+#echo '# android sdk' >> ${profile}
 #echo 'export ANDROID_HOME=/usr/local/adt' >> ${profile}
 #echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools' >> ${profile}
 #source ${profile}
