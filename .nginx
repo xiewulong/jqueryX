@@ -2,20 +2,20 @@
 
 ngx=~/nginx
 bin=/usr/local/nginx/sbin/nginx
-pid=`cat ${ngx}/logs/nginx.pid`
+pid=${ngx}/logs/nginx.pid
 
 case $1 in
 	start)
 		${bin} -p ${ngx} && echo 'nginx is already running.'
 		;;
 	stop)
-		kill -QUIT ${pid}` && echo 'nginx stops.'
+		kill -QUIT `cat ${pid}` && echo 'nginx stops.'
 		;;
 	restart | reload)
-		kill -HUP ${pid} && echo 'nginx reloaded.'
+		kill -HUP `cat ${pid}` && echo 'nginx reloaded.'
 		;;
 	pid)
-		echo ${pid}
+		echo `cat ${pid}`
 		;;
 	*)
 		echo "Usage: $0 {start|stop|restart|reload|pid}"
