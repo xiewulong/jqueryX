@@ -82,10 +82,11 @@ chkconfig --level 2345 memcached on
 service memcached start
 
 #echo '================== apache ant ==================';
-#ant='apache-ant-1.9.4';
-#wget -c http://apache.fayea.com/apache-mirror/ant/binaries/${ant}-bin.tar.gz
-#tar zxvf ${ant}-bin.tar.gz
-#mv ${ant} /usr/local/ant
+#name='apache-ant-1.9.4';
+#tar='${name}-bin.tar.gz';
+#wget -c http://apache.fayea.com/apache-mirror/ant/binaries/${tar}
+#tar zxvf ${tar}
+#mv ${name} /usr/local/ant
 #echo '' >> ${profile}
 #echo '# apache ant' >> ${profile}
 #echo 'export ANT_HOME=/usr/local/ant' >> ${profile}
@@ -93,11 +94,12 @@ service memcached start
 #source ${profile}
 
 #echo '================== android sdk ==================';
-#android='adt-bundle-linux-x86_64-20140321'
-#wget -c http://dl.google.com/android/adt/22.6.2/${android}.zip
-#jar xvf ${android}.zip
-#mv ${android}/sdk /usr/local/adt
-#chmod +x /usr/local/adt/platform-tools/* /usr/local/adt/tools/* /usr/local/adt/build-tools/android-4.4.2/*
+#name='adt-bundle-linux-x86_64-20140321'
+#dist=/usr/local/adt
+#wget -c http://dl.google.com/android/adt/22.6.2/${name}.zip
+#jar xvf ${name}.zip
+#mv ${name}/sdk ${dist}
+#chmod +x ${dist}/platform-tools/* ${dist}/tools/* ${dist}/build-tools/android-4.4.2/*
 #echo '' >> ${profile}
 #echo '# android sdk' >> ${profile}
 #echo 'export ANDROID_HOME=/usr/local/adt' >> ${profile}
