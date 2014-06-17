@@ -69,6 +69,7 @@ ln -s /lib64/libpcre.so.0.0.1 /lib64/libpcre.so.1
 #echo 'zend_loader.obfuscation_level_support=3' >> /etc/php.ini
 
 echo '================== config =================='
+ln -s /etc/rc.d/rc.local rc.local
 sed -i "s/;date.timezone =/date.timezone = PRC/g" /etc/php.ini
 sed -i "s/user = apache/user = ${nginx_user}/g" /etc/php-fpm.d/www.conf
 sed -i "s/group = apache/group = ${nginx_user}/g" /etc/php-fpm.d/www.conf
