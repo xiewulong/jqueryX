@@ -68,21 +68,6 @@ ln -s /lib64/libpcre.so.0.0.1 /lib64/libpcre.so.1
 #echo 'zend_loader.disable_licensing=0' >> /etc/php.ini
 #echo 'zend_loader.obfuscation_level_support=3' >> /etc/php.ini
 
-echo '================== config =================='
-ln -s /etc/rc.d/rc.local rc.local
-sed -i "s/;date.timezone =/date.timezone = PRC/g" /etc/php.ini
-sed -i "s/user = apache/user = ${nginx_user}/g" /etc/php-fpm.d/www.conf
-sed -i "s/group = apache/group = ${nginx_user}/g" /etc/php-fpm.d/www.conf
-chgrp ${nginx_user} /var/lib/php/session
-chkconfig --level 2345 php-fpm on
-service php-fpm start
-chkconfig --level 2345 mysqld on
-service mysqld start
-#grant all privileges on *.* to user@'host' identified by 'password';
-#flush privileges;
-chkconfig --level 2345 memcached on
-service memcached start
-
 #echo '================== apache ant =================='
 #name='apache-ant-1.9.4';
 #tar='${name}-bin.tar.gz';
@@ -107,3 +92,21 @@ service memcached start
 #echo 'export ANDROID_HOME=/usr/local/adt' >> ${profile}
 #echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools' >> ${profile}
 #source ${profile}
+
+echo '================== config =================='
+ln -s /etc/rc.d/rc.local rc.local
+sed -i "s/;date.timezone =/date.timezone = PRC/g" /etc/php.ini
+sed -i "s/user = apache/user = ${nginx_user}/g" /etc/php-fpm.d/www.conf
+sed -i "s/group = apache/group = ${nginx_user}/g" /etc/php-fpm.d/www.conf
+chgrp ${nginx_user} /var/lib/php/session
+chkconfig --level 2345 php-fpm on
+service php-fpm start
+chkconfig --level 2345 memcached on
+service memcached start
+chkconfig --level 2345 mysqld on
+service mysqld start
+#grant all privileges on *.* to user@'host' identified by 'password';
+#flush privileges;
+su - www -c 'git clone https://github.com/xiewulong/yii.git'
+su - www -c 'wget -c http://wordpress.org/latest.tar.gz'
+su - www -c 'mv latest.tar.gz wordpress.tar.gz'
