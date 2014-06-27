@@ -61,6 +61,7 @@ ln -s /lib64/libpcre.so.0.0.1 /lib64/libpcre.so.1
 #wget -c http://downloads.zend.com/guard/5.5.0/${zendguardloader}.tar.gz
 #tar zxvf ${zendguardloader}.tar.gz
 #cp ${zendguardloader}/php-5.3.x/ZendGuardLoader.so /usr/lib64/php/modules/ZendGuardLoader.so
+#rm -rf ${zendguardloader}
 #echo '' >> /etc/php.ini
 #echo '; zend guard loader' >> /etc/php.ini
 #echo 'zend_extension=/usr/lib64/php/modules/ZendGuardLoader.so' >> /etc/php.ini
@@ -110,6 +111,4 @@ chkconfig --level 2345 mysqld on
 service mysqld start
 #grant all privileges on *.* to user@'host' identified by 'password';
 #flush privileges;
-su - www -c 'git clone https://github.com/xiewulong/yii.git'
-su - www -c 'wget -c http://wordpress.org/latest.tar.gz'
-su - www -c 'mv latest.tar.gz wordpress.tar.gz'
+#su - www -c 'git clone https://github.com/xiewulong/yii.git'
