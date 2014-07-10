@@ -111,4 +111,4 @@ chkconfig --level 2345 mysqld on
 service mysqld start
 #grant all privileges on *.* to user@'host' identified by 'password';
 #flush privileges;
-#su - www -c 'git clone https://github.com/xiewulong/yii.git'
+#su - www -c 'git clone https://github.com/yiisoft/yii.git'
