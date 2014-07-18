@@ -28,10 +28,10 @@
 			$.extend({
 
 				/**
-				 * 浏览器cookie操作
+				 * 浏览器cookie读/写
 				 * @method $.cookie
 				 * @since 1.0.0
-				 * @param {string} name 键名
+				 * @param {string} name 名称
 				 * @param {string} [value] 值
 				 * @param {number} [expires] 有效期, 单位: 天
 				 * @param {string} [path] 服务器路径
