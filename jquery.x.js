@@ -28,7 +28,7 @@
 			$.extend({
 
 				/**
-				 * 浏览器cookie读/写
+				 * cookie读/写
 				 * @method $.cookie
 				 * @since 1.0.0
 				 * @param {string} name 名称
@@ -38,18 +38,17 @@
 				 * @param {string} [domain] 域名
 				 * @param {bool} [secure] https安全传输
 				 * @return {string|none}
-				 * @example $.cookie(d, fn);
+				 * @example $.cookie(name, value, expires, path, domain, secure);
 				 */
 				cookie: function(name, value, expires, path, domain, secure){
-					var arr,
-						d		= new Date(),
-						cookie	= '';
+					var arr, cookie,
+						d = new Date();
 
 					if(value === undefined){
 						arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
 						return arr ? unescape(arr[2]) : '';
 					}else{
-						cookie += name + '=' + escape(value);
+						cookie = name + '=' + escape(value);
 						cookie += expires ? ';expires=' + d.toGMTString(d.setDate(d.getDate() + expires)) : '';
 						cookie += path ? ';path=' + path : '';
 						cookie += domain ? ';domain=' + domain : '';
