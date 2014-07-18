@@ -120,6 +120,36 @@
 			$.extend({
 
 				/**
+				 * cookie读/写
+				 * @method $.cookie
+				 * @since 1.0.0
+				 * @param {string} name 名称
+				 * @param {string} [value] 值
+				 * @param {number} [expires] 有效期, 单位: 天
+				 * @param {string} [path] 服务器路径
+				 * @param {string} [domain] 域名
+				 * @param {bool} [secure] https安全传输
+				 * @return {string|none}
+				 * @example $.cookie(name, value, expires, path, domain, secure);
+				 */
+				cookie: function(name, value, expires, path, domain, secure){
+					var arr, cookie,
+						d = new Date();
+
+					if(value === undefined){
+						arr = document.cookie.match(new RegExp(&#x27;(^| )&#x27; + name + &#x27;=([^;]*)(;|$)&#x27;));
+						return arr ? unescape(arr[2]) : &#x27;&#x27;;
+					}else{
+						cookie = name + &#x27;=&#x27; + escape(value);
+						cookie += expires ? &#x27;;expires=&#x27; + d.toGMTString(d.setDate(d.getDate() + expires)) : &#x27;&#x27;;
+						cookie += path ? &#x27;;path=&#x27; + path : &#x27;&#x27;;
+						cookie += domain ? &#x27;;domain=&#x27; + domain : &#x27;&#x27;;
+						cookie += secure ? &#x27;;secure&#x27; : &#x27;&#x27;;
+						document.cookie = cookie;
+					}
+				},
+
+				/**
 				 * 粘贴板
 				 * @method $.clip
 				 * @since 1.0.0
@@ -134,22 +164,17 @@
 						fn		= fn || Fn;
 
 					if((clip = window.clipboardData)){
-
 						//IE,直接复制到剪贴板
 						clip.clearData();
 						clip.setData(&quot;text&quot;, text);
 						fn.call(d, true);
-
 					}else{
-
 						//非IE,只作选中处理
 						d.focus();
 						d.selectionStart	= 0,
 						d.selectionEnd		= text.length;
 						fn.call(d, false);
-
 					}
-
 				},
 
 				/**
@@ -365,7 +390,6 @@
 							marginTop	: (scroll ? $win.scrollTop() : 0) - h / 2
 						};
 					}
-
 				},
 				
 				/**
@@ -471,11 +495,16 @@
 					if(cutout){
 						if(length &gt; cutout){
 							for(var i=0, len = text.length; i &lt;= len; i++){
-								if($.textSize(text.substring(0, i+1)) &gt; cutout)return text.substring(0, i);
+								if($.textSize(text.substring(0, i+1)) &gt; cutout){
+									return text.substring(0, i);
+								}
 							}
-						}else return text;
-					}else return length;
-
+						}else{
+							return text;
+						}
+					}else{
+						return length;
+					}
 				},
 
 				/**
@@ -725,7 +754,6 @@
 						});
 						return tag;
 					}
-
 				},
 
 				/**
@@ -1152,7 +1180,6 @@
 
 						//判断运行回调或直接截取字符串
 						typeof config.fn === &#x27;function&#x27; ? config.fn.call(this, Math.floor(limit - size)) : size &gt; limit &amp;&amp; $this.val($.textSize(_value, limit * 2));
-
 					}
 
 					//记录光标位置
@@ -1186,9 +1213,7 @@
 					function _check(defaultValue){
 						return config.values.length == 0 || $.inArray(defaultValue, config.values) &gt;= 0;
 					}
-
 				}
-
 			});
 
 			return $;

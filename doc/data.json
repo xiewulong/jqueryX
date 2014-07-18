@@ -31,7 +31,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "jquery.x.js",
-            "line": 461,
+            "line": 490,
             "description": "jQuery X Plugins",
             "since": "1.0.0"
         }
@@ -63,7 +63,7 @@
             "module": "jqueryX",
             "namespace": "",
             "file": "jquery.x.js",
-            "line": 461,
+            "line": 490,
             "description": "jQuery原型方法",
             "since": "1.0.0"
         }
@@ -72,6 +72,60 @@
         {
             "file": "jquery.x.js",
             "line": 30,
+            "description": "cookie读/写",
+            "itemtype": "method",
+            "name": "$.cookie",
+            "since": "1.0.0",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "名称",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "值",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "expires",
+                    "description": "有效期, 单位: 天",
+                    "type": "Number",
+                    "optional": true
+                },
+                {
+                    "name": "path",
+                    "description": "服务器路径",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "domain",
+                    "description": "域名",
+                    "type": "String",
+                    "optional": true
+                },
+                {
+                    "name": "secure",
+                    "description": "https安全传输",
+                    "type": "Bool",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String|none"
+            },
+            "example": [
+                " $.cookie(name, value, expires, path, domain, secure);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 60,
             "description": "粘贴板",
             "itemtype": "method",
             "name": "$.clip",
@@ -101,7 +155,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 63,
+            "line": 88,
             "description": "加载程序",
             "itemtype": "method",
             "name": "$.loader",
@@ -131,7 +185,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 86,
+            "line": 111,
             "description": "弹窗",
             "itemtype": "method",
             "name": "$.pop",
@@ -300,7 +354,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 279,
+            "line": 303,
             "description": "关闭弹窗",
             "itemtype": "method",
             "name": "$.popClose",
@@ -337,7 +391,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 308,
+            "line": 332,
             "description": "开启遮罩蒙板",
             "itemtype": "method",
             "name": "$.popBg",
@@ -420,7 +474,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 366,
+            "line": 390,
             "description": "返回字符串长度/截取字符串",
             "itemtype": "method",
             "name": "$.textSize",
@@ -450,7 +504,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 389,
+            "line": 418,
             "description": "ie6检测",
             "itemtype": "method",
             "name": "$.ie6",
@@ -475,7 +529,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 406,
+            "line": 435,
             "description": "低于指定版本ie检测",
             "itemtype": "method",
             "name": "$.ltie",
@@ -507,7 +561,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 435,
+            "line": 464,
             "description": "指定ie版本检测",
             "itemtype": "method",
             "name": "$.ie",
@@ -532,7 +586,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 471,
+            "line": 500,
             "description": "模拟滚动条",
             "itemtype": "method",
             "name": "$.fn.scrolls",
@@ -558,7 +612,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 570,
+            "line": 599,
             "description": "设置模拟滚动条高度",
             "itemtype": "method",
             "name": "$.fn.fixScrolls",
@@ -576,7 +630,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 596,
+            "line": 625,
             "description": "复选全选",
             "itemtype": "method",
             "name": "$.fn.checkAll",
@@ -613,7 +667,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 639,
+            "line": 667,
             "description": "模拟复选",
             "itemtype": "method",
             "name": "$.fn.checkboxs",
@@ -646,7 +700,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 658,
+            "line": 686,
             "description": "模拟单选",
             "itemtype": "method",
             "name": "$.fn.radios",
@@ -679,7 +733,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 681,
+            "line": 709,
             "description": "模拟列表框",
             "itemtype": "method",
             "name": "$.fn.selects",
@@ -799,7 +853,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 808,
+            "line": 836,
             "description": "tab切换",
             "itemtype": "method",
             "name": "$.fn.tabs",
@@ -851,7 +905,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 851,
+            "line": 879,
             "description": "图片预加载",
             "itemtype": "method",
             "name": "$.fn.imgLoad",
@@ -884,7 +938,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 885,
+            "line": 913,
             "description": "文本输入区光标处插入",
             "itemtype": "method",
             "name": "$.fn.inputIn",
@@ -915,7 +969,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 937,
+            "line": 965,
             "description": "限制字符",
             "itemtype": "method",
             "name": "$.fn.limit",
@@ -946,7 +1000,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 959,
+            "line": 987,
             "description": "文本输入控件",
             "itemtype": "method",
             "name": "$.fn.inputs",
