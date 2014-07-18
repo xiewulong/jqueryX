@@ -28,6 +28,37 @@
 			$.extend({
 
 				/**
+				 * 浏览器cookie操作
+				 * @method $.cookie
+				 * @since 1.0.0
+				 * @param {string} name 键名
+				 * @param {string} [value] 值
+				 * @param {number} [expires] 有效期, 单位: 天
+				 * @param {string} [path] 服务器路径
+				 * @param {string} [domain] 域名
+				 * @param {bool} [secure] https安全传输
+				 * @return {string|none}
+				 * @example $.cookie(d, fn);
+				 */
+				cookie: function(name, value, expires, path, domain, secure){
+					var arr,
+						d		= new Date(),
+						cookie	= '';
+
+					if(value === undefined){
+						arr = document.cookie.match(new RegExp('(^| )' + name + '=([^;]*)(;|$)'));
+						return arr ? unescape(arr[2]) : '';
+					}else{
+						cookie += name + '=' + escape(value);
+						cookie += expires ? ';expires=' + d.toGMTString(d.setDate(d.getDate() + expires)) : '';
+						cookie += path ? ';path=' + path : '';
+						cookie += domain ? ';domain=' + domain : '';
+						cookie += secure ? ';secure' : '';
+						document.cookie = cookie;
+					}
+				},
+
+				/**
 				 * 粘贴板
 				 * @method $.clip
 				 * @since 1.0.0
@@ -42,22 +73,17 @@
 						fn		= fn || Fn;
 
 					if((clip = window.clipboardData)){
-
 						//IE,直接复制到剪贴板
 						clip.clearData();
 						clip.setData("text", text);
 						fn.call(d, true);
-
 					}else{
-
 						//非IE,只作选中处理
 						d.focus();
 						d.selectionStart	= 0,
 						d.selectionEnd		= text.length;
 						fn.call(d, false);
-
 					}
-
 				},
 
 				/**
@@ -273,7 +299,6 @@
 							marginTop	: (scroll ? $win.scrollTop() : 0) - h / 2
 						};
 					}
-
 				},
 				
 				/**
@@ -379,11 +404,16 @@
 					if(cutout){
 						if(length > cutout){
 							for(var i=0, len = text.length; i <= len; i++){
-								if($.textSize(text.substring(0, i+1)) > cutout)return text.substring(0, i);
+								if($.textSize(text.substring(0, i+1)) > cutout){
+									return text.substring(0, i);
+								}
 							}
-						}else return text;
-					}else return length;
-
+						}else{
+							return text;
+						}
+					}else{
+						return length;
+					}
 				},
 
 				/**
@@ -633,7 +663,6 @@
 						});
 						return tag;
 					}
-
 				},
 
 				/**
@@ -1060,7 +1089,6 @@
 
 						//判断运行回调或直接截取字符串
 						typeof config.fn === 'function' ? config.fn.call(this, Math.floor(limit - size)) : size > limit && $this.val($.textSize(_value, limit * 2));
-
 					}
 
 					//记录光标位置
@@ -1094,9 +1122,7 @@
 					function _check(defaultValue){
 						return config.values.length == 0 || $.inArray(defaultValue, config.values) >= 0;
 					}
-
 				}
-
 			});
 
 			return $;
