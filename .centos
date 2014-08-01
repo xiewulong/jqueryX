@@ -8,7 +8,7 @@ fi
 
 #config
 cur_dir=${pwd}
-node_ver='0.10.28'
+node_ver='0.10.30'
 pcre_ver='8.35'
 nginx_ver='1.6.0'
 nginx_user='www'
