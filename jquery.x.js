@@ -1,10 +1,11 @@
 /*!
- * jQuery X Plugins v1.0.0
+ * jQuery X Plugins
  * xiewulong <xiewulong@vip.qq.com>
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2014/4/16
+ * update: 2014/8/1
+ * version: 1.0.0
  */
 
 (function(window, undefined){
