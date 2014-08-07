@@ -4,7 +4,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2014/8/1
+ * update: 2014/8/7
  * version: 1.0.0
  */
 
@@ -27,6 +27,27 @@
 			 * @since 1.0.0
 			 */
 			$.extend({
+
+				//jQuery X Version
+				x: '1.0.0',
+
+				/**
+				 * ajax(可模拟demo)
+				 * @method $.xajax
+				 * @since 1.0.0
+				 * @param {string} url 请求链接
+				 * @param {function} [fn] 方法
+				 * @param {number|string|object} [demo] 测试数据
+				 * @param {object} [data] 数据
+				 * @param {string} [method=post] 请求方式
+				 * @param {string} [datatype=json] 返回数据的格式
+				 * @return {none}
+				 * @example $.xajax(url, fn, demo, data, method, datatype);
+				 */
+				xajax : function(url, fn, demo, data, method, datatype){
+					fn = fn || Fn;
+					url == 'javascript:;' ? fn(demo) : $[method || 'post'](url, data, fn, datatype || 'json');
+				},
 
 				/**
 				 * cookie读/写
@@ -494,9 +515,28 @@
 			 * @since 1.0.0
 			 */
 			$.fn.extend({
-
-				//jQuery X Version
-				x: '1.0.0',
+	
+				/**
+				 * 回到顶部
+				 * @method $.fn.backtop
+				 * @since 1.0.0
+				 * @return {none}
+				 * @chainable
+				 * @example $(selector).backtop();
+				 */
+				backtop : function(){
+					var $hb = $('html, body');
+					return this.each(function(){
+						var _scroll,
+							$this = $(this);
+						(_scroll = function(){
+							$this[$win.scrollTop() ? 'addClass' : 'removeClass']('on');
+						})();
+						$win.on('scroll', _scroll);
+					}).on('click', function(){
+						$hb.stop().animate({scrollTop: 0});
+					});
+				};
 
 				/**
 				 * 模拟滚动条
@@ -505,7 +545,7 @@
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.scrolls(fn);
+				 * @example $(selector).scrolls(fn);
 				 */
 				scrolls: function(fn){
 					return this.each(function(){
@@ -603,7 +643,7 @@
 				 * @since 1.0.0
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.fixScrolls();
+				 * @example $(selector).fixScrolls();
 				 */
 				fixScrolls: function(){
 					return this.each(function(){
@@ -632,7 +672,7 @@
 				 * @param {function} [fnC] 复选回调
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.checkAll(selector, fn, fnC);
+				 * @example $(selector).checkAll(selector, fn, fnC);
 				 */
 				checkAll: function(selector, fn, fnC){
 					var $cbs	= $(selector),
@@ -673,7 +713,7 @@
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.checkboxs(on, fn);
+				 * @example $(selector).checkboxs(on, fn);
 				 */
 				checkboxs: function(on, fn){
 					on === undefined && (on = 'on');
@@ -692,7 +732,7 @@
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.radios(on, fn);
+				 * @example $(selector).radios(on, fn);
 				 */
 				radios: function(on, fn){
 					var $this = this;
@@ -728,7 +768,7 @@
 				 * @param {function} [prop.fnA=false] a回调
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.selects(prop);
+				 * @example $(selector).selects(prop);
 				 */
 				selects: function(prop){
 					var p_all, hide_all,
@@ -845,7 +885,7 @@
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.tabs(selector, on, type, index, fn);
+				 * @example $(selector).tabs(selector, on, type, index, fn);
 				 */
 				tabs: function(selector, on, type, index, fn){
 					typeof on === 'function' && (fn = on, on = 'on');
@@ -885,7 +925,7 @@
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.imgLoad(attr, fn);
+				 * @example $(selector).imgLoad(attr, fn);
 				 */
 				imgLoad: function(attr, fn){
 					attr === undefined && (attr = '_src');
@@ -919,7 +959,7 @@
 				 * @param {array} [wrap] 两侧符号
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.inputIn(txt, wrap);
+				 * @example $(selector).inputIn(txt, wrap);
 				 */
 				inputIn: function(txt, wrap){
 
@@ -971,7 +1011,7 @@
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.limit(limit, fn);
+				 * @example $(selector).limit(limit, fn);
 				 */
 				limit: function(limit, fn){
 					return this.each(function(){
@@ -1001,7 +1041,7 @@
 				 * @param {bool} [prop.events=true] 默认获取焦点和失去焦点的时候运行fn
 				 * @return {object} this
 				 * @chainable
-				 * @example $.fn.inputs(prop);
+				 * @example $(selector).inputs(prop);
 				 */
 				inputs: function(prop){
 					var $parent, selector, ie,
