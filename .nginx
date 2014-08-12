@@ -1,12 +1,17 @@
 #!/bin/bash
 
-ngx=~/nginx
 bin=/usr/local/nginx/sbin/nginx
-pid=${ngx}/logs/nginx.pid
+cfg=-p
+ngx=~/nginx
+pid=${ngx}/nginx.pid
+
+[ -n "$2" ] && cfg=$2
+[ -n "$3" ] && ngx=$3
+[ -n "$4" ] && pid=$4
 
 case $1 in
 	start)
-		${bin} -p ${ngx} && echo 'nginx is already running.'
+		${bin} ${cfg} ${ngx} && echo 'nginx is already running.'
 		;;
 	stop)
 		kill -QUIT `cat ${pid}` && echo 'nginx stops.'
