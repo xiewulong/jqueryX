@@ -1,20 +1,20 @@
 #!/bin/bash
 
 #check permission
-if [ $(id -u) != '0' ]; then
+if [ `id -u` != '0' ]; then
 	echo 'Error: You must be root to run this script'
 	exit 1
 fi
 
 #config
-cur_dir=${pwd}
+dir=`pwd`
 
 #back to root directory
 cd
 
 echo '================== add repo && install tools && update && upgrade =================='
 yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm
-yum install -y net-tools ntp vsftpd vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* zip unzip inotify-tools golang git-core subversion docker-io nodejs nginx mysql-server memcached php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath php-pecl-memcache php-pecl-memcached java-1.7.0-openjdk java-1.7.0-openjdk-devel
+yum install -y net-tools ntp vsftpd vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* zip unzip inotify-tools golang git-core subversion docker nodejs nginx mysql-server memcached php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath php-pecl-memcache php-pecl-memcached java-1.7.0-openjdk java-1.7.0-openjdk-devel
 yum update -y
 yum upgrade -y
 

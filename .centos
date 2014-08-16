@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #check permission
-if [ $(id -u) != '0' ]; then
+if [ `id -u` != '0' ]; then
 	echo 'Error: You must be root to run this script'
 	exit 1
 fi
 
 #config
-cur_dir=${pwd}
+dir=`pwd`
 node_ver='0.10.30'
 pcre_ver='8.35'
 nginx_ver='1.6.0'
