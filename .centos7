@@ -17,6 +17,7 @@ yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-release-7-
 yum install -y net-tools iptables ntp vsftpd vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* zip unzip inotify-tools golang git-core subversion docker
 yum update -y
 yum upgrade -y
+yum clean all
 
 echo '================== config =================='
 systemctl stop firewalld
