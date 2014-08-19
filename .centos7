@@ -14,7 +14,7 @@ cd
 
 echo '================== add repo && install tools && update && upgrade =================='
 yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm
-yum install -y net-tools iptables ntp vsftpd vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* zip unzip inotify-tools golang git-core subversion docker
+yum install -y net-tools iptables-services ntp vsftpd vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* zip unzip inotify-tools golang git-core subversion docker
 yum update -y
 yum upgrade -y
 yum clean all
