@@ -7,7 +7,7 @@ if [ `id -u` != '0' ]; then
 fi
 
 #config
-dir=`pwd`
+dir=`pwd`/`dirname $0`
 node_ver='0.10.30'
 pcre_ver='8.35'
 nginx_ver='1.6.0'
@@ -25,7 +25,7 @@ function installer(){
 	rm -rf $1
 }
 
-#back to root directory
+#go to root directory
 cd
 
 echo '================== add repo && install tools && update && upgrade =================='
@@ -108,7 +108,16 @@ chkconfig --level 2345 memcached on
 service memcached start
 chkconfig --level 2345 mysqld on
 service mysqld start
-#grant all privileges on *.* to user@'host' identified by 'password';
-#flush privileges;
 chkconfig --level 2345 docker on
 service docker start
+
+echo '================== mysql privileges =================='
+sql=~/privileges.sql
+echo "truncate mysql.user;" > ${sql}
+echo "grant all privileges on *.* to root@localhost identified by 'root';" >> ${sql}
+echo "flush privileges;" >> ${sql}
+mysql -v < ${sql}
+rm -rf ${sql}
+
+#back
+cd ${dir}

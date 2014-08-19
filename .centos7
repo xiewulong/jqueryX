@@ -7,29 +7,24 @@ if [ `id -u` != '0' ]; then
 fi
 
 #config
-dir=`pwd`
+dir=`pwd`/`dirname $0`
 
-#back to root directory
+#go to root directory
 cd
 
 echo '================== add repo && install tools && update && upgrade =================='
 yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm
-yum install -y net-tools ntp vsftpd vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* zip unzip inotify-tools golang git-core subversion docker nodejs nginx mysql-server memcached php php-fpm php-mysql php-mcrypt php-gd php-mbstring php-xml php-imap php-bcmath php-pecl-memcache php-pecl-memcached java-1.7.0-openjdk java-1.7.0-openjdk-devel
+yum install -y net-tools iptables ntp vsftpd vim* make cmake gcc gcc-c++ wget curl curl-devel openssl openssl-devel telnet* zip unzip inotify-tools golang git-core subversion docker
 yum update -y
 yum upgrade -y
 
-echo '================== npm =================='
-npm install -g grunt-cli cordova
-
 echo '================== config =================='
-ln -s /etc/rc.d/rc.local rc.local
-#systemctl enable vsftpd
-#systemctl start vsftpd
-systemctl enable php-fpm
-systemctl start php-fpm
-systemctl enable memcached
-systemctl start memcached
-systemctl enable mysqld
-systemctl start mysqld
+systemctl stop firewalld
+systemctl disable firewalld
+systemctl enable iptables
+systemctl start iptables
 systemctl enable docker
 systemctl start docker
+
+#back
+cd ${dir}
