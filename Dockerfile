@@ -1,12 +1,24 @@
 FROM centos
 
+MAINTAINER xiewulong <xiewulong@vip.qq.com>
+
 RUN yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm && \
-	yum install -y nginx && \
 	yum update -y && \
 	yum upgrade -y
 
-ADD nginx.conf /etc/nginx/nginx.conf
+RUN yum install -y nodejs && \
+	yum clean all
 
-CMD ["nginx"]
+RUN npm install -g grunt-cli && \
+	useradd xiewulong && \
+	su - xiewulong
 
-EXPOSE 80 443
+ADD package.json
+
+RUN npm install
+
+WORKDIR /home/xiewulong
+
+VOLUME ["/home/xiewulong"]
+
+#CMD
