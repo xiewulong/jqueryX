@@ -9,12 +9,8 @@ RUN yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-releas
 RUN yum install -y tar bzip2 libpng libpng-devel git-core nodejs npm && \
 	yum clean all
 
-RUN npm install -g grunt-cli && \
-	useradd factory
+RUN npm install -g grunt-cli
 
-USER factory
-
-WORKDIR /home/factory/
 RUN git clone https://github.com/xiewulong/jqueryX.git
 
 WORKDIR jqueryX
