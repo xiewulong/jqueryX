@@ -8,7 +8,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/xiewulong/jqueryX.git"
+		"url": "git@github.com:xiewulong/jqueryX.git"
 	},
 	"keywords": [
 		"javascript",
@@ -24,7 +24,7 @@
 	},
 	"license": {
 		"type": "MIT",
-		"url": "https://github.com/xiewulong/jqueryX/blob/master/MIT-License"
+		"url": "https://github.com/xiewulong/jqueryX/raw/master/LICENSE"
 	},
 	"bugs": {
 		"url": "https://github.com/xiewulong/jqueryX/issues"
