@@ -31,7 +31,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "jquery.x.js",
-            "line": 490,
+            "line": 512,
             "description": "jQuery X Plugins",
             "since": "1.0.0"
         }
@@ -48,7 +48,7 @@
             "module": "jqueryX",
             "namespace": "",
             "file": "jquery.x.js",
-            "line": 23,
+            "line": 24,
             "description": "jquery静态方法",
             "since": "1.0.0"
         },
@@ -63,7 +63,7 @@
             "module": "jqueryX",
             "namespace": "",
             "file": "jquery.x.js",
-            "line": 490,
+            "line": 512,
             "description": "jQuery原型方法",
             "since": "1.0.0"
         }
@@ -71,7 +71,63 @@
     "classitems": [
         {
             "file": "jquery.x.js",
-            "line": 30,
+            "line": 34,
+            "description": "ajax(可模拟demo)",
+            "itemtype": "method",
+            "name": "$.xajax",
+            "since": "1.0.0",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "请求链接",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "方法",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "demo",
+                    "description": "测试数据",
+                    "type": "Number|string|object",
+                    "optional": true
+                },
+                {
+                    "name": "data",
+                    "description": "数据",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "method",
+                    "description": "请求方式",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "post"
+                },
+                {
+                    "name": "datatype",
+                    "description": "返回数据的格式",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "json"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "None"
+            },
+            "example": [
+                " $.xajax(url, fn, demo, data, method, datatype);"
+            ],
+            "class": "$.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 52,
             "description": "cookie读/写",
             "itemtype": "method",
             "name": "$.cookie",
@@ -125,7 +181,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 60,
+            "line": 82,
             "description": "粘贴板",
             "itemtype": "method",
             "name": "$.clip",
@@ -155,7 +211,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 88,
+            "line": 110,
             "description": "加载程序",
             "itemtype": "method",
             "name": "$.loader",
@@ -185,7 +241,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 111,
+            "line": 133,
             "description": "弹窗",
             "itemtype": "method",
             "name": "$.pop",
@@ -354,7 +410,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 303,
+            "line": 325,
             "description": "关闭弹窗",
             "itemtype": "method",
             "name": "$.popClose",
@@ -391,7 +447,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 332,
+            "line": 354,
             "description": "开启遮罩蒙板",
             "itemtype": "method",
             "name": "$.popBg",
@@ -474,7 +530,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 390,
+            "line": 412,
             "description": "返回字符串长度/截取字符串",
             "itemtype": "method",
             "name": "$.textSize",
@@ -504,7 +560,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 418,
+            "line": 440,
             "description": "ie6检测",
             "itemtype": "method",
             "name": "$.ie6",
@@ -529,7 +585,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 435,
+            "line": 457,
             "description": "低于指定版本ie检测",
             "itemtype": "method",
             "name": "$.ltie",
@@ -561,7 +617,7 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 464,
+            "line": 486,
             "description": "指定ie版本检测",
             "itemtype": "method",
             "name": "$.ie",
@@ -586,7 +642,25 @@
         },
         {
             "file": "jquery.x.js",
-            "line": 500,
+            "line": 519,
+            "description": "回到顶部",
+            "itemtype": "method",
+            "name": "$.fn.backtop",
+            "since": "1.0.0",
+            "return": {
+                "description": "",
+                "type": "None"
+            },
+            "chainable": 1,
+            "example": [
+                " $(selector).backtop();"
+            ],
+            "class": "$.fn.extend",
+            "module": "jqueryX"
+        },
+        {
+            "file": "jquery.x.js",
+            "line": 541,
             "description": "模拟滚动条",
             "itemtype": "method",
             "name": "$.fn.scrolls",
@@ -605,14 +679,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.scrolls(fn);"
+                " $(selector).scrolls(fn);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 599,
+            "line": 640,
             "description": "设置模拟滚动条高度",
             "itemtype": "method",
             "name": "$.fn.fixScrolls",
@@ -623,14 +697,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.fixScrolls();"
+                " $(selector).fixScrolls();"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 625,
+            "line": 666,
             "description": "复选全选",
             "itemtype": "method",
             "name": "$.fn.checkAll",
@@ -660,14 +734,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.checkAll(selector, fn, fnC);"
+                " $(selector).checkAll(selector, fn, fnC);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 667,
+            "line": 708,
             "description": "模拟复选",
             "itemtype": "method",
             "name": "$.fn.checkboxs",
@@ -693,14 +767,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.checkboxs(on, fn);"
+                " $(selector).checkboxs(on, fn);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 686,
+            "line": 727,
             "description": "模拟单选",
             "itemtype": "method",
             "name": "$.fn.radios",
@@ -726,14 +800,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.radios(on, fn);"
+                " $(selector).radios(on, fn);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 709,
+            "line": 750,
             "description": "模拟列表框",
             "itemtype": "method",
             "name": "$.fn.selects",
@@ -846,14 +920,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.selects(prop);"
+                " $(selector).selects(prop);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 836,
+            "line": 877,
             "description": "tab切换",
             "itemtype": "method",
             "name": "$.fn.tabs",
@@ -898,14 +972,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.tabs(selector, on, type, index, fn);"
+                " $(selector).tabs(selector, on, type, index, fn);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 879,
+            "line": 920,
             "description": "图片预加载",
             "itemtype": "method",
             "name": "$.fn.imgLoad",
@@ -931,14 +1005,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.imgLoad(attr, fn);"
+                " $(selector).imgLoad(attr, fn);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 913,
+            "line": 954,
             "description": "文本输入区光标处插入",
             "itemtype": "method",
             "name": "$.fn.inputIn",
@@ -962,14 +1036,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.inputIn(txt, wrap);"
+                " $(selector).inputIn(txt, wrap);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 965,
+            "line": 1006,
             "description": "限制字符",
             "itemtype": "method",
             "name": "$.fn.limit",
@@ -993,14 +1067,14 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.limit(limit, fn);"
+                " $(selector).limit(limit, fn);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
         },
         {
             "file": "jquery.x.js",
-            "line": 987,
+            "line": 1028,
             "description": "文本输入控件",
             "itemtype": "method",
             "name": "$.fn.inputs",
@@ -1080,7 +1154,7 @@
             },
             "chainable": 1,
             "example": [
-                " $.fn.inputs(prop);"
+                " $(selector).inputs(prop);"
             ],
             "class": "$.fn.extend",
             "module": "jqueryX"
