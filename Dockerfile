@@ -6,19 +6,14 @@ RUN yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-releas
 	yum update -y && \
 	yum upgrade -y
 
-RUN yum install -y nodejs && \
+RUN yum install -y tar bzip2 libpng libpng-devel nodejs npm && \
 	yum clean all
 
 RUN npm install -g grunt-cli && \
-	useradd xiewulong && \
-	su - xiewulong
+	useradd factory && \
+	su - factory
 
-ADD package.json
+ADD package.json ~/package.json
+ADD .vimrc ~/vimrc
 
 RUN npm install
-
-WORKDIR /home/xiewulong
-
-VOLUME ["/home/xiewulong"]
-
-#CMD
