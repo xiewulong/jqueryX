@@ -7,14 +7,14 @@ RUN yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-releas
 	yum upgrade -y
 
 RUN yum install -y tar bzip2 libpng libpng-devel nodejs npm && \
-	yum clean all
-
-RUN npm install -g grunt-cli && \
+	yum clean all && \
+	npm install -g grunt-cli && \
 	useradd factory
+
+USER factory
+WORKDIR /home/factory
 
 ADD .vimrc /home/factory/.vimrc
 ADD package.json /home/factory/package.json
-RUN chown factory:factory /home/factory/.vimrc /home/factory/package.json
-
-USER factory
-RUN npm install
+RUN chown factory:factory /home/factory/.vimrc /home/factory/package.json && \
+	npm install
