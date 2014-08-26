@@ -49,18 +49,6 @@ module.exports = function(grunt){
 				},
 			},
 		},
-		/*
-		jsdoc: {
-			generate: {
-				src: ['jquery.x.js'],
-				options: {
-					template: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template',
-					configure: 'node_modules/grunt-jsdoc/node_modules/ink-docstrap/template/jsdoc.conf.json',
-					destination: 'doc',
-				},
-			},
-		},
-		*/
 		watch: {
 			scripts: {
 				files: ['jquery.x.js'],
@@ -90,13 +78,11 @@ module.exports = function(grunt){
 	//grunt.loadNpmTasks('grunt-contrib-concat');
 	//grunt.loadNpmTasks('grunt-contrib-requirejs');
 	grunt.loadNpmTasks('grunt-contrib-yuidoc');
-	//grunt.loadNpmTasks('grunt-jsdoc');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('default', [
 		'clean',
 		'uglify',
 		'yuidoc',
-		//'jsdoc', //dependent on java
 	]);
 };
