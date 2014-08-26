@@ -4,7 +4,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2014/8/7
+ * update: 2014/8/26
  * version: 1.0.0
  */
 
@@ -536,7 +536,7 @@
 					}).on('click', function(){
 						$hb.stop().animate({scrollTop: 0});
 					});
-				};
+				},
 
 				/**
 				 * 模拟滚动条
