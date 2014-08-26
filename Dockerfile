@@ -11,6 +11,9 @@ RUN yum install -y tar bzip2 libpng libpng-devel git-core nodejs npm && \
 
 RUN npm install -g grunt-cli
 
+USER root
+
+WORKDIR /root
 RUN git clone https://github.com/xiewulong/jqueryX.git
 
 WORKDIR jqueryX
