@@ -18,3 +18,5 @@ RUN git clone https://github.com/xiewulong/jqueryX.git
 
 WORKDIR jqueryX
 RUN npm install
+
+ENTRYPOINT su - root
