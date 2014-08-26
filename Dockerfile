@@ -12,11 +12,10 @@ RUN yum install -y tar bzip2 libpng libpng-devel nodejs npm && \
 RUN npm install -g grunt-cli && \
 	useradd factory
 
-ADD .vimrc /home/factory/.vimrc
-ADD package.json /home/factory/package.json
+USER factory
 
 WORKDIR /home/factory/
-RUN chown factory:factory -R .
+RUN git clone https://github.com/xiewulong/jqueryX.git
 
-USER factory
+WORKDIR jqueryX
 RUN npm install
