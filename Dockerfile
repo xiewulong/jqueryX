@@ -10,13 +10,9 @@ RUN yum install -y tar bzip2 libpng libpng-devel nodejs npm && \
 	yum clean all
 
 RUN npm install -g grunt-cli && \
-	useradd factory
+	useradd factory \
 
-USER factory
-
-WORKDIR /home/factory
-
-ADD package.json package.json
-ADD .vimrc .vimrc
-
+USER factory \
+ADD package.json package.json \
+ADD .vimrc .vimrc \
 RUN npm install
