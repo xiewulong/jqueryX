@@ -14,7 +14,7 @@ RUN npm install -g grunt-cli && \
 
 USER factory
 
-WORKDIR ~
+WORKDIR /home/factory
 
 ADD package.json package.json
 ADD .vimrc .vimrc
