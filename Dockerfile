@@ -6,7 +6,7 @@ RUN yum install -y http://mirrors.sohu.com/fedora-epel/beta/7/x86_64/epel-releas
 	yum update -y && \
 	yum upgrade -y
 
-RUN yum install -y tar bzip2 libpng libpng-devel nodejs npm && \
+RUN yum install -y tar bzip2 libpng libpng-devel git-core nodejs npm && \
 	yum clean all
 
 RUN npm install -g grunt-cli && \
