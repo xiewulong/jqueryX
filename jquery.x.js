@@ -4,11 +4,13 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2014/8/26
+ * update: 2014/8/31
  * version: 1.0.0
  */
 
-(function(window, undefined){
++function(window, undefined){
+
+	'use strict';
 
 	/**
 	 * jQuery X Plugins
@@ -1175,4 +1177,4 @@
 		jQuery && jQuery().jquery && jQueryX(jQuery);
 		typeof define === 'function' && define.amd && define(['jquery'], jQueryX);
 
-})(window);
+}(window);
