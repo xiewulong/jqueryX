@@ -1,0 +1,21 @@
+{
+	"name": "xiewulong/jqueryX",
+	"description": "jQuery X Plugins",
+	"keywords": ["xiewulong", "jquery", "jqueryX", "plugins"],
+	"type": "jquery plugins",
+	"license": "MIT",
+	"support": {
+		"issues": "https://github.com/xiewulong/jqueryX/issues",
+		"wiki": "https://github.com/xiewulong/jqueryX/wiki",
+		"source": "https://github.com/xiewulong/jqueryX"
+	},
+	"authors": [
+		{
+			"name": "xiewulong",
+			"email": "xiewulong@vip.qq.com"
+		}
+    ],
+	"autoload": {
+		"psr-4": {"yii\\jqueryX\\": ""}
+	}
+}
