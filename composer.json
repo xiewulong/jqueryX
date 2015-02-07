@@ -2,7 +2,7 @@
 	"name": "xiewulong/jqueryx",
 	"description": "jQuery X Plugins",
 	"keywords": ["xiewulong", "jquery", "jqueryX", "plugins"],
-	"type": "jquery plugins",
+	"type": "library",
 	"license": "MIT",
 	"support": {
 		"issues": "https://github.com/xiewulong/jqueryX/issues",
