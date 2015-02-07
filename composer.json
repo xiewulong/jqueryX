@@ -16,6 +16,6 @@
 		}
     ],
 	"autoload": {
-		"psr-4": {"yii\\jqueryX\\": ""}
+		"psr-4": {"xiewulong\\jqueryX\\": ""}
 	}
 }
