@@ -1,5 +1,5 @@
 {
-	"name": "xiewulong/jqueryX",
+	"name": "xiewulong/jqueryx",
 	"description": "jQuery X Plugins",
 	"keywords": ["xiewulong", "jquery", "jqueryX", "plugins"],
 	"type": "jquery plugins",
@@ -16,6 +16,6 @@
 		}
     ],
 	"autoload": {
-		"psr-4": {"yii\\jqueryX\\": ""}
+		"psr-4": {"yii\\jqueryx\\": ""}
 	}
 }
