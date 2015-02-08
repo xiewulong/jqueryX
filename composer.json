@@ -19,6 +19,6 @@
         "xiewulong/www": "*"
     },
 	"autoload": {
-		"psr-4": {"xiewulong\\jqueryX\\": ""}
+		"psr-4": {"xiewulong\\jqueryx\\": ""}
 	}
 }
