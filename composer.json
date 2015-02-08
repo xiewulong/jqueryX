@@ -16,7 +16,7 @@
 		}
     ],
     "require": {
-        "bower-asset/jquery": "^1.9.1"
+        "bower-asset/jquery": "~1.9"
     },
 	"autoload": {
 		"psr-4": {"xiewulong\\jqueryX\\": ""}
