@@ -4,7 +4,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2014/8/31
+ * update: 2015/4/5
  * version: 1.0.0
  */
 
@@ -633,7 +633,7 @@
 							content.css({top: t});
 							scroller.css({top: (t / max) * h_all + h_up});
 							gotop[t < 0 ? 'show' : 'hide']();
-							(fn || Fn).call(_this, t >= max);
+							(fn || Fn).call(_this, t <= max);
 							e.preventDefault ? e.preventDefault() : (event.returnValue = false);
 						}
 					}).fixScrolls();
