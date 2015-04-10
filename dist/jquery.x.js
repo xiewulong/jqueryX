@@ -4,7 +4,7 @@
  * http://xiewulong.github.io/jqueryX
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
- * update: 2015/4/5
+ * update: 2015/4/10
  * version: 1.0.0
  */
 
@@ -650,17 +650,18 @@
 				fixScrolls: function(){
 					return this.each(function(){
 						var $this		= $(this),
+							scroll_c	= $this.find('.scroll_c'),
 							scroll		= $this.find('.scroll'),
 							scroller	= scroll.find('.scroller'),
 							h			= $this.height(),
-							_h			= this.scrollHeight;
+							_h			= scroll_c.height();
 
 						scroller.height((scroll.height() - (scroll.find('.up').height() || 0) - (scroll.find('.down').height() || 0)) * h / _h);
 						scroll[h < _h ? 'show' : 'hide']();
 
 						if(h >= _h){
 							scroller.css({'top': 0});
-							$this.find('.scroll_c').css({'top': 0});
+							scroll_c.css({'top': 0});
 						}
 					});
 				},
