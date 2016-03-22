@@ -267,13 +267,13 @@
 					$(config.close).on('click', function(e){
 						(config.fnC || Fn).call(config.$pop.get(0));
 						$.popClose(config.id, config.animation);
-						e.stopPropagation();
+						return false;
 					});
 
 					//无背景蒙板则定义document关闭
 					if(!config.bg && config.bgcloser){
 						$doc.on('click', function(){config.$pop.remove();});
-						config.$pop.on('click', function(e){e.stopPropagation();});
+						config.$pop.on('click', function(e){return false;});
 					}
 
 					//拖曳,暂不支持ie6
@@ -847,7 +847,7 @@
 							config.onW && $$this.addClass(config.onW);
 							(config.fn || Fn).call($$this.get(0));
 
-							e.stopPropagation();
+							return false;
 						});
 
 						//选项事件
@@ -855,14 +855,11 @@
 							var $$this	= $(this),
 								tagname	= span.get(0).tagName.toUpperCase(),
 								text = (config.fnA || Fn).call(this);
-							if(text === false){
-								e.stopPropagation();
-							}else{
-								text === undefined && (text = $$this.text());
-								tagname == 'INPUT' || tagname == 'TEXTAREA' ? span.val(text) : span.html(text);
-								config.onS && span.addClass(config.onS);
-								config.onA	&& (a.removeClass(config.onA), $$this.addClass(config.onA));
-							}
+							if(text === false)return false;
+							text === undefined && (text = $$this.text());
+							tagname == 'INPUT' || tagname == 'TEXTAREA' ? span.val(text) : span.html(text);
+							config.onS && span.addClass(config.onS);
+							config.onA	&& (a.removeClass(config.onA), $$this.addClass(config.onA));
 						});
 
 						//加载检测选项值
