@@ -15,9 +15,6 @@
 			"email": "xiewulong@vip.qq.com"
 		}
     ],
-    "require": {
-        "xiewulong/www": "*"
-    },
 	"autoload": {
 		"psr-4": {"xiewulong\\jqueryx\\": ""}
 	}
