@@ -1,9 +1,0 @@
-#public
-.gitignore
-LICENSE
-README.md
-
-jquery.x.js
-jquery.x.min.js
-Gruntfile.js
-package.json

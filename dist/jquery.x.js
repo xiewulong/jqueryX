@@ -5,7 +5,7 @@
  * https://github.com/xiewulong/jqueryX/blob/master/MIT-License
  * create: 2013/5/16
  * update: 2016/3/22
- * version: 1.0.0
+ * version: 0.0.1
  */
 
 +function(window, undefined){
@@ -15,7 +15,7 @@
 	/**
 	 * jQuery X Plugins
 	 * @module jqueryX
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 */
 	var jQueryX = function($){
 
@@ -26,17 +26,17 @@
 			/**
 			 * jquery静态方法
 			 * @class $.extend
-			 * @since 1.0.0
+			 * @since 0.0.1
 			 */
 			$.extend({
 
 				//jQuery X Version
-				x: '1.0.0',
+				x: '0.0.1',
 
 				/**
 				 * ajax(可模拟demo)
 				 * @method $.xajax
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} url 请求链接
 				 * @param {function} [fn] 方法
 				 * @param {number|string|object} [demo] 测试数据
@@ -54,7 +54,7 @@
 				/**
 				 * cookie读/写
 				 * @method $.cookie
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} name 名称
 				 * @param {string} [value] 值
 				 * @param {number} [expires] 有效期, 单位: 天
@@ -84,7 +84,7 @@
 				/**
 				 * 粘贴板
 				 * @method $.clip
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {object} d 文本输入区对象
 				 * @param {function} [fn] 回调
 				 * @return {none}
@@ -112,7 +112,7 @@
 				/**
 				 * 加载程序
 				 * @method $.loader
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {object} fns 程序集合
 				 * @param {bool} [onload] 默认页面onload完成后执行
 				 * @return {object} fns
@@ -131,11 +131,11 @@
 						}
 					}
 				},
-				
+
 				/**
 				 * 弹窗
 				 * @method $.pop
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {object} prop 参数
 				 * @param {string} prop.html 弹窗内容
 				 * @param {string} [prop.parent='body'] dom父级
@@ -323,11 +323,11 @@
 						};
 					}
 				},
-				
+
 				/**
 				 * 关闭弹窗
 				 * @method $.popClose
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} id 弹窗id
 				 * @param {string} [animation] 动画,支持'fade'
 				 * @param {number} [duration=400] 动画持续时间
@@ -352,11 +352,11 @@
 						$(all || this).remove();
 					}
 				},
-				
+
 				/**
 				 * 开启遮罩蒙板
 				 * @method $.popBg
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {object} [prop] 参数
 				 * @param {string} [prop.parent='body'] dom父级
 				 * @param {string} [prop.id='jq_x_pop_bg'] id
@@ -393,7 +393,7 @@
 
 					//是否淡入
 					config.fade && $bg.stop().animate({opacity : config.opacity}, config.duration);
-					
+
 					//ie6兼容
 					$.ie6(function(){
 						var _fixed;
@@ -414,7 +414,7 @@
 				/**
 				 * 返回字符串长度/截取字符串
 				 * @method $.textSize
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} text 字符串
 				 * @param {number} [cutout] 需要截取的字符串的长度,为空则返回字符串长度
 				 * @return {number/string} length/text
@@ -442,7 +442,7 @@
 				/**
 				 * ie6检测
 				 * @method $.ie6
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {function} [fn] 回调
 				 * @return {bool}
 				 * @example $.ie6(fn);
@@ -459,7 +459,7 @@
 				/**
 				 * 低于指定版本ie检测
 				 * @method $.ltie
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} [ver=9] 版本
 				 * @param {function} [fn] 回调
 				 * @return {bool}
@@ -478,7 +478,7 @@
 					//获取版本号
 					index	= userAgent.indexOf('MSIE'),
 					version	= parseInt(userAgent.slice(index + 5, index + 7));
-					
+
 					//判断版本低于version则执行回调
 					(tag = version < ver) && (fn || Fn)();
 
@@ -488,7 +488,7 @@
 				/**
 				 * 指定ie版本检测
 				 * @method $.ie
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {function} [fn] 回调
 				 * @return {bool}
 				 * @example $.ie(ver, fn);
@@ -514,14 +514,14 @@
 			/**
 			 * jQuery原型方法
 			 * @class $.fn.extend
-			 * @since 1.0.0
+			 * @since 0.0.1
 			 */
 			$.fn.extend({
-	
+
 				/**
 				 * 回到顶部
 				 * @method $.fn.backtop
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @return {none}
 				 * @chainable
 				 * @example $(selector).backtop();
@@ -543,7 +543,7 @@
 				/**
 				 * 模拟滚动条
 				 * @method $.fn.scrolls
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {function} [fn] 回调
 				 * @return {object} this
 				 * @chainable
@@ -642,7 +642,7 @@
 				/**
 				 * 设置模拟滚动条高度
 				 * @method $.fn.fixScrolls
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @return {object} this
 				 * @chainable
 				 * @example $(selector).fixScrolls();
@@ -669,7 +669,7 @@
 				/**
 				 * 复选全选
 				 * @method $.fn.checkAll
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} selector 复选框
 				 * @param {function} [fn] 全选回调
 				 * @param {function} [fnC] 复选回调
@@ -711,7 +711,7 @@
 				/**
 				 * 模拟复选
 				 * @method $.fn.checkboxs
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} [on='on'] 选中
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -730,7 +730,7 @@
 				/**
 				 * 模拟单选
 				 * @method $.fn.radios
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} [on='on'] 选中
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -753,7 +753,7 @@
 				/**
 				 * 模拟列表框
 				 * @method $.fn.selects
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {object} [prop] 参数
 				 * @param {string} [prop.parent] 阻止冒泡的父级
 				 * @param {string} [prop.disabled='disabled'] 禁用class
@@ -795,7 +795,7 @@
 
 					//重置参数
 					$.extend(config, prop);
-					
+
 					//获取所有下拉
 					p_all = $this.find(config.p);
 
@@ -877,7 +877,7 @@
 				/**
 				 * tab切换
 				 * @method $.fn.tabs
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} selector 切换页
 				 * @param {string} [on='on'] tab按钮效果切换class
 				 * @param {string} [type='click'] 事件类型,支持'click/hover'
@@ -911,7 +911,7 @@
 						(fn || Fn).call($this.get(i), i, $cons.get(i));
 
 					})(index);
-					
+
 					return this.each(function(i){
 						$(this).on(etype, function(){cutover(i);});
 					});
@@ -920,7 +920,7 @@
 				/**
 				 * 图片预加载
 				 * @method $.fn.imgLoad
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} [attr='_src'] 属性名
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -954,7 +954,7 @@
 				/**
 				 * 文本输入区光标处插入
 				 * @method $.fn.inputIn
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {string} txt 文本
 				 * @param {array} [wrap] 两侧符号
 				 * @return {object} this
@@ -973,7 +973,7 @@
 						//取值及长度
 						this.focus();
 						value	= this.value;
-						
+
 						//获取首尾值
 						if(ds){
 							_range	= (_range = this.getAttribute('_range')) ? _range.split('|') : [0, 0];
@@ -1006,7 +1006,7 @@
 				/**
 				 * 限制字符
 				 * @method $.fn.limit
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {number} limit 限制数
 				 * @param {function} [fn] 回调
 				 * @return {object} this
@@ -1018,7 +1018,7 @@
 						var $this	= $(this),
 							_value	= $this.val(),
 							size	= $.textSize(_value) / 2;
-						
+
 						//判断运行回调或直接截取字符串
 						typeof fn === 'function' ? fn.call(this, Math.floor(limit - size)) : size > limit && $this.val($.textSize(_value, limit * 2));
 
@@ -1028,7 +1028,7 @@
 				/**
 				 * 文本输入控件
 				 * @method $.fn.inputs
-				 * @since 1.0.0
+				 * @since 0.0.1
 				 * @param {object} [prop] 参数
 				 * @param {string} [prop.parent] 事件委托对象,默认不使用
 				 * @param {array} [prop.values] 默认值数组,空数据则不匹配默认值
@@ -1073,7 +1073,7 @@
 
 						v_def && $this.val() == v_def && _check(v_def) && $this.val('');
 						$this.addClass(config.onF);
-						
+
 						//字符限制
 						config.events && config.limit && _limit.call(this);
 
@@ -1083,7 +1083,7 @@
 							v_def	= config.defV && $this.attr(config.defV) || this.defaultValue;
 
 						(_value == '' || _value == v_def) && _check(v_def) && $this.val(v_def).removeClass(config.onF + ' ' + config.onK);
-						
+
 						//字符限制
 						config.events && config.limit && _limit.call(this);
 
@@ -1096,7 +1096,7 @@
 
 						//记录光标位置
 						ie && _range.call(this);
-						
+
 						//字符限制
 						config.limit && _limit.call(this);
 
@@ -1107,7 +1107,7 @@
 						this.each(_limit);
 						ltie10 && this.on('paste', _limit);
 					}
-					
+
 					//记录光标位置
 					ie && $parent.on('mouseup', selector, _range);
 
