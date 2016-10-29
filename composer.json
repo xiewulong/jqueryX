@@ -14,7 +14,7 @@
 			"name": "xiewulong",
 			"email": "xiewulong@vip.qq.com"
 		}
-    ],
+	],
 	"autoload": {
 		"psr-4": {"xiewulong\\jqueryx\\": ""}
 	}
